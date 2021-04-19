@@ -7,62 +7,62 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		11036FF3262E451F00E40C4A /* WalletPlusApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11036FF2262E451F00E40C4A /* WalletPlusApp.swift */; };
-		11036FF5262E451F00E40C4A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11036FF4262E451F00E40C4A /* ContentView.swift */; };
-		11036FF7262E452300E40C4A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 11036FF6262E452300E40C4A /* Assets.xcassets */; };
-		11036FFA262E452300E40C4A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 11036FF9262E452300E40C4A /* Preview Assets.xcassets */; };
-		11037005262E452300E40C4A /* WalletPlusTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11037004262E452300E40C4A /* WalletPlusTests.swift */; };
-		11037010262E452300E40C4A /* WalletPlusUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1103700F262E452300E40C4A /* WalletPlusUITests.swift */; };
+		1136D54E262E4A6900CDB4E7 /* WalletPlusApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1136D54D262E4A6900CDB4E7 /* WalletPlusApp.swift */; };
+		1136D550262E4A6900CDB4E7 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1136D54F262E4A6900CDB4E7 /* ContentView.swift */; };
+		1136D552262E4A6900CDB4E7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1136D551262E4A6900CDB4E7 /* Assets.xcassets */; };
+		1136D555262E4A6900CDB4E7 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1136D554262E4A6900CDB4E7 /* Preview Assets.xcassets */; };
+		1136D560262E4A6900CDB4E7 /* WalletPlusTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1136D55F262E4A6900CDB4E7 /* WalletPlusTests.swift */; };
+		1136D56B262E4A6900CDB4E7 /* WalletPlusUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1136D56A262E4A6900CDB4E7 /* WalletPlusUITests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		11037001262E452300E40C4A /* PBXContainerItemProxy */ = {
+		1136D55C262E4A6900CDB4E7 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 11036FE7262E451F00E40C4A /* Project object */;
+			containerPortal = 1136D542262E4A6800CDB4E7 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 11036FEE262E451F00E40C4A;
+			remoteGlobalIDString = 1136D549262E4A6800CDB4E7;
 			remoteInfo = WalletPlus;
 		};
-		1103700C262E452300E40C4A /* PBXContainerItemProxy */ = {
+		1136D567262E4A6900CDB4E7 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 11036FE7262E451F00E40C4A /* Project object */;
+			containerPortal = 1136D542262E4A6800CDB4E7 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 11036FEE262E451F00E40C4A;
+			remoteGlobalIDString = 1136D549262E4A6800CDB4E7;
 			remoteInfo = WalletPlus;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		11036FEF262E451F00E40C4A /* WalletPlus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WalletPlus.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		11036FF2262E451F00E40C4A /* WalletPlusApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletPlusApp.swift; sourceTree = "<group>"; };
-		11036FF4262E451F00E40C4A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		11036FF6262E452300E40C4A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		11036FF9262E452300E40C4A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		11036FFB262E452300E40C4A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		11037000262E452300E40C4A /* WalletPlusTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WalletPlusTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		11037004262E452300E40C4A /* WalletPlusTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletPlusTests.swift; sourceTree = "<group>"; };
-		11037006262E452300E40C4A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		1103700B262E452300E40C4A /* WalletPlusUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WalletPlusUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		1103700F262E452300E40C4A /* WalletPlusUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletPlusUITests.swift; sourceTree = "<group>"; };
-		11037011262E452300E40C4A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1136D54A262E4A6800CDB4E7 /* WalletPlus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WalletPlus.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1136D54D262E4A6900CDB4E7 /* WalletPlusApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletPlusApp.swift; sourceTree = "<group>"; };
+		1136D54F262E4A6900CDB4E7 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		1136D551262E4A6900CDB4E7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		1136D554262E4A6900CDB4E7 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		1136D556262E4A6900CDB4E7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1136D55B262E4A6900CDB4E7 /* WalletPlusTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WalletPlusTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		1136D55F262E4A6900CDB4E7 /* WalletPlusTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletPlusTests.swift; sourceTree = "<group>"; };
+		1136D561262E4A6900CDB4E7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1136D566262E4A6900CDB4E7 /* WalletPlusUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WalletPlusUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		1136D56A262E4A6900CDB4E7 /* WalletPlusUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletPlusUITests.swift; sourceTree = "<group>"; };
+		1136D56C262E4A6900CDB4E7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		11036FEC262E451F00E40C4A /* Frameworks */ = {
+		1136D547262E4A6800CDB4E7 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		11036FFD262E452300E40C4A /* Frameworks */ = {
+		1136D558262E4A6900CDB4E7 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		11037008262E452300E40C4A /* Frameworks */ = {
+		1136D563262E4A6900CDB4E7 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -72,60 +72,60 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		11036FE6262E451F00E40C4A = {
+		1136D541262E4A6800CDB4E7 = {
 			isa = PBXGroup;
 			children = (
-				11036FF1262E451F00E40C4A /* WalletPlus */,
-				11037003262E452300E40C4A /* WalletPlusTests */,
-				1103700E262E452300E40C4A /* WalletPlusUITests */,
-				11036FF0262E451F00E40C4A /* Products */,
+				1136D54C262E4A6800CDB4E7 /* WalletPlus */,
+				1136D55E262E4A6900CDB4E7 /* WalletPlusTests */,
+				1136D569262E4A6900CDB4E7 /* WalletPlusUITests */,
+				1136D54B262E4A6800CDB4E7 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		11036FF0262E451F00E40C4A /* Products */ = {
+		1136D54B262E4A6800CDB4E7 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				11036FEF262E451F00E40C4A /* WalletPlus.app */,
-				11037000262E452300E40C4A /* WalletPlusTests.xctest */,
-				1103700B262E452300E40C4A /* WalletPlusUITests.xctest */,
+				1136D54A262E4A6800CDB4E7 /* WalletPlus.app */,
+				1136D55B262E4A6900CDB4E7 /* WalletPlusTests.xctest */,
+				1136D566262E4A6900CDB4E7 /* WalletPlusUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		11036FF1262E451F00E40C4A /* WalletPlus */ = {
+		1136D54C262E4A6800CDB4E7 /* WalletPlus */ = {
 			isa = PBXGroup;
 			children = (
-				11036FF2262E451F00E40C4A /* WalletPlusApp.swift */,
-				11036FF4262E451F00E40C4A /* ContentView.swift */,
-				11036FF6262E452300E40C4A /* Assets.xcassets */,
-				11036FFB262E452300E40C4A /* Info.plist */,
-				11036FF8262E452300E40C4A /* Preview Content */,
+				1136D54D262E4A6900CDB4E7 /* WalletPlusApp.swift */,
+				1136D54F262E4A6900CDB4E7 /* ContentView.swift */,
+				1136D551262E4A6900CDB4E7 /* Assets.xcassets */,
+				1136D556262E4A6900CDB4E7 /* Info.plist */,
+				1136D553262E4A6900CDB4E7 /* Preview Content */,
 			);
 			path = WalletPlus;
 			sourceTree = "<group>";
 		};
-		11036FF8262E452300E40C4A /* Preview Content */ = {
+		1136D553262E4A6900CDB4E7 /* Preview Content */ = {
 			isa = PBXGroup;
 			children = (
-				11036FF9262E452300E40C4A /* Preview Assets.xcassets */,
+				1136D554262E4A6900CDB4E7 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		11037003262E452300E40C4A /* WalletPlusTests */ = {
+		1136D55E262E4A6900CDB4E7 /* WalletPlusTests */ = {
 			isa = PBXGroup;
 			children = (
-				11037004262E452300E40C4A /* WalletPlusTests.swift */,
-				11037006262E452300E40C4A /* Info.plist */,
+				1136D55F262E4A6900CDB4E7 /* WalletPlusTests.swift */,
+				1136D561262E4A6900CDB4E7 /* Info.plist */,
 			);
 			path = WalletPlusTests;
 			sourceTree = "<group>";
 		};
-		1103700E262E452300E40C4A /* WalletPlusUITests */ = {
+		1136D569262E4A6900CDB4E7 /* WalletPlusUITests */ = {
 			isa = PBXGroup;
 			children = (
-				1103700F262E452300E40C4A /* WalletPlusUITests.swift */,
-				11037011262E452300E40C4A /* Info.plist */,
+				1136D56A262E4A6900CDB4E7 /* WalletPlusUITests.swift */,
+				1136D56C262E4A6900CDB4E7 /* Info.plist */,
 			);
 			path = WalletPlusUITests;
 			sourceTree = "<group>";
@@ -133,13 +133,13 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		11036FEE262E451F00E40C4A /* WalletPlus */ = {
+		1136D549262E4A6800CDB4E7 /* WalletPlus */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 11037014262E452300E40C4A /* Build configuration list for PBXNativeTarget "WalletPlus" */;
+			buildConfigurationList = 1136D56F262E4A6900CDB4E7 /* Build configuration list for PBXNativeTarget "WalletPlus" */;
 			buildPhases = (
-				11036FEB262E451F00E40C4A /* Sources */,
-				11036FEC262E451F00E40C4A /* Frameworks */,
-				11036FED262E451F00E40C4A /* Resources */,
+				1136D546262E4A6800CDB4E7 /* Sources */,
+				1136D547262E4A6800CDB4E7 /* Frameworks */,
+				1136D548262E4A6800CDB4E7 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -147,68 +147,68 @@
 			);
 			name = WalletPlus;
 			productName = WalletPlus;
-			productReference = 11036FEF262E451F00E40C4A /* WalletPlus.app */;
+			productReference = 1136D54A262E4A6800CDB4E7 /* WalletPlus.app */;
 			productType = "com.apple.product-type.application";
 		};
-		11036FFF262E452300E40C4A /* WalletPlusTests */ = {
+		1136D55A262E4A6900CDB4E7 /* WalletPlusTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 11037017262E452300E40C4A /* Build configuration list for PBXNativeTarget "WalletPlusTests" */;
+			buildConfigurationList = 1136D572262E4A6900CDB4E7 /* Build configuration list for PBXNativeTarget "WalletPlusTests" */;
 			buildPhases = (
-				11036FFC262E452300E40C4A /* Sources */,
-				11036FFD262E452300E40C4A /* Frameworks */,
-				11036FFE262E452300E40C4A /* Resources */,
+				1136D557262E4A6900CDB4E7 /* Sources */,
+				1136D558262E4A6900CDB4E7 /* Frameworks */,
+				1136D559262E4A6900CDB4E7 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				11037002262E452300E40C4A /* PBXTargetDependency */,
+				1136D55D262E4A6900CDB4E7 /* PBXTargetDependency */,
 			);
 			name = WalletPlusTests;
 			productName = WalletPlusTests;
-			productReference = 11037000262E452300E40C4A /* WalletPlusTests.xctest */;
+			productReference = 1136D55B262E4A6900CDB4E7 /* WalletPlusTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		1103700A262E452300E40C4A /* WalletPlusUITests */ = {
+		1136D565262E4A6900CDB4E7 /* WalletPlusUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 1103701A262E452300E40C4A /* Build configuration list for PBXNativeTarget "WalletPlusUITests" */;
+			buildConfigurationList = 1136D575262E4A6900CDB4E7 /* Build configuration list for PBXNativeTarget "WalletPlusUITests" */;
 			buildPhases = (
-				11037007262E452300E40C4A /* Sources */,
-				11037008262E452300E40C4A /* Frameworks */,
-				11037009262E452300E40C4A /* Resources */,
+				1136D562262E4A6900CDB4E7 /* Sources */,
+				1136D563262E4A6900CDB4E7 /* Frameworks */,
+				1136D564262E4A6900CDB4E7 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				1103700D262E452300E40C4A /* PBXTargetDependency */,
+				1136D568262E4A6900CDB4E7 /* PBXTargetDependency */,
 			);
 			name = WalletPlusUITests;
 			productName = WalletPlusUITests;
-			productReference = 1103700B262E452300E40C4A /* WalletPlusUITests.xctest */;
+			productReference = 1136D566262E4A6900CDB4E7 /* WalletPlusUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		11036FE7262E451F00E40C4A /* Project object */ = {
+		1136D542262E4A6800CDB4E7 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1240;
 				LastUpgradeCheck = 1240;
 				TargetAttributes = {
-					11036FEE262E451F00E40C4A = {
+					1136D549262E4A6800CDB4E7 = {
 						CreatedOnToolsVersion = 12.4;
 					};
-					11036FFF262E452300E40C4A = {
+					1136D55A262E4A6900CDB4E7 = {
 						CreatedOnToolsVersion = 12.4;
-						TestTargetID = 11036FEE262E451F00E40C4A;
+						TestTargetID = 1136D549262E4A6800CDB4E7;
 					};
-					1103700A262E452300E40C4A = {
+					1136D565262E4A6900CDB4E7 = {
 						CreatedOnToolsVersion = 12.4;
-						TestTargetID = 11036FEE262E451F00E40C4A;
+						TestTargetID = 1136D549262E4A6800CDB4E7;
 					};
 				};
 			};
-			buildConfigurationList = 11036FEA262E451F00E40C4A /* Build configuration list for PBXProject "WalletPlus" */;
+			buildConfigurationList = 1136D545262E4A6800CDB4E7 /* Build configuration list for PBXProject "WalletPlus" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -216,36 +216,36 @@
 				en,
 				Base,
 			);
-			mainGroup = 11036FE6262E451F00E40C4A;
-			productRefGroup = 11036FF0262E451F00E40C4A /* Products */;
+			mainGroup = 1136D541262E4A6800CDB4E7;
+			productRefGroup = 1136D54B262E4A6800CDB4E7 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				11036FEE262E451F00E40C4A /* WalletPlus */,
-				11036FFF262E452300E40C4A /* WalletPlusTests */,
-				1103700A262E452300E40C4A /* WalletPlusUITests */,
+				1136D549262E4A6800CDB4E7 /* WalletPlus */,
+				1136D55A262E4A6900CDB4E7 /* WalletPlusTests */,
+				1136D565262E4A6900CDB4E7 /* WalletPlusUITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		11036FED262E451F00E40C4A /* Resources */ = {
+		1136D548262E4A6800CDB4E7 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				11036FFA262E452300E40C4A /* Preview Assets.xcassets in Resources */,
-				11036FF7262E452300E40C4A /* Assets.xcassets in Resources */,
+				1136D555262E4A6900CDB4E7 /* Preview Assets.xcassets in Resources */,
+				1136D552262E4A6900CDB4E7 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		11036FFE262E452300E40C4A /* Resources */ = {
+		1136D559262E4A6900CDB4E7 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		11037009262E452300E40C4A /* Resources */ = {
+		1136D564262E4A6900CDB4E7 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -255,48 +255,48 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		11036FEB262E451F00E40C4A /* Sources */ = {
+		1136D546262E4A6800CDB4E7 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				11036FF5262E451F00E40C4A /* ContentView.swift in Sources */,
-				11036FF3262E451F00E40C4A /* WalletPlusApp.swift in Sources */,
+				1136D550262E4A6900CDB4E7 /* ContentView.swift in Sources */,
+				1136D54E262E4A6900CDB4E7 /* WalletPlusApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		11036FFC262E452300E40C4A /* Sources */ = {
+		1136D557262E4A6900CDB4E7 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				11037005262E452300E40C4A /* WalletPlusTests.swift in Sources */,
+				1136D560262E4A6900CDB4E7 /* WalletPlusTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		11037007262E452300E40C4A /* Sources */ = {
+		1136D562262E4A6900CDB4E7 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				11037010262E452300E40C4A /* WalletPlusUITests.swift in Sources */,
+				1136D56B262E4A6900CDB4E7 /* WalletPlusUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		11037002262E452300E40C4A /* PBXTargetDependency */ = {
+		1136D55D262E4A6900CDB4E7 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 11036FEE262E451F00E40C4A /* WalletPlus */;
-			targetProxy = 11037001262E452300E40C4A /* PBXContainerItemProxy */;
+			target = 1136D549262E4A6800CDB4E7 /* WalletPlus */;
+			targetProxy = 1136D55C262E4A6900CDB4E7 /* PBXContainerItemProxy */;
 		};
-		1103700D262E452300E40C4A /* PBXTargetDependency */ = {
+		1136D568262E4A6900CDB4E7 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 11036FEE262E451F00E40C4A /* WalletPlus */;
-			targetProxy = 1103700C262E452300E40C4A /* PBXContainerItemProxy */;
+			target = 1136D549262E4A6800CDB4E7 /* WalletPlus */;
+			targetProxy = 1136D567262E4A6900CDB4E7 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		11037012262E452300E40C4A /* Debug */ = {
+		1136D56D262E4A6900CDB4E7 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -357,7 +357,7 @@
 			};
 			name = Debug;
 		};
-		11037013262E452300E40C4A /* Release */ = {
+		1136D56E262E4A6900CDB4E7 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -412,7 +412,7 @@
 			};
 			name = Release;
 		};
-		11037015262E452300E40C4A /* Debug */ = {
+		1136D570262E4A6900CDB4E7 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -434,7 +434,7 @@
 			};
 			name = Debug;
 		};
-		11037016262E452300E40C4A /* Release */ = {
+		1136D571262E4A6900CDB4E7 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -456,7 +456,7 @@
 			};
 			name = Release;
 		};
-		11037018262E452300E40C4A /* Debug */ = {
+		1136D573262E4A6900CDB4E7 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
@@ -478,7 +478,7 @@
 			};
 			name = Debug;
 		};
-		11037019262E452300E40C4A /* Release */ = {
+		1136D574262E4A6900CDB4E7 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
@@ -500,7 +500,7 @@
 			};
 			name = Release;
 		};
-		1103701B262E452300E40C4A /* Debug */ = {
+		1136D576262E4A6900CDB4E7 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
@@ -520,7 +520,7 @@
 			};
 			name = Debug;
 		};
-		1103701C262E452300E40C4A /* Release */ = {
+		1136D577262E4A6900CDB4E7 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
@@ -543,43 +543,43 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		11036FEA262E451F00E40C4A /* Build configuration list for PBXProject "WalletPlus" */ = {
+		1136D545262E4A6800CDB4E7 /* Build configuration list for PBXProject "WalletPlus" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				11037012262E452300E40C4A /* Debug */,
-				11037013262E452300E40C4A /* Release */,
+				1136D56D262E4A6900CDB4E7 /* Debug */,
+				1136D56E262E4A6900CDB4E7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		11037014262E452300E40C4A /* Build configuration list for PBXNativeTarget "WalletPlus" */ = {
+		1136D56F262E4A6900CDB4E7 /* Build configuration list for PBXNativeTarget "WalletPlus" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				11037015262E452300E40C4A /* Debug */,
-				11037016262E452300E40C4A /* Release */,
+				1136D570262E4A6900CDB4E7 /* Debug */,
+				1136D571262E4A6900CDB4E7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		11037017262E452300E40C4A /* Build configuration list for PBXNativeTarget "WalletPlusTests" */ = {
+		1136D572262E4A6900CDB4E7 /* Build configuration list for PBXNativeTarget "WalletPlusTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				11037018262E452300E40C4A /* Debug */,
-				11037019262E452300E40C4A /* Release */,
+				1136D573262E4A6900CDB4E7 /* Debug */,
+				1136D574262E4A6900CDB4E7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		1103701A262E452300E40C4A /* Build configuration list for PBXNativeTarget "WalletPlusUITests" */ = {
+		1136D575262E4A6900CDB4E7 /* Build configuration list for PBXNativeTarget "WalletPlusUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				1103701B262E452300E40C4A /* Debug */,
-				1103701C262E452300E40C4A /* Release */,
+				1136D576262E4A6900CDB4E7 /* Debug */,
+				1136D577262E4A6900CDB4E7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 11036FE7262E451F00E40C4A /* Project object */;
+	rootObject = 1136D542262E4A6800CDB4E7 /* Project object */;
 }
