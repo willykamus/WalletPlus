@@ -7,12 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		11104A3F262E4C7600F94902 /* IncomeTransaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11104A3E262E4C7600F94902 /* IncomeTransaction.swift */; };
+		11104A44262E4DF200F94902 /* ExpenseTransaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11104A43262E4DF200F94902 /* ExpenseTransaction.swift */; };
 		1136D54E262E4A6900CDB4E7 /* WalletPlusApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1136D54D262E4A6900CDB4E7 /* WalletPlusApp.swift */; };
 		1136D550262E4A6900CDB4E7 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1136D54F262E4A6900CDB4E7 /* ContentView.swift */; };
 		1136D552262E4A6900CDB4E7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1136D551262E4A6900CDB4E7 /* Assets.xcassets */; };
 		1136D555262E4A6900CDB4E7 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1136D554262E4A6900CDB4E7 /* Preview Assets.xcassets */; };
 		1136D560262E4A6900CDB4E7 /* WalletPlusTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1136D55F262E4A6900CDB4E7 /* WalletPlusTests.swift */; };
 		1136D56B262E4A6900CDB4E7 /* WalletPlusUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1136D56A262E4A6900CDB4E7 /* WalletPlusUITests.swift */; };
+		1136D57F262E4AC400CDB4E7 /* TransactionTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1136D57E262E4AC400CDB4E7 /* TransactionTest.swift */; };
+		1136D585262E4AE900CDB4E7 /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1136D584262E4AE900CDB4E7 /* Transaction.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,6 +37,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		11104A3E262E4C7600F94902 /* IncomeTransaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncomeTransaction.swift; sourceTree = "<group>"; };
+		11104A43262E4DF200F94902 /* ExpenseTransaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseTransaction.swift; sourceTree = "<group>"; };
 		1136D54A262E4A6800CDB4E7 /* WalletPlus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WalletPlus.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1136D54D262E4A6900CDB4E7 /* WalletPlusApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletPlusApp.swift; sourceTree = "<group>"; };
 		1136D54F262E4A6900CDB4E7 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -45,6 +51,8 @@
 		1136D566262E4A6900CDB4E7 /* WalletPlusUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WalletPlusUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1136D56A262E4A6900CDB4E7 /* WalletPlusUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletPlusUITests.swift; sourceTree = "<group>"; };
 		1136D56C262E4A6900CDB4E7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1136D57E262E4AC400CDB4E7 /* TransactionTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionTest.swift; sourceTree = "<group>"; };
+		1136D584262E4AE900CDB4E7 /* Transaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transaction.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +103,7 @@
 		1136D54C262E4A6800CDB4E7 /* WalletPlus */ = {
 			isa = PBXGroup;
 			children = (
+				1136D583262E4ACB00CDB4E7 /* Model */,
 				1136D54D262E4A6900CDB4E7 /* WalletPlusApp.swift */,
 				1136D54F262E4A6900CDB4E7 /* ContentView.swift */,
 				1136D551262E4A6900CDB4E7 /* Assets.xcassets */,
@@ -117,6 +126,7 @@
 			children = (
 				1136D55F262E4A6900CDB4E7 /* WalletPlusTests.swift */,
 				1136D561262E4A6900CDB4E7 /* Info.plist */,
+				1136D57E262E4AC400CDB4E7 /* TransactionTest.swift */,
 			);
 			path = WalletPlusTests;
 			sourceTree = "<group>";
@@ -128,6 +138,16 @@
 				1136D56C262E4A6900CDB4E7 /* Info.plist */,
 			);
 			path = WalletPlusUITests;
+			sourceTree = "<group>";
+		};
+		1136D583262E4ACB00CDB4E7 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				1136D584262E4AE900CDB4E7 /* Transaction.swift */,
+				11104A3E262E4C7600F94902 /* IncomeTransaction.swift */,
+				11104A43262E4DF200F94902 /* ExpenseTransaction.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -259,8 +279,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				11104A44262E4DF200F94902 /* ExpenseTransaction.swift in Sources */,
 				1136D550262E4A6900CDB4E7 /* ContentView.swift in Sources */,
 				1136D54E262E4A6900CDB4E7 /* WalletPlusApp.swift in Sources */,
+				1136D585262E4AE900CDB4E7 /* Transaction.swift in Sources */,
+				11104A3F262E4C7600F94902 /* IncomeTransaction.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -268,6 +291,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1136D57F262E4AC400CDB4E7 /* TransactionTest.swift in Sources */,
 				1136D560262E4A6900CDB4E7 /* WalletPlusTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
