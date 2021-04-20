@@ -8,6 +8,8 @@
 import Foundation
 
 struct IncomeTransaction: Transaction {
+    var date: Date
+    
     var remoteId: String
     var amount: Double
     var category: String

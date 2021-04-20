@@ -11,4 +11,5 @@ protocol Transaction {
     var remoteId: String { get set }
     var amount: Double { get set }
     var category: String { get set }
+    var date: Date { get set }
 }
