@@ -13,7 +13,6 @@ struct TransactionRow: View {
     
     var body: some View {
         HStack {
-            
             Text("\(transaction.category)").font(.system(size: 14.0, weight: .thin))
             Spacer()
             Text(self.amountText())

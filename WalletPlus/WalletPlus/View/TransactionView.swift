@@ -9,12 +9,17 @@ import SwiftUI
 
 struct TransactionView: View {
     
-    var transactions: [Transaction] = [IncomeTransaction(date: Date(), remoteId: "1", amount: 100.4, category: "Cash"), IncomeTransaction(date: Date(), remoteId: "2", amount: 99.9, category: "FFF"), ExpenseTransaction(date: Date(), remoteId: "3", amount: -33.2, category: "Car")]
+    @StateObject var viewModel: TransactionViewModel = TransactionViewModel()
     
     var body: some View {
         NavigationView {
             List {
-                ForEach(transactions, id: \.remoteId) { transaction in TransactionRow(transaction: transaction)
+                ForEach(viewModel.transactionListSection) { section in
+                    Section(header: TransactionSectionView(text: section.date)) {
+                        ForEach(section.transactions, id: \.remoteId) { transaction in
+                            TransactionRow(transaction: transaction)
+                        }
+                    }
                 }
             }
             .navigationBarTitle(Text("Transactions"))
@@ -24,6 +29,6 @@ struct TransactionView: View {
 
 struct TransactionView_Previews: PreviewProvider {
     static var previews: some View {
-        TransactionView(transactions: [IncomeTransaction(date: Date(), remoteId: "1", amount: 100.4, category: "Cash"), IncomeTransaction(date: Date(), remoteId: "2", amount: 99.9, category: "FFF"), ExpenseTransaction(date: Date(), remoteId: "3", amount: -33.2, category: "Car")])
+        TransactionView()
     }
 }
