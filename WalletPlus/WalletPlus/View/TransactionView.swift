@@ -9,7 +9,7 @@ import SwiftUI
 
 struct TransactionView: View {
     
-    var transactions: [Transaction] = [IncomeTransaction(remoteId: "1", amount: 100.4, category: "Cash"), IncomeTransaction(remoteId: "2", amount: 99.9, category: "FFF"), ExpenseTransaction(remoteId: "3", amount: -33.2, category: "Car")]
+    var transactions: [Transaction] = [IncomeTransaction(date: Date(), remoteId: "1", amount: 100.4, category: "Cash"), IncomeTransaction(date: Date(), remoteId: "2", amount: 99.9, category: "FFF"), ExpenseTransaction(date: Date(), remoteId: "3", amount: -33.2, category: "Car")]
     
     var body: some View {
         NavigationView {
@@ -24,6 +24,6 @@ struct TransactionView: View {
 
 struct TransactionView_Previews: PreviewProvider {
     static var previews: some View {
-        TransactionView(transactions: [IncomeTransaction(remoteId: "1", amount: 100.4, category: "Cash"), IncomeTransaction(remoteId: "2", amount: 99.9, category: "FFF"), ExpenseTransaction(remoteId: "3", amount: -33.2, category: "Car")])
+        TransactionView(transactions: [IncomeTransaction(date: Date(), remoteId: "1", amount: 100.4, category: "Cash"), IncomeTransaction(date: Date(), remoteId: "2", amount: 99.9, category: "FFF"), ExpenseTransaction(date: Date(), remoteId: "3", amount: -33.2, category: "Car")])
     }
 }

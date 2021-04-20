@@ -21,7 +21,7 @@ class TransactionTest: XCTestCase {
     func testCreateTransaction() {
         let value: Double = 100.0
         let category: String = "Cash"
-        let income: IncomeTransaction = IncomeTransaction(remoteId: "1", amount: value, category: category)
+        let income: IncomeTransaction = IncomeTransaction(date: Date(), remoteId: "1", amount: value, category: category)
         XCTAssertEqual(income.amount, value)
         XCTAssertEqual(income.category, category)
     }
