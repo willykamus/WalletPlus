@@ -12,6 +12,7 @@
 		11104A58262E4F1400F94902 /* TransactionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11104A57262E4F1400F94902 /* TransactionView.swift */; };
 		11104A61262E5F5000F94902 /* TransactionsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11104A60262E5F5000F94902 /* TransactionsViewModel.swift */; };
 		11104A66262E5FB600F94902 /* TransactionRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11104A65262E5FB600F94902 /* TransactionRow.swift */; };
+		11104AE6262F45FB00F94902 /* TransactionSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11104AE5262F45FB00F94902 /* TransactionSectionView.swift */; };
 		1136D54E262E4A6900CDB4E7 /* WalletPlusApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1136D54D262E4A6900CDB4E7 /* WalletPlusApp.swift */; };
 		1136D550262E4A6900CDB4E7 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1136D54F262E4A6900CDB4E7 /* ContentView.swift */; };
 		1136D552262E4A6900CDB4E7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1136D551262E4A6900CDB4E7 /* Assets.xcassets */; };
@@ -45,6 +46,7 @@
 		11104A57262E4F1400F94902 /* TransactionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionView.swift; sourceTree = "<group>"; };
 		11104A60262E5F5000F94902 /* TransactionsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsViewModel.swift; sourceTree = "<group>"; };
 		11104A65262E5FB600F94902 /* TransactionRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionRow.swift; sourceTree = "<group>"; };
+		11104AE5262F45FB00F94902 /* TransactionSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionSectionView.swift; sourceTree = "<group>"; };
 		1136D54A262E4A6800CDB4E7 /* WalletPlus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WalletPlus.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1136D54D262E4A6900CDB4E7 /* WalletPlusApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletPlusApp.swift; sourceTree = "<group>"; };
 		1136D54F262E4A6900CDB4E7 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -91,6 +93,7 @@
 			children = (
 				11104A57262E4F1400F94902 /* TransactionView.swift */,
 				11104A65262E5FB600F94902 /* TransactionRow.swift */,
+				11104AE5262F45FB00F94902 /* TransactionSectionView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -312,6 +315,7 @@
 				11104A66262E5FB600F94902 /* TransactionRow.swift in Sources */,
 				11104A61262E5F5000F94902 /* TransactionsViewModel.swift in Sources */,
 				11104A58262E4F1400F94902 /* TransactionView.swift in Sources */,
+				11104AE6262F45FB00F94902 /* TransactionSectionView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
