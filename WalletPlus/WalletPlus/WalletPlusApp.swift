@@ -11,7 +11,14 @@ import SwiftUI
 struct WalletPlusApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            TabView {
+                ContentView()
+                TransactionView()
+                    .tabItem {
+                        Text("Transactions")
+                        Image(systemName: "list.bullet.rectangle")
+                    }
+            }
         }
     }
 }

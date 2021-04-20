@@ -8,7 +8,7 @@
 import Foundation
 
 protocol Transaction {
-    var id: String { get set }
+    var remoteId: String { get set }
     var amount: Double { get set }
-    var group: String { get set }
+    var category: String { get set }
 }
