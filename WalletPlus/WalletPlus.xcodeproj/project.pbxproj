@@ -15,6 +15,9 @@
 		11104AE6262F45FB00F94902 /* TransactionSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11104AE5262F45FB00F94902 /* TransactionSectionView.swift */; };
 		11104C92262F904F00F94902 /* Wallet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11104C91262F904F00F94902 /* Wallet.swift */; };
 		11104C97262F910C00F94902 /* WalletTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11104C96262F910C00F94902 /* WalletTest.swift */; };
+		11104CA2262F9B5B00F94902 /* TransactionContainerOverview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11104CA1262F9B5B00F94902 /* TransactionContainerOverview.swift */; };
+		11104CA7262F9BD800F94902 /* TransactionContainerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11104CA6262F9BD800F94902 /* TransactionContainerViewModel.swift */; };
+		11104E622630DAB000F94902 /* SegmentedControlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11104E612630DAAF00F94902 /* SegmentedControlView.swift */; };
 		1136D54E262E4A6900CDB4E7 /* WalletPlusApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1136D54D262E4A6900CDB4E7 /* WalletPlusApp.swift */; };
 		1136D550262E4A6900CDB4E7 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1136D54F262E4A6900CDB4E7 /* ContentView.swift */; };
 		1136D552262E4A6900CDB4E7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1136D551262E4A6900CDB4E7 /* Assets.xcassets */; };
@@ -51,6 +54,9 @@
 		11104AE5262F45FB00F94902 /* TransactionSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionSectionView.swift; sourceTree = "<group>"; };
 		11104C91262F904F00F94902 /* Wallet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wallet.swift; sourceTree = "<group>"; };
 		11104C96262F910C00F94902 /* WalletTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletTest.swift; sourceTree = "<group>"; };
+		11104CA1262F9B5B00F94902 /* TransactionContainerOverview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionContainerOverview.swift; sourceTree = "<group>"; };
+		11104CA6262F9BD800F94902 /* TransactionContainerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionContainerViewModel.swift; sourceTree = "<group>"; };
+		11104E612630DAAF00F94902 /* SegmentedControlView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentedControlView.swift; sourceTree = "<group>"; };
 		1136D54A262E4A6800CDB4E7 /* WalletPlus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WalletPlus.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1136D54D262E4A6900CDB4E7 /* WalletPlusApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletPlusApp.swift; sourceTree = "<group>"; };
 		1136D54F262E4A6900CDB4E7 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -98,6 +104,8 @@
 				11104A57262E4F1400F94902 /* TransactionView.swift */,
 				11104A65262E5FB600F94902 /* TransactionRow.swift */,
 				11104AE5262F45FB00F94902 /* TransactionSectionView.swift */,
+				11104CA1262F9B5B00F94902 /* TransactionContainerOverview.swift */,
+				11104E612630DAAF00F94902 /* SegmentedControlView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -106,6 +114,7 @@
 			isa = PBXGroup;
 			children = (
 				11104A60262E5F5000F94902 /* TransactionsViewModel.swift */,
+				11104CA6262F9BD800F94902 /* TransactionContainerViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -314,11 +323,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				11104C92262F904F00F94902 /* Wallet.swift in Sources */,
+				11104E622630DAB000F94902 /* SegmentedControlView.swift in Sources */,
+				11104CA2262F9B5B00F94902 /* TransactionContainerOverview.swift in Sources */,
 				11104A44262E4DF200F94902 /* ExpenseTransaction.swift in Sources */,
 				1136D550262E4A6900CDB4E7 /* ContentView.swift in Sources */,
 				1136D54E262E4A6900CDB4E7 /* WalletPlusApp.swift in Sources */,
 				1136D585262E4AE900CDB4E7 /* Transaction.swift in Sources */,
 				11104A3F262E4C7600F94902 /* IncomeTransaction.swift in Sources */,
+				11104CA7262F9BD800F94902 /* TransactionContainerViewModel.swift in Sources */,
 				11104A66262E5FB600F94902 /* TransactionRow.swift in Sources */,
 				11104A61262E5F5000F94902 /* TransactionsViewModel.swift in Sources */,
 				11104A58262E4F1400F94902 /* TransactionView.swift in Sources */,
