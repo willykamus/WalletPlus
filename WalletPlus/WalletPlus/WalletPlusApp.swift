@@ -12,7 +12,7 @@ struct WalletPlusApp: App {
     var body: some Scene {
         WindowGroup {
             TabView {
-                ContentView()
+                TransactionContainerOverview()
                 TransactionView()
                     .tabItem {
                         Text("Transactions")
