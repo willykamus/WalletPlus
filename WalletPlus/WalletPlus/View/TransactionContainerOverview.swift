@@ -38,8 +38,8 @@ struct TransactionContainerOverview: View {
             .toolbar(content: {
             ToolbarItem(placement: .principal) {
                 VStack {
-                    Text("Total").font(.headline)
-                        Text(viewModel.getContainerAvailableAmount()).font(.subheadline)
+                    Text(viewModel.getContainerAvailableAmount()).font(.headline)
+                    Text("Total").font(.subheadline)
                     }
                 }
             })

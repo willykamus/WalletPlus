@@ -18,7 +18,7 @@ struct SegmentedControlView: View {
             }, label: {
                 VStack {
                     Text(viewModel.getIncomeValue()).font(.headline).foregroundColor(.black).padding(.horizontal)
-                    Text("Income").font(.subheadline).foregroundColor(Color(UIColor.darkGray))
+                    Text("Income").font(.subheadline).foregroundColor(Color.gray)
                 }
                 .frame(maxWidth: .infinity)
                 .padding(.vertical, 8)
@@ -31,7 +31,7 @@ struct SegmentedControlView: View {
             }, label: {
                 VStack {
                     Text(viewModel.getExpenseValue()).font(.headline).foregroundColor(.black).padding(.horizontal)
-                    Text("Expenses").font(.subheadline).foregroundColor(Color(UIColor.darkGray))
+                    Text("Expenses").font(.subheadline).foregroundColor(Color.gray)
                 }
                 .frame(maxWidth: .infinity)
                 .padding(.vertical, 8)
