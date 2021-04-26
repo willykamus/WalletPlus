@@ -13,7 +13,10 @@ struct TransactionRow: View {
     
     var body: some View {
         HStack {
-            Text("\(transaction.category)").font(.system(size: 14.0, weight: .thin))
+            VStack(alignment: .leading) {
+                Text("\(transaction.category)").font(.system(size: 12.0, weight: .regular))
+                Text(transaction.container).font(.system(size: 12.0, weight: .regular))
+            }
             Spacer()
             Text(self.amountText())
                 .font(.system(size: 14.0, weight: .thin))
@@ -44,6 +47,6 @@ struct TransactionRow: View {
 
 struct TransactionRow_Previews: PreviewProvider {
     static var previews: some View {
-        TransactionRow(transaction: IncomeTransaction(date: Date(), remoteId: "1", amount: 100.4, category: "Cash"))
+        TransactionRow(transaction: IncomeTransaction(container: "Cartera", date: Date(), remoteId: "1", amount: 100.4, category: "Cash"))
     }
 }
