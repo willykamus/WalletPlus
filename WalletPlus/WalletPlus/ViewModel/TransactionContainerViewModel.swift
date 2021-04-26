@@ -9,22 +9,25 @@ import Foundation
 
 class TransactionContainerViewModel: ObservableObject {
     
-    var testData: [Transaction] = [IncomeTransaction(date: Date(timeIntervalSinceReferenceDate: 1000000), remoteId: "1", amount: 100.4, category: "Cash"), IncomeTransaction(date: Date(timeIntervalSinceReferenceDate: 10000000), remoteId: "2", amount: 99.9, category: "FFF"), ExpenseTransaction(date: Date(timeIntervalSinceReferenceDate: 1000000), remoteId: "3", amount: -33.2, category: "Car")]
+    var testData: [Transaction] = TestData().testData
     
     @Published var transactionContainer: TransactionContainer = Wallet(name: "Cash")
     @Published var selectedTransactionType: Int = 0 {
         didSet {
             if selectedTransactionType == 0 {
-                self.currentTransactions = getIncomeTransactions()
+                self.currentCategories = self.getDisplayableCategories(from: self.getIncomeTransactions())
             } else {
-                self.currentTransactions = getExpenseTransactions()
+                self.currentCategories = self.getDisplayableCategories(from: self.getExpenseTransactions())
             }
         }
     }
-    @Published var currentTransactions: [Transaction] = []
+    @Published var currentCategories: [DisplayableCategory] = []
+    
+    var categoryInteractor: GetCategory = CategoryInteractor()
     
     init() {
         self.transactionContainer.transactions = testData
+        self.currentCategories = self.getDisplayableCategories(from: self.getIncomeTransactions())
     }
     
     func getContainerAvailableAmount() -> String {
@@ -70,6 +73,19 @@ class TransactionContainerViewModel: ObservableObject {
     
     func getExpenseTransactions() -> [Transaction] {
         return self.testData.filter( { $0 is ExpenseTransaction })
+    }
+    
+    func getDisplayableCategories(from transactions: [Transaction]) -> [DisplayableCategory] {
+        var displayableGroups: [DisplayableCategory] = []
+        let uniques: [Category] = categoryInteractor.getCategory(from: transactions)
+        for category in uniques {
+            var total: Double = 0
+            for transaction in category.transactions {
+                total += transaction.amount
+            }
+            displayableGroups.append(DisplayableCategory(name: category.name, amount: String(total), numberOfTransactions: category.transactions.count > 1 ? "\(category.transactions.count) transactions" : "\(category.transactions.count) transaction"))
+        }
+        return displayableGroups
     }
     
 }

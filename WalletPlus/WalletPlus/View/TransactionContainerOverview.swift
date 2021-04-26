@@ -29,8 +29,8 @@ struct TransactionContainerOverview: View {
                     Spacer()
                 }.padding(.horizontal)
                 
-                ForEach(viewModel.currentTransactions, id: \.remoteId) { transaction in
-                    TransactionRow(transaction: transaction).padding(.horizontal)
+                ForEach(viewModel.currentCategories) { category in
+                    CategoryRow(category: category).padding(.horizontal)
                 }.padding(.top,4)
 
             }

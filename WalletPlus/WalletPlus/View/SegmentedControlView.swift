@@ -12,7 +12,7 @@ struct SegmentedControlView: View {
     @ObservedObject var viewModel: TransactionContainerViewModel
     
     var body: some View {
-        HStack {
+        HStack(spacing: 0) {
             Button(action: {
                 viewModel.selectedTransactionType = 0
             }, label: {
