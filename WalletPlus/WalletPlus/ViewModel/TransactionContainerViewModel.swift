@@ -9,7 +9,7 @@ import Foundation
 
 class TransactionContainerViewModel: ObservableObject {
     
-    var testData: [Transaction] = TestData().testData
+    var testData: [Transaction] = TestData().testData[1].transactions!
     
     @Published var transactionContainer: TransactionContainer = Wallet(name: "Cash")
     @Published var selectedTransactionType: Int = 0 {

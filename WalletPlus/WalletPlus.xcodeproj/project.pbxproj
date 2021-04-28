@@ -26,12 +26,16 @@
 		1136D56B262E4A6900CDB4E7 /* WalletPlusUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1136D56A262E4A6900CDB4E7 /* WalletPlusUITests.swift */; };
 		1136D57F262E4AC400CDB4E7 /* TransactionTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1136D57E262E4AC400CDB4E7 /* TransactionTest.swift */; };
 		1136D585262E4AE900CDB4E7 /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1136D584262E4AE900CDB4E7 /* Transaction.swift */; };
+		1145639726378B0F0068C58F /* WalletsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1145639626378B0F0068C58F /* WalletsViewModel.swift */; };
+		1145639C26378D170068C58F /* ContainerList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1145639B26378D170068C58F /* ContainerList.swift */; };
+		114563A126378EFF0068C58F /* GetContainerTotal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 114563A026378EFF0068C58F /* GetContainerTotal.swift */; };
 		115C4FF42634DF330008D217 /* CategoryRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 115C4FF32634DF330008D217 /* CategoryRow.swift */; };
 		115C50012634E6600008D217 /* DisplayableCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 115C50002634E6600008D217 /* DisplayableCategory.swift */; };
 		115C500626361A7B0008D217 /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = 115C500526361A7B0008D217 /* Group.swift */; };
 		115C500C26361AB30008D217 /* GroupTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 115C500B26361AB30008D217 /* GroupTest.swift */; };
 		115C501426361AE10008D217 /* TestData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 115C501326361AE10008D217 /* TestData.swift */; };
 		115C501926361BA70008D217 /* GetCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 115C501826361BA70008D217 /* GetCategory.swift */; };
+		1188CFFE263A1B6300FD489C /* AmountFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1188CFFD263A1B6300FD489C /* AmountFormatter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,12 +81,16 @@
 		1136D56C262E4A6900CDB4E7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1136D57E262E4AC400CDB4E7 /* TransactionTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionTest.swift; sourceTree = "<group>"; };
 		1136D584262E4AE900CDB4E7 /* Transaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transaction.swift; sourceTree = "<group>"; };
+		1145639626378B0F0068C58F /* WalletsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletsViewModel.swift; sourceTree = "<group>"; };
+		1145639B26378D170068C58F /* ContainerList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerList.swift; sourceTree = "<group>"; };
+		114563A026378EFF0068C58F /* GetContainerTotal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetContainerTotal.swift; sourceTree = "<group>"; };
 		115C4FF32634DF330008D217 /* CategoryRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryRow.swift; sourceTree = "<group>"; };
 		115C50002634E6600008D217 /* DisplayableCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayableCategory.swift; sourceTree = "<group>"; };
 		115C500526361A7B0008D217 /* Group.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Group.swift; sourceTree = "<group>"; };
 		115C500B26361AB30008D217 /* GroupTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupTest.swift; sourceTree = "<group>"; };
 		115C501326361AE10008D217 /* TestData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestData.swift; sourceTree = "<group>"; };
 		115C501826361BA70008D217 /* GetCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetCategory.swift; sourceTree = "<group>"; };
+		1188CFFD263A1B6300FD489C /* AmountFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AmountFormatter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +127,7 @@
 				11104CA1262F9B5B00F94902 /* TransactionContainerOverview.swift */,
 				11104E612630DAAF00F94902 /* SegmentedControlView.swift */,
 				115C4FF32634DF330008D217 /* CategoryRow.swift */,
+				1145639B26378D170068C58F /* ContainerList.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -129,6 +138,7 @@
 				11104A60262E5F5000F94902 /* TransactionsViewModel.swift */,
 				11104CA6262F9BD800F94902 /* TransactionContainerViewModel.swift */,
 				115C50002634E6600008D217 /* DisplayableCategory.swift */,
+				1145639626378B0F0068C58F /* WalletsViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -156,6 +166,7 @@
 		1136D54C262E4A6800CDB4E7 /* WalletPlus */ = {
 			isa = PBXGroup;
 			children = (
+				1188CFFC263A1B5000FD489C /* Presentation */,
 				115C500A26361A990008D217 /* Domain */,
 				11104A5C262E4F1E00F94902 /* ViewModel */,
 				11104A4B262E4EF200F94902 /* View */,
@@ -206,6 +217,7 @@
 				11104A43262E4DF200F94902 /* ExpenseTransaction.swift */,
 				11104C91262F904F00F94902 /* Wallet.swift */,
 				115C500526361A7B0008D217 /* Group.swift */,
+				114563A026378EFF0068C58F /* GetContainerTotal.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -217,6 +229,14 @@
 				115C501826361BA70008D217 /* GetCategory.swift */,
 			);
 			path = Domain;
+			sourceTree = "<group>";
+		};
+		1188CFFC263A1B5000FD489C /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				1188CFFD263A1B6300FD489C /* AmountFormatter.swift */,
+			);
+			path = Presentation;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -348,10 +368,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1188CFFE263A1B6300FD489C /* AmountFormatter.swift in Sources */,
 				11104C92262F904F00F94902 /* Wallet.swift in Sources */,
+				114563A126378EFF0068C58F /* GetContainerTotal.swift in Sources */,
 				11104E622630DAB000F94902 /* SegmentedControlView.swift in Sources */,
+				1145639726378B0F0068C58F /* WalletsViewModel.swift in Sources */,
 				11104CA2262F9B5B00F94902 /* TransactionContainerOverview.swift in Sources */,
 				115C500626361A7B0008D217 /* Group.swift in Sources */,
+				1145639C26378D170068C58F /* ContainerList.swift in Sources */,
 				11104A44262E4DF200F94902 /* ExpenseTransaction.swift in Sources */,
 				115C4FF42634DF330008D217 /* CategoryRow.swift in Sources */,
 				115C50012634E6600008D217 /* DisplayableCategory.swift in Sources */,
