@@ -9,7 +9,7 @@ import Foundation
 
 class TransactionViewModel: ObservableObject {
     
-    var testData: [Transaction] = TestData().testData
+    var testData: [Transaction] = TestData().testData[1].transactions!
     
     @Published var transactionListSection: [TransactionListSection] = []
     
