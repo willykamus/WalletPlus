@@ -24,7 +24,7 @@ class GroupTest: XCTestCase {
         let categoryInteractor: GetCategory = CategoryInteractor()
         
         // When
-        let groups = categoryInteractor.getCategory(from: testData.testData)
+        let groups = categoryInteractor.getCategory(from: testData.testData[0].transactions!)
         
         // Then
         XCTAssertNotNil(groups)
