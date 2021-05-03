@@ -36,6 +36,7 @@
 		115C501426361AE10008D217 /* TestData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 115C501326361AE10008D217 /* TestData.swift */; };
 		115C501926361BA70008D217 /* GetCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 115C501826361BA70008D217 /* GetCategory.swift */; };
 		1188CFFE263A1B6300FD489C /* AmountFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1188CFFD263A1B6300FD489C /* AmountFormatter.swift */; };
+		1188D000263A203D00FD489C /* GetTransactions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1188CFFF263A203D00FD489C /* GetTransactions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -91,6 +92,7 @@
 		115C501326361AE10008D217 /* TestData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestData.swift; sourceTree = "<group>"; };
 		115C501826361BA70008D217 /* GetCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetCategory.swift; sourceTree = "<group>"; };
 		1188CFFD263A1B6300FD489C /* AmountFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AmountFormatter.swift; sourceTree = "<group>"; };
+		1188CFFF263A203D00FD489C /* GetTransactions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetTransactions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -227,6 +229,7 @@
 			children = (
 				115C501326361AE10008D217 /* TestData.swift */,
 				115C501826361BA70008D217 /* GetCategory.swift */,
+				1188CFFF263A203D00FD489C /* GetTransactions.swift */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
@@ -371,6 +374,7 @@
 				1188CFFE263A1B6300FD489C /* AmountFormatter.swift in Sources */,
 				11104C92262F904F00F94902 /* Wallet.swift in Sources */,
 				114563A126378EFF0068C58F /* GetContainerTotal.swift in Sources */,
+				1188D000263A203D00FD489C /* GetTransactions.swift in Sources */,
 				11104E622630DAB000F94902 /* SegmentedControlView.swift in Sources */,
 				1145639726378B0F0068C58F /* WalletsViewModel.swift in Sources */,
 				11104CA2262F9B5B00F94902 /* TransactionContainerOverview.swift in Sources */,
