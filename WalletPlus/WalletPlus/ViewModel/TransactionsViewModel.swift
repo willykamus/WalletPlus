@@ -9,19 +9,27 @@ import Foundation
 
 class TransactionViewModel: ObservableObject {
     
-    var testData: [Transaction] = GetTransactionsInteractor().getTransactions(from: TestData().testData)
+    var testData: [Transaction] = []
     
     @Published var transactionListSection: [TransactionListSection] = []
-    
-    init() {
-        createTransactionSections()
-    }
+
     
     func createTransactionSections() {
         for date in getUniqueDates() {
             let filtered = testData.filter { $0.date == date }
             transactionListSection.append(TransactionListSection(date: format(date: date), transactions: filtered))
         }
+    }
+    
+    func getTransactions(from container: TransactionContainer?) {
+        testData.removeAll()
+        transactionListSection.removeAll()
+        if container != nil {
+            self.testData = container!.transactions!
+        } else {
+            self.testData = GetTransactionsInteractor().getTransactions(from: TestData().testData)
+        }
+        self.createTransactionSections()
     }
     
     private func getUniqueDates() -> [Date] {
