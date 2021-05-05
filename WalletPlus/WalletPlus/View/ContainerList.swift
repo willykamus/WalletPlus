@@ -15,10 +15,14 @@ struct ContainerList: View {
         NavigationView {
             List {
                 ForEach(viewModel.containers, id: \.id) { container in
-                    VStack(alignment: .leading) {
-                        Text(container.name)
-                        Text(viewModel.getTotal(from: container))
-                    }
+                    NavigationLink(
+                        destination: TransactionsListView(container: container),
+                        label: {
+                            VStack(alignment: .leading) {
+                                Text(container.name)
+                                Text(viewModel.getTotal(from: container))
+                            }
+                        })
                 }
             }
             .navigationBarTitle(viewModel.getTotalFromContainers())

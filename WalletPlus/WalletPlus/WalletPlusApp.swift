@@ -19,7 +19,7 @@ struct WalletPlusApp: App {
                     }
                 
                 TransactionContainerOverview()
-                TransactionView()
+                TransactionsListTab()
                     .tabItem {
                         Text("Transactions")
                         Image(systemName: "list.bullet.rectangle")
