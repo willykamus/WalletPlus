@@ -17,8 +17,6 @@ struct WalletPlusApp: App {
                         Text("Wallets")
                         Image(systemName: "wallet.pass")
                     }
-                
-                TransactionContainerOverview()
                 TransactionsListTab()
                     .tabItem {
                         Text("Transactions")
