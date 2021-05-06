@@ -9,10 +9,16 @@ import SwiftUI
 
 struct TransactionContainerOverview: View {
     
-    @StateObject var viewModel: TransactionContainerViewModel = TransactionContainerViewModel()
+    var container: TransactionContainer
+    
+    @ObservedObject var viewModel: TransactionContainerViewModel
+    
+    init(container: TransactionContainer) {
+        self.container = container
+        self.viewModel = TransactionContainerViewModel(transactionContainer: self.container)
+    }
     
     var body: some View {
-        NavigationView {
             ScrollView {
                 HStack {
                     Text("Categories")
@@ -43,12 +49,11 @@ struct TransactionContainerOverview: View {
                     }
                 }
             })
-        }
     }
 }
 
 struct TransactionContainerOverview_Previews: PreviewProvider {
     static var previews: some View {
-        TransactionContainerOverview()
+        TransactionContainerOverview(container: Wallet(name: "Hello"))
     }
 }

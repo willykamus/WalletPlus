@@ -13,6 +13,20 @@ struct TransactionsListView: View {
     
     @ObservedObject var viewModel: TransactionViewModel = TransactionViewModel()
     
+    var trailingButton: some View {
+        HStack {
+            if self.container != nil {
+                NavigationLink(
+                    destination: TransactionContainerOverview(container: self.container!),
+                    label: {
+                        Text("Overview")
+                    })
+            } else {
+                EmptyView()
+            }
+        }
+    }
+    
     var body: some View {
         List {
             ForEach(viewModel.transactionListSection) { section in
@@ -24,11 +38,15 @@ struct TransactionsListView: View {
             }
         }
         .navigationBarTitle(Text("Transactions"))
+        .toolbar(content: {
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    self.trailingButton
+                }
+        })
         .onAppear(perform: {
             self.viewModel.getTransactions(from: self.container)
         })
     }
-        
 }
 
 struct TransactionsListView_Previews: PreviewProvider {

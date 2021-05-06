@@ -9,9 +9,8 @@ import Foundation
 
 class TransactionContainerViewModel: ObservableObject {
     
-    var testData: [Transaction] = TestData().testData[1].transactions!
+    var transactionContainer: TransactionContainer
     
-    @Published var transactionContainer: TransactionContainer = Wallet(name: "Cash")
     @Published var selectedTransactionType: Int = 0 {
         didSet {
             if selectedTransactionType == 0 {
@@ -21,19 +20,18 @@ class TransactionContainerViewModel: ObservableObject {
             }
         }
     }
+    
     @Published var currentCategories: [DisplayableCategory] = []
     
     var categoryInteractor: GetCategory = CategoryInteractor()
     
-    init() {
-        self.transactionContainer.transactions = testData
-        self.currentCategories = self.getDisplayableCategories(from: self.getIncomeTransactions())
+    init(transactionContainer: TransactionContainer) {
+        self.transactionContainer = transactionContainer
     }
     
     func getContainerAvailableAmount() -> String {
         return self.amountText()
     }
-    
     
     private func amountFormatter() -> String {
         var amount: Double = transactionContainer.currentAmount()
@@ -68,11 +66,11 @@ class TransactionContainerViewModel: ObservableObject {
     }
     
     func getIncomeTransactions() -> [Transaction] {
-        return self.testData.filter( { $0 is IncomeTransaction })
+        return self.transactionContainer.transactions!.filter( { $0 is IncomeTransaction })
     }
     
     func getExpenseTransactions() -> [Transaction] {
-        return self.testData.filter( { $0 is ExpenseTransaction })
+        return self.transactionContainer.transactions!.filter( { $0 is ExpenseTransaction })
     }
     
     func getDisplayableCategories(from transactions: [Transaction]) -> [DisplayableCategory] {
