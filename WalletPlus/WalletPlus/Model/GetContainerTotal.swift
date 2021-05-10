@@ -14,7 +14,7 @@ protocol GetContainerAmount {
 class ContainerInteractor: GetContainerAmount {
     
     func getContainerTotalAmount(from container: TransactionContainer) -> Double {
-        let total = container.transactions?.reduce(0) { $0 + $1.amount}
+        let total = container.transactions.reduce(0) { $0 + $1.amount}
         return total ?? 0.0
     }
     

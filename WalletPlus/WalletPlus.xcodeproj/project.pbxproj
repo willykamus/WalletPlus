@@ -35,6 +35,8 @@
 		115C500C26361AB30008D217 /* GroupTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 115C500B26361AB30008D217 /* GroupTest.swift */; };
 		115C501426361AE10008D217 /* TestData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 115C501326361AE10008D217 /* TestData.swift */; };
 		115C501926361BA70008D217 /* GetCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 115C501826361BA70008D217 /* GetCategory.swift */; };
+		116912EB2649476E00C01B69 /* GetDates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116912EA2649476E00C01B69 /* GetDates.swift */; };
+		116912ED264947FF00C01B69 /* GetDatesFromTransactionsTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116912EC264947FF00C01B69 /* GetDatesFromTransactionsTest.swift */; };
 		1188CFFE263A1B6300FD489C /* AmountFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1188CFFD263A1B6300FD489C /* AmountFormatter.swift */; };
 		1188D000263A203D00FD489C /* GetTransactions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1188CFFF263A203D00FD489C /* GetTransactions.swift */; };
 		11BF7EF02641605F00C6D01E /* TransactionsListTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11BF7EEF2641605F00C6D01E /* TransactionsListTab.swift */; };
@@ -92,6 +94,8 @@
 		115C500B26361AB30008D217 /* GroupTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupTest.swift; sourceTree = "<group>"; };
 		115C501326361AE10008D217 /* TestData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestData.swift; sourceTree = "<group>"; };
 		115C501826361BA70008D217 /* GetCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetCategory.swift; sourceTree = "<group>"; };
+		116912EA2649476E00C01B69 /* GetDates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetDates.swift; sourceTree = "<group>"; };
+		116912EC264947FF00C01B69 /* GetDatesFromTransactionsTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetDatesFromTransactionsTest.swift; sourceTree = "<group>"; };
 		1188CFFD263A1B6300FD489C /* AmountFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AmountFormatter.swift; sourceTree = "<group>"; };
 		1188CFFF263A203D00FD489C /* GetTransactions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetTransactions.swift; sourceTree = "<group>"; };
 		11BF7EEF2641605F00C6D01E /* TransactionsListTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsListTab.swift; sourceTree = "<group>"; };
@@ -201,6 +205,7 @@
 				1136D57E262E4AC400CDB4E7 /* TransactionTest.swift */,
 				11104C96262F910C00F94902 /* WalletTest.swift */,
 				115C500B26361AB30008D217 /* GroupTest.swift */,
+				116912EC264947FF00C01B69 /* GetDatesFromTransactionsTest.swift */,
 			);
 			path = WalletPlusTests;
 			sourceTree = "<group>";
@@ -233,6 +238,7 @@
 				115C501326361AE10008D217 /* TestData.swift */,
 				115C501826361BA70008D217 /* GetCategory.swift */,
 				1188CFFF263A203D00FD489C /* GetTransactions.swift */,
+				116912EA2649476E00C01B69 /* GetDates.swift */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
@@ -377,6 +383,7 @@
 				1188CFFE263A1B6300FD489C /* AmountFormatter.swift in Sources */,
 				11104C92262F904F00F94902 /* Wallet.swift in Sources */,
 				114563A126378EFF0068C58F /* GetContainerTotal.swift in Sources */,
+				116912EB2649476E00C01B69 /* GetDates.swift in Sources */,
 				1188D000263A203D00FD489C /* GetTransactions.swift in Sources */,
 				11104E622630DAB000F94902 /* SegmentedControlView.swift in Sources */,
 				1145639726378B0F0068C58F /* WalletsViewModel.swift in Sources */,
@@ -406,6 +413,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				11104C97262F910C00F94902 /* WalletTest.swift in Sources */,
+				116912ED264947FF00C01B69 /* GetDatesFromTransactionsTest.swift in Sources */,
 				1136D57F262E4AC400CDB4E7 /* TransactionTest.swift in Sources */,
 				1136D560262E4A6900CDB4E7 /* WalletPlusTests.swift in Sources */,
 				115C500C26361AB30008D217 /* GroupTest.swift in Sources */,

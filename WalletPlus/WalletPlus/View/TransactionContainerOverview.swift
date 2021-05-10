@@ -54,6 +54,6 @@ struct TransactionContainerOverview: View {
 
 struct TransactionContainerOverview_Previews: PreviewProvider {
     static var previews: some View {
-        TransactionContainerOverview(container: Wallet(name: "Hello"))
+        TransactionContainerOverview(container: Wallet(name: "Hello", transactions: []))
     }
 }

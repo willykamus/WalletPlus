@@ -66,11 +66,11 @@ class TransactionContainerViewModel: ObservableObject {
     }
     
     func getIncomeTransactions() -> [Transaction] {
-        return self.transactionContainer.transactions!.filter( { $0 is IncomeTransaction })
+        return self.transactionContainer.transactions.filter( { $0 is IncomeTransaction })
     }
     
     func getExpenseTransactions() -> [Transaction] {
-        return self.transactionContainer.transactions!.filter( { $0 is ExpenseTransaction })
+        return self.transactionContainer.transactions.filter( { $0 is ExpenseTransaction })
     }
     
     func getDisplayableCategories(from transactions: [Transaction]) -> [DisplayableCategory] {

@@ -48,6 +48,6 @@ struct SegmentedControlView: View {
 struct SegmentedControlView_Previews: PreviewProvider {
 
     static var previews: some View {
-        SegmentedControlView(viewModel: TransactionContainerViewModel(transactionContainer: Wallet(name: "Hello")))
+        SegmentedControlView(viewModel: TransactionContainerViewModel(transactionContainer: Wallet(name: "Hello", transactions: [])))
     }
 }

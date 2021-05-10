@@ -22,14 +22,14 @@ class WalletTest: XCTestCase {
     
     func testCreateEmptyWallet() {
         let name: String = "Cash"
-        let wallet: TransactionContainer = Wallet(name: name)
+        let wallet: TransactionContainer = Wallet(name: name, transactions: [])
         XCTAssertEqual(wallet.name, name)
         XCTAssertEqual(wallet.currentAmount(), 0.0)
     }
     
     func testWalletAmount() {
         let name: String = "Cash"
-        var wallet: TransactionContainer = Wallet(name: name)
+        var wallet: TransactionContainer = Wallet(name: name, transactions: [])
         wallet.transactions = testData
         XCTAssertEqual(wallet.currentAmount(), 166.7)
     }
