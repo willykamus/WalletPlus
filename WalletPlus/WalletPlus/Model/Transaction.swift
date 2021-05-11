@@ -12,5 +12,5 @@ protocol Transaction {
     var amount: Double { get set }
     var category: String { get set }
     var date: Date { get set }
-    var container: String { get set }
+    var containerTitle: String { get set }
 }

@@ -37,6 +37,8 @@
 		115C501926361BA70008D217 /* GetCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 115C501826361BA70008D217 /* GetCategory.swift */; };
 		116912EB2649476E00C01B69 /* GetDates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116912EA2649476E00C01B69 /* GetDates.swift */; };
 		116912ED264947FF00C01B69 /* GetDatesFromTransactionsTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116912EC264947FF00C01B69 /* GetDatesFromTransactionsTest.swift */; };
+		116913352649FDD900C01B69 /* CreateTransaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116913342649FDD900C01B69 /* CreateTransaction.swift */; };
+		11691337264A005B00C01B69 /* FloatingButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11691336264A005B00C01B69 /* FloatingButton.swift */; };
 		1188CFFE263A1B6300FD489C /* AmountFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1188CFFD263A1B6300FD489C /* AmountFormatter.swift */; };
 		1188D000263A203D00FD489C /* GetTransactions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1188CFFF263A203D00FD489C /* GetTransactions.swift */; };
 		11BF7EF02641605F00C6D01E /* TransactionsListTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11BF7EEF2641605F00C6D01E /* TransactionsListTab.swift */; };
@@ -96,6 +98,8 @@
 		115C501826361BA70008D217 /* GetCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetCategory.swift; sourceTree = "<group>"; };
 		116912EA2649476E00C01B69 /* GetDates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetDates.swift; sourceTree = "<group>"; };
 		116912EC264947FF00C01B69 /* GetDatesFromTransactionsTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetDatesFromTransactionsTest.swift; sourceTree = "<group>"; };
+		116913342649FDD900C01B69 /* CreateTransaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateTransaction.swift; sourceTree = "<group>"; };
+		11691336264A005B00C01B69 /* FloatingButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatingButton.swift; sourceTree = "<group>"; };
 		1188CFFD263A1B6300FD489C /* AmountFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AmountFormatter.swift; sourceTree = "<group>"; };
 		1188CFFF263A203D00FD489C /* GetTransactions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetTransactions.swift; sourceTree = "<group>"; };
 		11BF7EEF2641605F00C6D01E /* TransactionsListTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsListTab.swift; sourceTree = "<group>"; };
@@ -137,6 +141,7 @@
 				115C4FF32634DF330008D217 /* CategoryRow.swift */,
 				1145639B26378D170068C58F /* ContainerList.swift */,
 				11BF7EEF2641605F00C6D01E /* TransactionsListTab.swift */,
+				11691336264A005B00C01B69 /* FloatingButton.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -239,6 +244,7 @@
 				115C501826361BA70008D217 /* GetCategory.swift */,
 				1188CFFF263A203D00FD489C /* GetTransactions.swift */,
 				116912EA2649476E00C01B69 /* GetDates.swift */,
+				116913342649FDD900C01B69 /* CreateTransaction.swift */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
@@ -394,11 +400,13 @@
 				115C4FF42634DF330008D217 /* CategoryRow.swift in Sources */,
 				115C50012634E6600008D217 /* DisplayableCategory.swift in Sources */,
 				1136D550262E4A6900CDB4E7 /* ContentView.swift in Sources */,
+				116913352649FDD900C01B69 /* CreateTransaction.swift in Sources */,
 				11BF7EF02641605F00C6D01E /* TransactionsListTab.swift in Sources */,
 				1136D54E262E4A6900CDB4E7 /* WalletPlusApp.swift in Sources */,
 				115C501426361AE10008D217 /* TestData.swift in Sources */,
 				115C501926361BA70008D217 /* GetCategory.swift in Sources */,
 				1136D585262E4AE900CDB4E7 /* Transaction.swift in Sources */,
+				11691337264A005B00C01B69 /* FloatingButton.swift in Sources */,
 				11104A3F262E4C7600F94902 /* IncomeTransaction.swift in Sources */,
 				11104CA7262F9BD800F94902 /* TransactionContainerViewModel.swift in Sources */,
 				11104A66262E5FB600F94902 /* TransactionRow.swift in Sources */,

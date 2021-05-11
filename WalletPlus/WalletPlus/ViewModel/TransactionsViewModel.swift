@@ -33,16 +33,6 @@ class TransactionViewModel: ObservableObject {
         self.createTransactionSections()
     }
     
-//    private func getUniqueDates() -> [Date] {
-//        var uniques: [Date] = []
-//        for transaction in testData {
-//            if !uniques.contains(transaction.date) {
-//                uniques.append(transaction.date)
-//            }
-//        }
-//        return uniques
-//    }
-    
     private func format(date currentDate: Date) -> String {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "dd MMMM YYYY"

@@ -8,7 +8,7 @@
 import Foundation
 
 struct IncomeTransaction: Transaction {
-    var container: String
+    var containerTitle: String
     var date: Date
     var remoteId: String
     var amount: Double

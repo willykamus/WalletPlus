@@ -28,24 +28,40 @@ struct TransactionsListView: View {
     }
     
     var body: some View {
-        List {
-            ForEach(viewModel.transactionListSection) { section in
-                Section(header: TransactionSectionView(text: section.date)) {
-                    ForEach(section.transactions, id: \.remoteId) { transaction in
-                        TransactionRow(transaction: transaction)
+        ZStack {
+            List {
+                ForEach(viewModel.transactionListSection) { section in
+                    Section(header: TransactionSectionView(text: section.date)) {
+                        ForEach(section.transactions, id: \.remoteId) { transaction in
+                            TransactionRow(transaction: transaction)
+                        }
                     }
                 }
             }
-        }
-        .navigationBarTitle(Text("Transactions"))
-        .toolbar(content: {
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    self.trailingButton
+            .listStyle(InsetGroupedListStyle())
+            .navigationBarTitle(Text("Transactions"))
+            .toolbar(content: {
+                    ToolbarItem(placement: .navigationBarTrailing) {
+                        self.trailingButton
+                    }
+            })
+            
+            VStack {
+                Spacer()
+                HStack {
+                    Spacer()
+                    FloatingButton()
                 }
-        })
-        .onAppear(perform: {
-            self.viewModel.getTransactions(from: self.container)
-        })
+                .padding(.bottom,30)
+                .padding(.horizontal,30)
+                
+            }
+            
+            
+            .onAppear(perform: {
+                self.viewModel.getTransactions(from: self.container)
+            })
+        }
     }
 }
 
