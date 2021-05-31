@@ -9,23 +9,22 @@ import SwiftUI
 
 struct CreateTransactionView: View {
     
+    @State var currentContainer: TransactionContainer?
     @State var amount: String = ""
     @State var description: String = ""
-    @State var wallet: String
     @State var presentContainers: Bool = false
     
     var body: some View {
         ZStack(alignment: Alignment(horizontal: .center, vertical: .center)) {
             VStack {
-                
                 NavigationLink(
-                    destination: ContainersListView(),
+                    destination: ContainersListView(container: self.$currentContainer, containersPresented: $presentContainers),
                     isActive: $presentContainers,
                     label: {
                         HStack {
                             Text("Wallet").foregroundColor(.black)
                             Spacer()
-                            Text(self.wallet)
+                            Text(currentContainer?.name ?? "")
                         }
                     })
                 TextField("Description", text: self.$description).textFieldStyle(RoundedBorderTextFieldStyle())
@@ -38,6 +37,6 @@ struct CreateTransactionView: View {
 
 struct CreateTransactionVIew_Previews: PreviewProvider {
     static var previews: some View {
-        CreateTransactionView(wallet: "Hello")
+        CreateTransactionView()
     }
 }

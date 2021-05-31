@@ -72,7 +72,7 @@ struct TransactionsListView: View {
             print("Not here")
         }, content: {
             NavigationView {
-                CreateTransactionView(wallet: self.container?.name ?? "")
+                CreateTransactionView(currentContainer: self.container)
             }
         })
         .navigationBarTitle("")

@@ -9,12 +9,19 @@ import SwiftUI
 
 struct ContainersListView: View {
     
+    @Binding var container: TransactionContainer?
+    @Binding var containersPresented: Bool
     @ObservedObject var viewModel: WalletsViewModel = WalletsViewModel()
     
     var body: some View {
         List {
             ForEach(viewModel.containers, id: \.id) { container in
                 WalletRowView(container: container)
+                    .onTapGesture {
+                        print("Hello")
+                        self.container = container
+                        self.containersPresented.toggle()
+                    }
             }
         }
     }
@@ -22,6 +29,6 @@ struct ContainersListView: View {
 
 struct ContainersListView_Previews: PreviewProvider {
     static var previews: some View {
-        ContainersListView()
+        ContainersListView(container: .constant(Wallet(name: "Hello", transactions: [])), containersPresented: .constant(true))
     }
 }
