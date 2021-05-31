@@ -10,6 +10,7 @@ import SwiftUI
 struct TransactionsListView: View {
     
     var container: TransactionContainer?
+    @State var createTransaction: Bool = false
     
     @ObservedObject var viewModel: TransactionViewModel = TransactionViewModel()
     
@@ -28,40 +29,54 @@ struct TransactionsListView: View {
     }
     
     var body: some View {
-        ZStack {
-            List {
-                ForEach(viewModel.transactionListSection) { section in
-                    Section(header: TransactionSectionView(text: section.date)) {
-                        ForEach(section.transactions, id: \.remoteId) { transaction in
-                            TransactionRow(transaction: transaction)
+        NavigationView {
+            ZStack {
+                List {
+                    ForEach(viewModel.transactionListSection) { section in
+                        Section(header: TransactionSectionView(text: section.date)) {
+                            ForEach(section.transactions, id: \.remoteId) { transaction in
+                                TransactionRow(transaction: transaction)
+                            }
                         }
                     }
                 }
-            }
-            .listStyle(InsetGroupedListStyle())
-            .navigationBarTitle(Text("Transactions"))
-            .toolbar(content: {
-                    ToolbarItem(placement: .navigationBarTrailing) {
-                        self.trailingButton
-                    }
-            })
-            
-            VStack {
-                Spacer()
-                HStack {
-                    Spacer()
-                    FloatingButton()
-                }
-                .padding(.bottom,30)
-                .padding(.horizontal,30)
+                .listStyle(InsetGroupedListStyle())
+                .navigationBarTitle(Text("Transactions"))
+                .toolbar(content: {
+                        ToolbarItem(placement: .navigationBarTrailing) {
+                            self.trailingButton
+                        }
+                })
                 
+                VStack {
+                    Spacer()
+                    HStack {
+                        Spacer()
+                        Button(action: {
+                            self.createTransaction.toggle()
+                        }, label: {
+                            FloatingButton()
+                        })
+                    }
+                    .padding(.bottom,20)
+                    .padding(.horizontal,20)
+                    
+                }
+                
+                .onAppear(perform: {
+                    self.viewModel.getTransactions(from: self.container)
+                })
             }
-            
-            
-            .onAppear(perform: {
-                self.viewModel.getTransactions(from: self.container)
-            })
         }
+        .sheet(isPresented: self.$createTransaction, onDismiss: {
+            print("Not here")
+        }, content: {
+            NavigationView {
+                CreateTransactionView(wallet: self.container?.name ?? "")
+            }
+        })
+        .navigationBarTitle("")
+        .navigationBarHidden(true)
     }
 }
 
