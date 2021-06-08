@@ -13,7 +13,7 @@ struct TransactionsListTab: View {
     
     var body: some View {
         NavigationView {
-            TransactionsListView(viewModel: self.viewModel)
+            TransactionsListView().environmentObject(viewModel)
             .navigationBarTitle(Text("Transactions"))
         }
     }

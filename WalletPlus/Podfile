@@ -7,7 +7,6 @@ target 'WalletPlus' do
 
   pod 'Firebase/Analytics'
   pod 'Firebase/Auth'
-  pod 'Firebase/Analytics'
   pod 'Firebase/Firestore'
   pod 'FirebaseFirestoreSwift', '~> 7.0-beta'
 

@@ -10,9 +10,10 @@ import SwiftUI
 struct TransactionsListView: View {
     
     var container: TransactionsContainer?
+    
     @State var createTransaction: Bool = false
     
-    @ObservedObject var viewModel: TransactionsViewModel = TransactionsViewModel()
+    @EnvironmentObject var viewModel: TransactionsViewModel
     
     var trailingButton: some View {
         HStack {
