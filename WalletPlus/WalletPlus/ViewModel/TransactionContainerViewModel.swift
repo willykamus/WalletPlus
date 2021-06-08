@@ -9,73 +9,60 @@ import Foundation
 
 class TransactionContainerViewModel: ObservableObject {
     
-    var transactionContainer: TransactionContainer
+    var selectedTransactionContainer: TransactionsContainer
     
     @Published var selectedTransactionType: Int = 0 {
         didSet {
-            if selectedTransactionType == 0 {
-                self.currentCategories = self.getDisplayableCategories(from: self.getIncomeTransactions())
-            } else {
-                self.currentCategories = self.getDisplayableCategories(from: self.getExpenseTransactions())
-            }
+            self.getCategories(selectedType: self.selectedTransactionType)
         }
     }
     
     @Published var currentCategories: [DisplayableCategory] = []
     
-    var categoryInteractor: GetCategory = CategoryInteractor()
+    var categoryInteractor: GetTransactionsCategoriesInteractor = GetTransactionsCategoriesInteractorImpl()
+    var incomeTransactionsInteractor: GetIncomeTransactionsFromContainerInteractor = GetIncomeTransactionsFromContainerInteractorImpl()
+    var expenseTransactionsInteractor: GetExpenseTransactionsFromContainerInteractor = GetExpenseTransactionsFromContainerInteractorImpl()
+    var amountFormatterInteractor: AmountFormatterInteractor = AmountFormatterInteractorImpl()
     
-    init(transactionContainer: TransactionContainer) {
-        self.transactionContainer = transactionContainer
+    init(selectedTransactionContainer: TransactionsContainer) {
+        self.selectedTransactionContainer = selectedTransactionContainer
     }
     
     func getContainerAvailableAmount() -> String {
-        return self.amountText()
+        return amountFormatterInteractor.format(value: self.selectedTransactionContainer.currentAmount())
     }
     
-    private func amountFormatter() -> String {
-        var amount: Double = transactionContainer.currentAmount()
-        if amount < 0 {
-            amount = amount * -1
+    func getIncomeTotalAmount() -> String {
+        let transactions = self.incomeTransactionsInteractor.execute(container: self.selectedTransactionContainer)
+        var total: Double = 0
+        for transaction in transactions {
+            total += transaction.amount
         }
-        let formatter = NumberFormatter()
-        let number = NSNumber(value: amount)
-        formatter.minimumFractionDigits = 2
-        formatter.numberStyle = .decimal
-        return formatter.string(from: number) ?? ""
+        return amountFormatterInteractor.format(value: total)
     }
     
-    private func amountText() -> String {
-        var text: String = "$\(self.amountFormatter())"
-        if transactionContainer.currentAmount() < 0 {
-            text = "-$\(self.amountFormatter())"
+    func getExpenseTotalAmount() -> String {
+        let transactions = self.expenseTransactionsInteractor.execute(container: self.selectedTransactionContainer)
+        var total: Double = 0
+        for transaction in transactions {
+            total += transaction.amount
         }
-        return text
+        return amountFormatterInteractor.format(value: total)
     }
     
-    func getIncomeValue() -> String {
-        let transactions = self.getIncomeTransactions()
-        let total = transactions.reduce(0) { $0 + $1.amount}
-        return String(total)
+    private func getCategories(selectedType: Int) {
+        var transactions: [Transaction]!
+        if selectedType == 0 {
+            transactions = self.incomeTransactionsInteractor.execute(container: self.selectedTransactionContainer)
+        } else {
+            transactions = self.expenseTransactionsInteractor.execute(container: self.selectedTransactionContainer)
+        }
+        self.currentCategories = self.getDisplayableCategories(from: transactions)
     }
-    
-    func getExpenseValue() -> String {
-        let transactions = self.getExpenseTransactions()
-        let total = transactions.reduce(0) { $0 + $1.amount}
-        return String(total)
-    }
-    
-    func getIncomeTransactions() -> [Transaction] {
-        return self.transactionContainer.transactions.filter( { $0 is IncomeTransaction })
-    }
-    
-    func getExpenseTransactions() -> [Transaction] {
-        return self.transactionContainer.transactions.filter( { $0 is ExpenseTransaction })
-    }
-    
+
     func getDisplayableCategories(from transactions: [Transaction]) -> [DisplayableCategory] {
         var displayableGroups: [DisplayableCategory] = []
-        let uniques: [Category] = categoryInteractor.getCategory(from: transactions)
+        let uniques: [Category] = categoryInteractor.execute(containers: [self.selectedTransactionContainer])
         for category in uniques {
             var total: Double = 0
             for transaction in category.transactions {

@@ -17,7 +17,7 @@ struct SegmentedControlView: View {
                 viewModel.selectedTransactionType = 0
             }, label: {
                 VStack {
-                    Text(viewModel.getIncomeValue()).font(.headline).foregroundColor(.black).padding(.horizontal)
+                    Text(viewModel.getIncomeTotalAmount()).font(.headline).foregroundColor(.black).padding(.horizontal)
                     Text("Income").font(.subheadline).foregroundColor(Color.gray)
                 }
                 .frame(maxWidth: .infinity)
@@ -30,7 +30,7 @@ struct SegmentedControlView: View {
                 viewModel.selectedTransactionType = 1
             }, label: {
                 VStack {
-                    Text(viewModel.getExpenseValue()).font(.headline).foregroundColor(.black).padding(.horizontal)
+                    Text(viewModel.getExpenseTotalAmount()).font(.headline).foregroundColor(.black).padding(.horizontal)
                     Text("Expenses").font(.subheadline).foregroundColor(Color.gray)
                 }
                 .frame(maxWidth: .infinity)
@@ -48,6 +48,6 @@ struct SegmentedControlView: View {
 struct SegmentedControlView_Previews: PreviewProvider {
 
     static var previews: some View {
-        SegmentedControlView(viewModel: TransactionContainerViewModel(transactionContainer: Wallet(name: "Hello", transactions: [])))
+        SegmentedControlView(viewModel: TransactionContainerViewModel(selectedTransactionContainer: TransactionsContainer(id: "123", transactions: [], name: "Hello")))
     }
 }

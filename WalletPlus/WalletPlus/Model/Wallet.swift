@@ -7,28 +7,20 @@
 
 import Foundation
 
-protocol TransactionContainer {
-    var id: String { get set }
-    var transactions: [Transaction] { get set }
-    var name: String { get set }
-    func currentAmount() -> Double
-}
-
-class Wallet: TransactionContainer {
-    var id: String = UUID().uuidString
-    var transactions: [Transaction]
-    var name: String
+struct TransactionsContainer: Identifiable {
     
-    init(name: String, transactions: [Transaction]) {
-        self.name = name
-        self.transactions = transactions
-    }
+    var id: String
+    var transactions: [Transaction]?
+    var name: String
     
     func currentAmount() -> Double {
         var amount: Double = 0
-        for transaction in transactions {
-            amount += transaction.amount
+        if transactions?.count ?? 0 > 0 {
+            for transaction in transactions! {
+                amount += transaction.amount
+            }
+            return amount
         }
-        return amount
+        return 0.0
     }
 }

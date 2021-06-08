@@ -8,14 +8,17 @@
 import Foundation
 
 protocol GetContainerAmount {
-    func getContainerTotalAmount(from container: TransactionContainer) -> Double
+    func getContainerTotalAmount(from container: TransactionsContainer) -> Double
 }
 
 class ContainerInteractor: GetContainerAmount {
     
-    func getContainerTotalAmount(from container: TransactionContainer) -> Double {
-        let total = container.transactions.reduce(0) { $0 + $1.amount}
-        return total ?? 0.0
+    func getContainerTotalAmount(from container: TransactionsContainer) -> Double {
+        if let transactions = container.transactions {
+            let total = transactions.reduce(0) { $0 + $1.amount}
+            return total
+        }
+        return 0.0
     }
     
 }

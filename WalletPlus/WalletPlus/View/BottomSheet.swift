@@ -9,7 +9,7 @@ import SwiftUI
 
 struct BottomSheet: View {
     
-    @ObservedObject var viewModel: WalletsViewModel = WalletsViewModel()
+    @ObservedObject var viewModel: ContainersListViewModel = ContainersListViewModel()
     
     var body: some View {
         VStack {

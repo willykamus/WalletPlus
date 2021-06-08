@@ -47,6 +47,6 @@ struct TransactionRow: View {
 
 struct TransactionRow_Previews: PreviewProvider {
     static var previews: some View {
-        TransactionRow(transaction: IncomeTransaction(containerTitle: "Cartera", date: Date(), remoteId: "1", amount: 100.4, category: "Cash"))
+        TransactionRow(transaction: Transaction(id: "123", amount: 100.56, category: "Gas" , date: Date(), containerTitle: "Cash"))
     }
 }

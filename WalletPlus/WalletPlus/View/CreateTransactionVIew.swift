@@ -9,7 +9,7 @@ import SwiftUI
 
 struct CreateTransactionView: View {
     
-    @State var currentContainer: TransactionContainer?
+    @State var currentContainer: TransactionsContainer?
     @State var amount: String = ""
     @State var description: String = ""
     @State var presentContainers: Bool = false

@@ -9,10 +9,10 @@ import SwiftUI
 
 struct TransactionsListView: View {
     
-    var container: TransactionContainer?
+    var container: TransactionsContainer?
     @State var createTransaction: Bool = false
     
-    @ObservedObject var viewModel: TransactionViewModel = TransactionViewModel()
+    @ObservedObject var viewModel: TransactionsViewModel = TransactionsViewModel()
     
     var trailingButton: some View {
         HStack {
@@ -34,7 +34,7 @@ struct TransactionsListView: View {
                 List {
                     ForEach(viewModel.transactionListSection) { section in
                         Section(header: TransactionSectionView(text: section.date)) {
-                            ForEach(section.transactions, id: \.remoteId) { transaction in
+                            ForEach(section.transactions, id: \.id) { transaction in
                                 TransactionRow(transaction: transaction)
                             }
                         }
@@ -62,10 +62,6 @@ struct TransactionsListView: View {
                     .padding(.horizontal,20)
                     
                 }
-                
-                .onAppear(perform: {
-                    self.viewModel.getTransactions(from: self.container)
-                })
             }
         }
         .sheet(isPresented: self.$createTransaction, onDismiss: {

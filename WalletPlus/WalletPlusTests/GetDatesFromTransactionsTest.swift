@@ -10,7 +10,7 @@ import XCTest
 
 class GetDatesFromTransactionsTest: XCTestCase {
     
-    var data: TransactionContainer = Wallet(name: "Cartera", transactions: [IncomeTransaction(container: "Cartera", date: Date(timeIntervalSinceReferenceDate: 1000000), remoteId: "1", amount: 100.4, category: "Cash"), IncomeTransaction(container: "Cartera", date: Date(timeIntervalSinceReferenceDate: 40000000), remoteId: "2", amount: 99.9, category: "FFF"), ExpenseTransaction(container: "Cartera", date: Date(timeIntervalSinceReferenceDate: 1000000), remoteId: "3", amount: -33.2, category: "Car"), ExpenseTransaction(container: "Cartera", date: Date(timeIntervalSinceReferenceDate: 1000000), remoteId: "4", amount: -70.5, category: "Car")])
+    var data: TransactionContainer = Wallet(name: "Cartera", transactions: [IncomeTransaction(containerTitle: "Cartera", date: Date(timeIntervalSinceReferenceDate: 1000000), remoteId: "1", amount: 100.4, category: "Cash"), IncomeTransaction(containerTitle: "Cartera", date: Date(timeIntervalSinceReferenceDate: 40000000), remoteId: "2", amount: 99.9, category: "FFF"), ExpenseTransaction(containerTitle: "Cartera", date: Date(timeIntervalSinceReferenceDate: 1000000), remoteId: "3", amount: -33.2, category: "Car"), ExpenseTransaction(containerTitle: "Cartera", date: Date(timeIntervalSinceReferenceDate: 1000000), remoteId: "4", amount: -70.5, category: "Car")])
 
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.

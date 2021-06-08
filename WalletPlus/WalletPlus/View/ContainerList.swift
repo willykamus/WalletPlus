@@ -9,26 +9,42 @@ import SwiftUI
 
 struct ContainerList: View {
     
-    @ObservedObject var viewModel: WalletsViewModel = WalletsViewModel()
+    @ObservedObject var viewModel: ContainersListViewModel = ContainersListViewModel()
     
     var body: some View {
-        NavigationView {
-            List {
-                ForEach(viewModel.containers, id: \.id) { container in
-                    NavigationLink(
-                        destination: TransactionsListView(container: container),
-                        label: {
-                            VStack(alignment: .leading) {
-                                Text(container.name)
-                                Text(viewModel.getTotal(from: container))
-                            }
-                        })
-                }
-            }
-            .navigationBarTitle(viewModel.getTotalFromContainers())
-            .navigationBarTitleDisplayMode(.inline)
-        }
+        Text("Hello")
+//        NavigationView {
+//            List {
+//                ForEach(viewModel.containers, id: \.id) { container in
+//                    NavigationLink(
+//                        destination: TransactionsListView(container: container),
+//                        label: {
+//                            VStack {Text(container.name)
+//                                Text(viewModel.total)}
+//
+//                        })
+//                .navigationBarTitle(viewModel.getTotalFromContainers())
+//                .navigationBarTitleDisplayMode(.inline)
+//                }
+//
+//            }
     }
+//            List() {
+//                ForEach(viewModel.containers, id: \.id) { container in
+//                    NavigationLink(
+//                        destination: TransactionsListView(container: container),
+//                        label: {
+//                            VStack(alignment: .leading) {
+//                                Text(container.name)
+//                                Text(viewModel.total)
+//                            }
+//                        })
+//                }
+//            }
+//            .navigationBarTitle(viewModel.getTotalFromContainers())
+//            .navigationBarTitleDisplayMode(.inline)
+//        }
+//    }
 }
 
 struct ContainerList_Previews: PreviewProvider {

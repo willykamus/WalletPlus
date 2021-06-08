@@ -7,30 +7,40 @@
 
 import Foundation
 
-class TransactionViewModel: ObservableObject {
+class TransactionsViewModel: ObservableObject {
     
-    var testData: [Transaction] = []
     var getDatesInteractor: GetDates = GetDatesInteractor()
+    var getTransactionsContainerInteractor = GetTransactionsContainerInteractorImpl(dataSource: TransactionsContainerRemoteDataSourceImpl())
     
     @Published var transactionListSection: [TransactionListSection] = []
 
+    init() {
+        getTransactionsContainerInteractor.execute { result in
+            switch result {
+            case .success(let containers):
+                let transactions = self.getAllTransactions(from: containers)
+                self.createTransactionSections(transactions: transactions)
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+        }
+    }
     
-    func createTransactionSections() {
-        for date in self.getDatesInteractor.getDates(from: testData) {
-            let filtered = testData.filter { $0.date == date }
+    func createTransactionSections(transactions: [Transaction]) {
+        for date in self.getDatesInteractor.getDates(from: transactions) {
+            let filtered = transactions.filter { $0.date == date }
             transactionListSection.append(TransactionListSection(date: format(date: date), transactions: filtered))
         }
     }
     
-    func getTransactions(from container: TransactionContainer?) {
-        testData.removeAll()
-        transactionListSection.removeAll()
-        if container != nil {
-            self.testData = container!.transactions
-        } else {
-            self.testData = GetTransactionsInteractor().getTransactions(from: TestData().testData)
+    private func getAllTransactions(from containers: [TransactionsContainer]) -> [Transaction] {
+        var allTransactions: [Transaction] = []
+        for container in containers {
+            if let transactions = container.transactions {
+                allTransactions.append(contentsOf: transactions)
+            }
         }
-        self.createTransactionSections()
+        return allTransactions
     }
     
     private func format(date currentDate: Date) -> String {

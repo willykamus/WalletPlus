@@ -9,9 +9,9 @@ import SwiftUI
 
 struct ContainersListView: View {
     
-    @Binding var container: TransactionContainer?
+    @Binding var container: TransactionsContainer?
     @Binding var containersPresented: Bool
-    @ObservedObject var viewModel: WalletsViewModel = WalletsViewModel()
+    @ObservedObject var viewModel: ContainersListViewModel = ContainersListViewModel()
     
     var body: some View {
         List {
@@ -29,6 +29,6 @@ struct ContainersListView: View {
 
 struct ContainersListView_Previews: PreviewProvider {
     static var previews: some View {
-        ContainersListView(container: .constant(Wallet(name: "Hello", transactions: [])), containersPresented: .constant(true))
+        ContainersListView(container: .constant(TransactionsContainer(id: "111", transactions: [], name: "Hello")), containersPresented: .constant(true))
     }
 }

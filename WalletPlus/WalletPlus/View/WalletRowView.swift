@@ -9,7 +9,7 @@ import SwiftUI
 
 struct WalletRowView: View {
     
-    @State var container: TransactionContainer
+    @State var container: TransactionsContainer
     
     var body: some View {
         HStack(spacing:0) {
@@ -18,7 +18,7 @@ struct WalletRowView: View {
                 .padding()
             VStack(alignment: .leading) {
                 Text(container.name)
-                Text("\(container.transactions.count) Transactions")
+                Text("\(container.transactions?.count ?? 0) Transactions")
             }
             
             Spacer()
@@ -28,6 +28,6 @@ struct WalletRowView: View {
 
 struct WalletRowView_Previews: PreviewProvider {
     static var previews: some View {
-        WalletRowView(container: Wallet(name: "Hello World", transactions: []))
+        WalletRowView(container: TransactionsContainer(id: "123", transactions: [], name: "Hello World"))
     }
 }

@@ -9,7 +9,7 @@ import SwiftUI
 
 struct TransactionsListTab: View {
     
-    @StateObject var viewModel: TransactionViewModel = TransactionViewModel()
+    @StateObject var viewModel: TransactionsViewModel = TransactionsViewModel()
     
     var body: some View {
         NavigationView {

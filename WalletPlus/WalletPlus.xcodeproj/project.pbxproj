@@ -3,12 +3,10 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		11104A3F262E4C7600F94902 /* IncomeTransaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11104A3E262E4C7600F94902 /* IncomeTransaction.swift */; };
-		11104A44262E4DF200F94902 /* ExpenseTransaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11104A43262E4DF200F94902 /* ExpenseTransaction.swift */; };
 		11104A58262E4F1400F94902 /* TransactionsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11104A57262E4F1400F94902 /* TransactionsListView.swift */; };
 		11104A61262E5F5000F94902 /* TransactionsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11104A60262E5F5000F94902 /* TransactionsViewModel.swift */; };
 		11104A66262E5FB600F94902 /* TransactionRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11104A65262E5FB600F94902 /* TransactionRow.swift */; };
@@ -26,15 +24,19 @@
 		1136D56B262E4A6900CDB4E7 /* WalletPlusUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1136D56A262E4A6900CDB4E7 /* WalletPlusUITests.swift */; };
 		1136D57F262E4AC400CDB4E7 /* TransactionTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1136D57E262E4AC400CDB4E7 /* TransactionTest.swift */; };
 		1136D585262E4AE900CDB4E7 /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1136D584262E4AE900CDB4E7 /* Transaction.swift */; };
-		1145639726378B0F0068C58F /* WalletsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1145639626378B0F0068C58F /* WalletsViewModel.swift */; };
+		1145639726378B0F0068C58F /* ContainersListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1145639626378B0F0068C58F /* ContainersListViewModel.swift */; };
 		1145639C26378D170068C58F /* ContainerList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1145639B26378D170068C58F /* ContainerList.swift */; };
 		114563A126378EFF0068C58F /* GetContainerTotal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 114563A026378EFF0068C58F /* GetContainerTotal.swift */; };
+		114BD9D62667C03C00C4F9F6 /* TransactionsContainerRemoteEntityMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 114BD9D52667C03C00C4F9F6 /* TransactionsContainerRemoteEntityMapper.swift */; };
+		114BD9D82667C08200C4F9F6 /* TransactionsContainerRemoteEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 114BD9D72667C08200C4F9F6 /* TransactionsContainerRemoteEntity.swift */; };
+		114BD9DA2667C0AE00C4F9F6 /* TransactionRemoteEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 114BD9D92667C0AE00C4F9F6 /* TransactionRemoteEntity.swift */; };
+		114BD9DC2667C0C200C4F9F6 /* TransactionRemoteEntityMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 114BD9DB2667C0C200C4F9F6 /* TransactionRemoteEntityMapper.swift */; };
+		114BD9EF2669647300C4F9F6 /* GetTransactionsContainerInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 114BD9EE2669647300C4F9F6 /* GetTransactionsContainerInteractor.swift */; };
 		115C4FF42634DF330008D217 /* CategoryRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 115C4FF32634DF330008D217 /* CategoryRow.swift */; };
 		115C50012634E6600008D217 /* DisplayableCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 115C50002634E6600008D217 /* DisplayableCategory.swift */; };
 		115C500626361A7B0008D217 /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = 115C500526361A7B0008D217 /* Group.swift */; };
 		115C500C26361AB30008D217 /* GroupTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 115C500B26361AB30008D217 /* GroupTest.swift */; };
 		115C501426361AE10008D217 /* TestData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 115C501326361AE10008D217 /* TestData.swift */; };
-		115C501926361BA70008D217 /* GetCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 115C501826361BA70008D217 /* GetCategory.swift */; };
 		1162FD1E2665277100B21EBC /* WalletRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1162FD1D2665277100B21EBC /* WalletRowView.swift */; };
 		1162FD2026652F1100B21EBC /* ContainersListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1162FD1F26652F1100B21EBC /* ContainersListView.swift */; };
 		116912EB2649476E00C01B69 /* GetDates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116912EA2649476E00C01B69 /* GetDates.swift */; };
@@ -43,9 +45,18 @@
 		11691337264A005B00C01B69 /* FloatingButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11691336264A005B00C01B69 /* FloatingButton.swift */; };
 		116914AA264BF7ED00C01B69 /* CreateTransactionVIew.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116914A9264BF7ED00C01B69 /* CreateTransactionVIew.swift */; };
 		116914AC264C8F0D00C01B69 /* BottomSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116914AB264C8F0D00C01B69 /* BottomSheet.swift */; };
+		117BFAB126656F86009D4318 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 117BFAB026656F86009D4318 /* GoogleService-Info.plist */; };
+		117BFAB426658EAC009D4318 /* TransactionsContainerRemoteDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 117BFAB326658EAC009D4318 /* TransactionsContainerRemoteDataSource.swift */; };
 		1188CFFE263A1B6300FD489C /* AmountFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1188CFFD263A1B6300FD489C /* AmountFormatter.swift */; };
-		1188D000263A203D00FD489C /* GetTransactions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1188CFFF263A203D00FD489C /* GetTransactions.swift */; };
 		11BF7EF02641605F00C6D01E /* TransactionsListTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11BF7EEF2641605F00C6D01E /* TransactionsListTab.swift */; };
+		11E59A7F266E6364008452EF /* GetTransactionsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11E59A7E266E6364008452EF /* GetTransactionsInteractor.swift */; };
+		11E59A81266E6EC5008452EF /* GetTransactionsCategoriesInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11E59A80266E6EC5008452EF /* GetTransactionsCategoriesInteractor.swift */; };
+		11E59A83266E8698008452EF /* GetIncomeTransactionsFromContainerInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11E59A82266E8698008452EF /* GetIncomeTransactionsFromContainerInteractor.swift */; };
+		11E59A85266E8876008452EF /* GetExpenseTransactionsFromContainerInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11E59A84266E8876008452EF /* GetExpenseTransactionsFromContainerInteractor.swift */; };
+		11E59A87266E9BD2008452EF /* AmountFormatterInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11E59A86266E9BD2008452EF /* AmountFormatterInteractor.swift */; };
+		5EE066FA673BD9088F5569A0 /* Pods_WalletPlus_WalletPlusUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73934E786EBF92730325604D /* Pods_WalletPlus_WalletPlusUITests.framework */; };
+		A9458BADE25DFC6E62EC554C /* Pods_WalletPlus.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 240E1B78601BAB85764F7C4D /* Pods_WalletPlus.framework */; };
+		FF987B9EAEE2F3F0CD21196C /* Pods_WalletPlusTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4618C195D485268A25AFAFC3 /* Pods_WalletPlusTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,8 +77,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		11104A3E262E4C7600F94902 /* IncomeTransaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncomeTransaction.swift; sourceTree = "<group>"; };
-		11104A43262E4DF200F94902 /* ExpenseTransaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseTransaction.swift; sourceTree = "<group>"; };
 		11104A57262E4F1400F94902 /* TransactionsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsListView.swift; sourceTree = "<group>"; };
 		11104A60262E5F5000F94902 /* TransactionsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsViewModel.swift; sourceTree = "<group>"; };
 		11104A65262E5FB600F94902 /* TransactionRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionRow.swift; sourceTree = "<group>"; };
@@ -91,15 +100,19 @@
 		1136D56C262E4A6900CDB4E7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1136D57E262E4AC400CDB4E7 /* TransactionTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionTest.swift; sourceTree = "<group>"; };
 		1136D584262E4AE900CDB4E7 /* Transaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transaction.swift; sourceTree = "<group>"; };
-		1145639626378B0F0068C58F /* WalletsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletsViewModel.swift; sourceTree = "<group>"; };
+		1145639626378B0F0068C58F /* ContainersListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainersListViewModel.swift; sourceTree = "<group>"; };
 		1145639B26378D170068C58F /* ContainerList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerList.swift; sourceTree = "<group>"; };
 		114563A026378EFF0068C58F /* GetContainerTotal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetContainerTotal.swift; sourceTree = "<group>"; };
+		114BD9D52667C03C00C4F9F6 /* TransactionsContainerRemoteEntityMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsContainerRemoteEntityMapper.swift; sourceTree = "<group>"; };
+		114BD9D72667C08200C4F9F6 /* TransactionsContainerRemoteEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsContainerRemoteEntity.swift; sourceTree = "<group>"; };
+		114BD9D92667C0AE00C4F9F6 /* TransactionRemoteEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionRemoteEntity.swift; sourceTree = "<group>"; };
+		114BD9DB2667C0C200C4F9F6 /* TransactionRemoteEntityMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionRemoteEntityMapper.swift; sourceTree = "<group>"; };
+		114BD9EE2669647300C4F9F6 /* GetTransactionsContainerInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetTransactionsContainerInteractor.swift; sourceTree = "<group>"; };
 		115C4FF32634DF330008D217 /* CategoryRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryRow.swift; sourceTree = "<group>"; };
 		115C50002634E6600008D217 /* DisplayableCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayableCategory.swift; sourceTree = "<group>"; };
 		115C500526361A7B0008D217 /* Group.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Group.swift; sourceTree = "<group>"; };
 		115C500B26361AB30008D217 /* GroupTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupTest.swift; sourceTree = "<group>"; };
 		115C501326361AE10008D217 /* TestData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestData.swift; sourceTree = "<group>"; };
-		115C501826361BA70008D217 /* GetCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetCategory.swift; sourceTree = "<group>"; };
 		1162FD1D2665277100B21EBC /* WalletRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletRowView.swift; sourceTree = "<group>"; };
 		1162FD1F26652F1100B21EBC /* ContainersListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainersListView.swift; sourceTree = "<group>"; };
 		116912EA2649476E00C01B69 /* GetDates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetDates.swift; sourceTree = "<group>"; };
@@ -108,9 +121,24 @@
 		11691336264A005B00C01B69 /* FloatingButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatingButton.swift; sourceTree = "<group>"; };
 		116914A9264BF7ED00C01B69 /* CreateTransactionVIew.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateTransactionVIew.swift; sourceTree = "<group>"; };
 		116914AB264C8F0D00C01B69 /* BottomSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheet.swift; sourceTree = "<group>"; };
+		117BFAB026656F86009D4318 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		117BFAB326658EAC009D4318 /* TransactionsContainerRemoteDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsContainerRemoteDataSource.swift; sourceTree = "<group>"; };
 		1188CFFD263A1B6300FD489C /* AmountFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AmountFormatter.swift; sourceTree = "<group>"; };
-		1188CFFF263A203D00FD489C /* GetTransactions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetTransactions.swift; sourceTree = "<group>"; };
 		11BF7EEF2641605F00C6D01E /* TransactionsListTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsListTab.swift; sourceTree = "<group>"; };
+		11E59A7E266E6364008452EF /* GetTransactionsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetTransactionsInteractor.swift; sourceTree = "<group>"; };
+		11E59A80266E6EC5008452EF /* GetTransactionsCategoriesInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetTransactionsCategoriesInteractor.swift; sourceTree = "<group>"; };
+		11E59A82266E8698008452EF /* GetIncomeTransactionsFromContainerInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetIncomeTransactionsFromContainerInteractor.swift; sourceTree = "<group>"; };
+		11E59A84266E8876008452EF /* GetExpenseTransactionsFromContainerInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetExpenseTransactionsFromContainerInteractor.swift; sourceTree = "<group>"; };
+		11E59A86266E9BD2008452EF /* AmountFormatterInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AmountFormatterInteractor.swift; sourceTree = "<group>"; };
+		240E1B78601BAB85764F7C4D /* Pods_WalletPlus.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WalletPlus.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3694C332BC4267329F36575C /* Pods-WalletPlus-WalletPlusUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WalletPlus-WalletPlusUITests.debug.xcconfig"; path = "Target Support Files/Pods-WalletPlus-WalletPlusUITests/Pods-WalletPlus-WalletPlusUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		3B38E253EE3C157D95A618BD /* Pods-WalletPlusTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WalletPlusTests.debug.xcconfig"; path = "Target Support Files/Pods-WalletPlusTests/Pods-WalletPlusTests.debug.xcconfig"; sourceTree = "<group>"; };
+		4178E362268B0128CA648C75 /* Pods-WalletPlusTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WalletPlusTests.release.xcconfig"; path = "Target Support Files/Pods-WalletPlusTests/Pods-WalletPlusTests.release.xcconfig"; sourceTree = "<group>"; };
+		4618C195D485268A25AFAFC3 /* Pods_WalletPlusTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WalletPlusTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5E95CF6CE6A42B1EC2D7EEBA /* Pods-WalletPlus-WalletPlusUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WalletPlus-WalletPlusUITests.release.xcconfig"; path = "Target Support Files/Pods-WalletPlus-WalletPlusUITests/Pods-WalletPlus-WalletPlusUITests.release.xcconfig"; sourceTree = "<group>"; };
+		60256D91211C3A06FE103DDB /* Pods-WalletPlus.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WalletPlus.release.xcconfig"; path = "Target Support Files/Pods-WalletPlus/Pods-WalletPlus.release.xcconfig"; sourceTree = "<group>"; };
+		73934E786EBF92730325604D /* Pods_WalletPlus_WalletPlusUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WalletPlus_WalletPlusUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		ED709F7C427049923593D3A2 /* Pods-WalletPlus.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WalletPlus.debug.xcconfig"; path = "Target Support Files/Pods-WalletPlus/Pods-WalletPlus.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +146,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A9458BADE25DFC6E62EC554C /* Pods_WalletPlus.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -125,6 +154,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FF987B9EAEE2F3F0CD21196C /* Pods_WalletPlusTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -132,12 +162,26 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5EE066FA673BD9088F5569A0 /* Pods_WalletPlus_WalletPlusUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0CAC0D866FF2DF94FC9B34B6 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				ED709F7C427049923593D3A2 /* Pods-WalletPlus.debug.xcconfig */,
+				60256D91211C3A06FE103DDB /* Pods-WalletPlus.release.xcconfig */,
+				3694C332BC4267329F36575C /* Pods-WalletPlus-WalletPlusUITests.debug.xcconfig */,
+				5E95CF6CE6A42B1EC2D7EEBA /* Pods-WalletPlus-WalletPlusUITests.release.xcconfig */,
+				3B38E253EE3C157D95A618BD /* Pods-WalletPlusTests.debug.xcconfig */,
+				4178E362268B0128CA648C75 /* Pods-WalletPlusTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		11104A4B262E4EF200F94902 /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -164,7 +208,7 @@
 				11104A60262E5F5000F94902 /* TransactionsViewModel.swift */,
 				11104CA6262F9BD800F94902 /* TransactionContainerViewModel.swift */,
 				115C50002634E6600008D217 /* DisplayableCategory.swift */,
-				1145639626378B0F0068C58F /* WalletsViewModel.swift */,
+				1145639626378B0F0068C58F /* ContainersListViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -176,6 +220,8 @@
 				1136D55E262E4A6900CDB4E7 /* WalletPlusTests */,
 				1136D569262E4A6900CDB4E7 /* WalletPlusUITests */,
 				1136D54B262E4A6800CDB4E7 /* Products */,
+				0CAC0D866FF2DF94FC9B34B6 /* Pods */,
+				F5677A63D388F94B27033A76 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -192,6 +238,7 @@
 		1136D54C262E4A6800CDB4E7 /* WalletPlus */ = {
 			isa = PBXGroup;
 			children = (
+				117BFAB026656F86009D4318 /* GoogleService-Info.plist */,
 				1188CFFC263A1B5000FD489C /* Presentation */,
 				115C500A26361A990008D217 /* Domain */,
 				11104A5C262E4F1E00F94902 /* ViewModel */,
@@ -240,8 +287,6 @@
 			isa = PBXGroup;
 			children = (
 				1136D584262E4AE900CDB4E7 /* Transaction.swift */,
-				11104A3E262E4C7600F94902 /* IncomeTransaction.swift */,
-				11104A43262E4DF200F94902 /* ExpenseTransaction.swift */,
 				11104C91262F904F00F94902 /* Wallet.swift */,
 				115C500526361A7B0008D217 /* Group.swift */,
 				114563A026378EFF0068C58F /* GetContainerTotal.swift */,
@@ -249,12 +294,45 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		114BD9D42667C01300C4F9F6 /* TransactionsContainer */ = {
+			isa = PBXGroup;
+			children = (
+				117BFAB326658EAC009D4318 /* TransactionsContainerRemoteDataSource.swift */,
+				114BD9D52667C03C00C4F9F6 /* TransactionsContainerRemoteEntityMapper.swift */,
+				114BD9D72667C08200C4F9F6 /* TransactionsContainerRemoteEntity.swift */,
+				114BD9D92667C0AE00C4F9F6 /* TransactionRemoteEntity.swift */,
+				114BD9DB2667C0C200C4F9F6 /* TransactionRemoteEntityMapper.swift */,
+			);
+			path = TransactionsContainer;
+			sourceTree = "<group>";
+		};
+		114BD9EC2669604400C4F9F6 /* RemoteDataSource */ = {
+			isa = PBXGroup;
+			children = (
+				114BD9D42667C01300C4F9F6 /* TransactionsContainer */,
+			);
+			path = RemoteDataSource;
+			sourceTree = "<group>";
+		};
+		114BD9ED2669645E00C4F9F6 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				114BD9EE2669647300C4F9F6 /* GetTransactionsContainerInteractor.swift */,
+				11E59A7E266E6364008452EF /* GetTransactionsInteractor.swift */,
+				11E59A80266E6EC5008452EF /* GetTransactionsCategoriesInteractor.swift */,
+				11E59A82266E8698008452EF /* GetIncomeTransactionsFromContainerInteractor.swift */,
+				11E59A84266E8876008452EF /* GetExpenseTransactionsFromContainerInteractor.swift */,
+				11E59A86266E9BD2008452EF /* AmountFormatterInteractor.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
 		115C500A26361A990008D217 /* Domain */ = {
 			isa = PBXGroup;
 			children = (
+				114BD9ED2669645E00C4F9F6 /* Interactor */,
+				114BD9EC2669604400C4F9F6 /* RemoteDataSource */,
 				115C501326361AE10008D217 /* TestData.swift */,
-				115C501826361BA70008D217 /* GetCategory.swift */,
-				1188CFFF263A203D00FD489C /* GetTransactions.swift */,
 				116912EA2649476E00C01B69 /* GetDates.swift */,
 				116913342649FDD900C01B69 /* CreateTransaction.swift */,
 			);
@@ -269,6 +347,16 @@
 			path = Presentation;
 			sourceTree = "<group>";
 		};
+		F5677A63D388F94B27033A76 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				240E1B78601BAB85764F7C4D /* Pods_WalletPlus.framework */,
+				73934E786EBF92730325604D /* Pods_WalletPlus_WalletPlusUITests.framework */,
+				4618C195D485268A25AFAFC3 /* Pods_WalletPlusTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -276,9 +364,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1136D56F262E4A6900CDB4E7 /* Build configuration list for PBXNativeTarget "WalletPlus" */;
 			buildPhases = (
+				A3259C1170756C1C2AC22AE1 /* [CP] Check Pods Manifest.lock */,
 				1136D546262E4A6800CDB4E7 /* Sources */,
 				1136D547262E4A6800CDB4E7 /* Frameworks */,
 				1136D548262E4A6800CDB4E7 /* Resources */,
+				3A74CCF1E3B351908D0C7B83 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -293,6 +383,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1136D572262E4A6900CDB4E7 /* Build configuration list for PBXNativeTarget "WalletPlusTests" */;
 			buildPhases = (
+				645B360305C0FAC893F0BE72 /* [CP] Check Pods Manifest.lock */,
 				1136D557262E4A6900CDB4E7 /* Sources */,
 				1136D558262E4A6900CDB4E7 /* Frameworks */,
 				1136D559262E4A6900CDB4E7 /* Resources */,
@@ -311,9 +402,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1136D575262E4A6900CDB4E7 /* Build configuration list for PBXNativeTarget "WalletPlusUITests" */;
 			buildPhases = (
+				2CD476B16F2AB5128FA471B4 /* [CP] Check Pods Manifest.lock */,
 				1136D562262E4A6900CDB4E7 /* Sources */,
 				1136D563262E4A6900CDB4E7 /* Frameworks */,
 				1136D564262E4A6900CDB4E7 /* Resources */,
+				64F2B36A4E35789C2831538C /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -374,6 +467,7 @@
 			files = (
 				1136D555262E4A6900CDB4E7 /* Preview Assets.xcassets in Resources */,
 				1136D552262E4A6900CDB4E7 /* Assets.xcassets in Resources */,
+				117BFAB126656F86009D4318 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -393,23 +487,130 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		2CD476B16F2AB5128FA471B4 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-WalletPlus-WalletPlusUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3A74CCF1E3B351908D0C7B83 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-WalletPlus/Pods-WalletPlus-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-WalletPlus/Pods-WalletPlus-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-WalletPlus/Pods-WalletPlus-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		645B360305C0FAC893F0BE72 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-WalletPlusTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		64F2B36A4E35789C2831538C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-WalletPlus-WalletPlusUITests/Pods-WalletPlus-WalletPlusUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-WalletPlus-WalletPlusUITests/Pods-WalletPlus-WalletPlusUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-WalletPlus-WalletPlusUITests/Pods-WalletPlus-WalletPlusUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A3259C1170756C1C2AC22AE1 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-WalletPlus-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		1136D546262E4A6800CDB4E7 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				1188CFFE263A1B6300FD489C /* AmountFormatter.swift in Sources */,
+				11E59A87266E9BD2008452EF /* AmountFormatterInteractor.swift in Sources */,
+				114BD9DA2667C0AE00C4F9F6 /* TransactionRemoteEntity.swift in Sources */,
 				11104C92262F904F00F94902 /* Wallet.swift in Sources */,
 				114563A126378EFF0068C58F /* GetContainerTotal.swift in Sources */,
 				1162FD2026652F1100B21EBC /* ContainersListView.swift in Sources */,
 				116912EB2649476E00C01B69 /* GetDates.swift in Sources */,
-				1188D000263A203D00FD489C /* GetTransactions.swift in Sources */,
+				11E59A81266E6EC5008452EF /* GetTransactionsCategoriesInteractor.swift in Sources */,
+				114BD9DC2667C0C200C4F9F6 /* TransactionRemoteEntityMapper.swift in Sources */,
+				114BD9D62667C03C00C4F9F6 /* TransactionsContainerRemoteEntityMapper.swift in Sources */,
 				11104E622630DAB000F94902 /* SegmentedControlView.swift in Sources */,
-				1145639726378B0F0068C58F /* WalletsViewModel.swift in Sources */,
+				1145639726378B0F0068C58F /* ContainersListViewModel.swift in Sources */,
 				11104CA2262F9B5B00F94902 /* TransactionContainerOverview.swift in Sources */,
+				114BD9EF2669647300C4F9F6 /* GetTransactionsContainerInteractor.swift in Sources */,
 				115C500626361A7B0008D217 /* Group.swift in Sources */,
 				1145639C26378D170068C58F /* ContainerList.swift in Sources */,
-				11104A44262E4DF200F94902 /* ExpenseTransaction.swift in Sources */,
 				115C4FF42634DF330008D217 /* CategoryRow.swift in Sources */,
 				115C50012634E6600008D217 /* DisplayableCategory.swift in Sources */,
 				1136D550262E4A6900CDB4E7 /* ContentView.swift in Sources */,
@@ -418,16 +619,19 @@
 				11BF7EF02641605F00C6D01E /* TransactionsListTab.swift in Sources */,
 				1136D54E262E4A6900CDB4E7 /* WalletPlusApp.swift in Sources */,
 				115C501426361AE10008D217 /* TestData.swift in Sources */,
-				115C501926361BA70008D217 /* GetCategory.swift in Sources */,
+				11E59A83266E8698008452EF /* GetIncomeTransactionsFromContainerInteractor.swift in Sources */,
+				117BFAB426658EAC009D4318 /* TransactionsContainerRemoteDataSource.swift in Sources */,
 				1136D585262E4AE900CDB4E7 /* Transaction.swift in Sources */,
 				11691337264A005B00C01B69 /* FloatingButton.swift in Sources */,
-				11104A3F262E4C7600F94902 /* IncomeTransaction.swift in Sources */,
 				11104CA7262F9BD800F94902 /* TransactionContainerViewModel.swift in Sources */,
 				1162FD1E2665277100B21EBC /* WalletRowView.swift in Sources */,
 				116914AC264C8F0D00C01B69 /* BottomSheet.swift in Sources */,
+				114BD9D82667C08200C4F9F6 /* TransactionsContainerRemoteEntity.swift in Sources */,
 				11104A66262E5FB600F94902 /* TransactionRow.swift in Sources */,
 				11104A61262E5F5000F94902 /* TransactionsViewModel.swift in Sources */,
 				11104A58262E4F1400F94902 /* TransactionsListView.swift in Sources */,
+				11E59A7F266E6364008452EF /* GetTransactionsInteractor.swift in Sources */,
+				11E59A85266E8876008452EF /* GetExpenseTransactionsFromContainerInteractor.swift in Sources */,
 				11104AE6262F45FB00F94902 /* TransactionSectionView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -519,7 +723,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -574,7 +778,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -586,6 +790,7 @@
 		};
 		1136D570262E4A6900CDB4E7 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = ED709F7C427049923593D3A2 /* Pods-WalletPlus.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -608,6 +813,7 @@
 		};
 		1136D571262E4A6900CDB4E7 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 60256D91211C3A06FE103DDB /* Pods-WalletPlus.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -630,6 +836,7 @@
 		};
 		1136D573262E4A6900CDB4E7 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3B38E253EE3C157D95A618BD /* Pods-WalletPlusTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -652,6 +859,7 @@
 		};
 		1136D574262E4A6900CDB4E7 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4178E362268B0128CA648C75 /* Pods-WalletPlusTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -674,6 +882,7 @@
 		};
 		1136D576262E4A6900CDB4E7 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3694C332BC4267329F36575C /* Pods-WalletPlus-WalletPlusUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -694,6 +903,7 @@
 		};
 		1136D577262E4A6900CDB4E7 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5E95CF6CE6A42B1EC2D7EEBA /* Pods-WalletPlus-WalletPlusUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;

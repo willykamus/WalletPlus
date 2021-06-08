@@ -7,10 +7,10 @@
 
 import Foundation
 
-protocol Transaction {
-    var remoteId: String { get set }
-    var amount: Double { get set }
-    var category: String { get set }
-    var date: Date { get set }
-    var containerTitle: String { get set }
+struct Transaction: Identifiable {
+    var id: String
+    var amount: Double
+    var category: String
+    var date: Date
+    var containerTitle: String
 }
