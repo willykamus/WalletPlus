@@ -17,7 +17,6 @@ class ContainersListViewModel: ObservableObject {
     
     init() {
         self.getTransactionsContainer()
-        self.getTotalFromContainers()
     }
     
     func getTransactionsContainer() {
@@ -25,6 +24,7 @@ class ContainersListViewModel: ObservableObject {
             switch result {
             case .success(let containers):
                 self.containers = containers
+                self.getTotalFromContainers()
             case .failure(let error):
                 print(error.localizedDescription)
             }

@@ -20,7 +20,7 @@ struct ContainerList: View {
                         label: {
                             VStack(alignment: .leading) {
                                 Text(container.name)
-                                Text(viewModel.total)
+                                Text(String(container.currentAmount()))
                             }
                         })
                 }
