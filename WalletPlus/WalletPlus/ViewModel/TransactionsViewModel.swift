@@ -6,15 +6,33 @@
 //
 
 import Foundation
+import Firebase
 
 class TransactionsViewModel: ObservableObject {
     
+    var selectedContainer: TransactionsContainer?
     var getDatesInteractor: GetDates = GetDatesInteractor()
     var getTransactionsContainerInteractor = GetTransactionsContainerInteractorImpl(dataSource: TransactionsContainerRemoteDataSourceImpl())
-    
-    @Published var transactionListSection: [TransactionListSection] = []
 
-    init() {
+    @Published var transactionListSection: [TransactionListSection] = []
+    
+    func initialize() {
+        if selectedContainer != nil {
+            self.createTransactionSections(transactions: selectedContainer!.transactions!)
+        } else {
+            getTransactionsContainerInteractor.execute { result in
+                switch result {
+                case .success(let containers):
+                    let transactions = self.getAllTransactions(from: containers)
+                    self.createTransactionSections(transactions: transactions)
+                case .failure(let error):
+                    print(error.localizedDescription)
+                }
+            }
+        }
+    }
+    
+    func getTransactions() {
         getTransactionsContainerInteractor.execute { result in
             switch result {
             case .success(let containers):
@@ -25,10 +43,13 @@ class TransactionsViewModel: ObservableObject {
             }
         }
     }
-    
+
     func createTransactionSections(transactions: [Transaction]) {
+        transactionListSection.removeAll()
+        transactionListSection = []
         for date in self.getDatesInteractor.getDates(from: transactions) {
-            let filtered = transactions.filter { $0.date == date }
+            let filtered = transactions.filter {
+                Calendar.current.isDate($0.date, equalTo: date, toGranularity: .day) /*$0.date == date*/ }
             transactionListSection.append(TransactionListSection(date: format(date: date), transactions: filtered))
         }
     }
@@ -48,7 +69,7 @@ class TransactionsViewModel: ObservableObject {
         dateFormatter.dateFormat = "dd MMMM YYYY"
         return dateFormatter.string(from: currentDate)
     }
-    
+
 }
 
 struct TransactionListSection: Identifiable {

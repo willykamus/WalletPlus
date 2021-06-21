@@ -15,10 +15,17 @@ class GetDatesInteractor: GetDates {
     func getDates(from transactions: [Transaction]) -> [Date] {
         var uniques: [Date] = []
         for transaction in transactions {
-            if !uniques.contains(transaction.date) {
-                uniques.append(transaction.date)
+            let date = removeTimeFromDate(transaction.date)
+            if !uniques.contains(date) {
+                uniques.append(date)
             }
         }
         return uniques.sorted { $0 > $1}
+    }
+    
+    private func removeTimeFromDate(_ date: Date) -> Date {
+        let calendar = Calendar.current
+        let dateComponents = calendar.dateComponents([.year, .month, .day], from: date)
+        return calendar.date(from: dateComponents) ?? Date()
     }
 }

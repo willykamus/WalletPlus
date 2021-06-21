@@ -12,8 +12,7 @@ struct TransactionsListView: View {
     var container: TransactionsContainer?
     
     @State var createTransaction: Bool = false
-    
-    @EnvironmentObject var viewModel: TransactionsViewModel
+    @StateObject var viewModel: TransactionsViewModel = TransactionsViewModel()
     
     var trailingButton: some View {
         HStack {
@@ -30,7 +29,6 @@ struct TransactionsListView: View {
     }
     
     var body: some View {
-        NavigationView {
             ZStack {
                 List {
                     ForEach(viewModel.transactionListSection) { section in
@@ -64,17 +62,21 @@ struct TransactionsListView: View {
                     
                 }
             }
+            .onAppear(perform: {
+                if container != nil {
+                    self.viewModel.selectedContainer = container!
+                }
+                self.viewModel.initialize()
+            })
+            .sheet(isPresented: self.$createTransaction, onDismiss: {
+                viewModel.getTransactions()
+            }, content: {
+                NavigationView {
+                    CreateTransactionView(createTransactionOpened: self.$createTransaction, currentContainer: self.container)
+                }
+            })
         }
-        .sheet(isPresented: self.$createTransaction, onDismiss: {
-            print("Not here")
-        }, content: {
-            NavigationView {
-                CreateTransactionView(currentContainer: self.container)
-            }
-        })
-        .navigationBarTitle("")
-        .navigationBarHidden(true)
-    }
+
 }
 
 struct TransactionsListView_Previews: PreviewProvider {

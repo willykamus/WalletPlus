@@ -18,11 +18,12 @@ struct ContainersListView: View {
             ForEach(viewModel.containers, id: \.id) { container in
                 WalletRowView(container: container)
                     .onTapGesture {
-                        print("Hello")
                         self.container = container
                         self.containersPresented.toggle()
                     }
-            }
+            }.onAppear(perform: {
+                viewModel.getTransactionsContainer()
+            })
         }
     }
 }

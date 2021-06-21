@@ -13,8 +13,7 @@ struct ContainerList: View {
     
     var body: some View {
         NavigationView {
-            List {
-                ForEach(viewModel.containers, id: \.id) { container in
+            List(viewModel.containers) { container in
                     NavigationLink(
                         destination: TransactionsListView(container: container),
                         label: {
@@ -23,7 +22,7 @@ struct ContainerList: View {
                                 Text(String(container.currentAmount()))
                             }
                         })
-                }
+                
             }
             .navigationBarTitle(viewModel.total)
             .navigationBarTitleDisplayMode(.inline)

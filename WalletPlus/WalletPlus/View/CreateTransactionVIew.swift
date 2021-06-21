@@ -9,10 +9,12 @@ import SwiftUI
 
 struct CreateTransactionView: View {
     
+    @Binding var createTransactionOpened: Bool
     @State var currentContainer: TransactionsContainer?
     @State var amount: String = ""
     @State var description: String = ""
     @State var presentContainers: Bool = false
+    @ObservedObject var viewModel = CreateTransactionViewModel()
     
     var body: some View {
         ZStack(alignment: Alignment(horizontal: .center, vertical: .center)) {
@@ -29,6 +31,12 @@ struct CreateTransactionView: View {
                     })
                 TextField("Description", text: self.$description).textFieldStyle(RoundedBorderTextFieldStyle())
                 TextField("Amount", text: self.$amount).textFieldStyle(RoundedBorderTextFieldStyle())
+                Button(action: {
+                    viewModel.save(containerID: currentContainer!.id, containerTitle: currentContainer!.name, category: description, amount: amount, date: Date())
+                    createTransactionOpened.toggle()
+                }, label: {
+                    Text("Save")
+                })
             }
             .padding()
         }
@@ -37,6 +45,6 @@ struct CreateTransactionView: View {
 
 struct CreateTransactionVIew_Previews: PreviewProvider {
     static var previews: some View {
-        CreateTransactionView()
+        CreateTransactionView(createTransactionOpened: .constant(true))
     }
 }
