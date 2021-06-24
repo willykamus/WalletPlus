@@ -9,11 +9,9 @@ import SwiftUI
 
 struct TransactionsListTab: View {
     
-    @StateObject var viewModel: TransactionViewModel = TransactionViewModel()
-    
     var body: some View {
         NavigationView {
-            TransactionsListView(viewModel: self.viewModel)
+            TransactionsListView()
             .navigationBarTitle(Text("Transactions"))
         }
     }

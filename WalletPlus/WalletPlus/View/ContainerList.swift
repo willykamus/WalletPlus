@@ -9,26 +9,26 @@ import SwiftUI
 
 struct ContainerList: View {
     
-    @ObservedObject var viewModel: WalletsViewModel = WalletsViewModel()
+    @ObservedObject var viewModel: ContainersListViewModel = ContainersListViewModel()
     
     var body: some View {
         NavigationView {
-            List {
-                ForEach(viewModel.containers, id: \.id) { container in
+            List(viewModel.containers) { container in
                     NavigationLink(
                         destination: TransactionsListView(container: container),
                         label: {
                             VStack(alignment: .leading) {
                                 Text(container.name)
-                                Text(viewModel.getTotal(from: container))
+                                Text(String(container.currentAmount()))
                             }
                         })
-                }
+                
             }
-            .navigationBarTitle(viewModel.getTotalFromContainers())
+            .navigationBarTitle(viewModel.total)
             .navigationBarTitleDisplayMode(.inline)
         }
     }
+
 }
 
 struct ContainerList_Previews: PreviewProvider {

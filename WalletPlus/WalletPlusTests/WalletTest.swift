@@ -10,7 +10,7 @@ import XCTest
 
 class WalletTest: XCTestCase {
     
-    var testData: [Transaction] = [IncomeTransaction(container: "Walltet", date: Date(timeIntervalSinceReferenceDate: 1000000), remoteId: "1", amount: 100.1, category: "Cash"), IncomeTransaction(container: "Wallet", date: Date(timeIntervalSinceReferenceDate: 10000000), remoteId: "2", amount: 99.9, category: "FFF"), ExpenseTransaction(container: "Waller", date: Date(timeIntervalSinceReferenceDate: 1000000), remoteId: "3", amount: -33.3, category: "Car")]
+    var testData: [Transaction] = [IncomeTransaction(containerTitle: "Walltet", date: Date(timeIntervalSinceReferenceDate: 1000000), remoteId: "1", amount: 100.1, category: "Cash"), IncomeTransaction(containerTitle: "Wallet", date: Date(timeIntervalSinceReferenceDate: 10000000), remoteId: "2", amount: 99.9, category: "FFF"), ExpenseTransaction(containerTitle: "Waller", date: Date(timeIntervalSinceReferenceDate: 1000000), remoteId: "3", amount: -33.3, category: "Car")]
 
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
@@ -22,14 +22,14 @@ class WalletTest: XCTestCase {
     
     func testCreateEmptyWallet() {
         let name: String = "Cash"
-        let wallet: TransactionContainer = Wallet(name: name)
+        let wallet: TransactionContainer = Wallet(name: name, transactions: [])
         XCTAssertEqual(wallet.name, name)
         XCTAssertEqual(wallet.currentAmount(), 0.0)
     }
     
     func testWalletAmount() {
         let name: String = "Cash"
-        var wallet: TransactionContainer = Wallet(name: name)
+        var wallet: TransactionContainer = Wallet(name: name, transactions: [])
         wallet.transactions = testData
         XCTAssertEqual(wallet.currentAmount(), 166.7)
     }

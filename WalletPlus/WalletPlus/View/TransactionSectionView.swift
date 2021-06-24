@@ -16,6 +16,7 @@ struct TransactionSectionView: View {
             Text(text)
             Spacer()
         }
+        .padding(.horizontal, 12)
         .font(.system(size: 12.0, weight: .thin))
     }
 }

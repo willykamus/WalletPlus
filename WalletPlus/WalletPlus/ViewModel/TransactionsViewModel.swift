@@ -6,48 +6,70 @@
 //
 
 import Foundation
+import Firebase
 
-class TransactionViewModel: ObservableObject {
+class TransactionsViewModel: ObservableObject {
     
-    var testData: [Transaction] = []
-    
+    var selectedContainer: TransactionsContainer?
+    var getDatesInteractor: GetDates = GetDatesInteractor()
+    var getTransactionsContainerInteractor = GetTransactionsContainerInteractorImpl(dataSource: TransactionsContainerRemoteDataSourceImpl())
+
     @Published var transactionListSection: [TransactionListSection] = []
-
     
-    func createTransactionSections() {
-        for date in getUniqueDates() {
-            let filtered = testData.filter { $0.date == date }
+    func initialize() {
+        if selectedContainer != nil {
+            self.createTransactionSections(transactions: selectedContainer!.transactions!)
+        } else {
+            getTransactionsContainerInteractor.execute { result in
+                switch result {
+                case .success(let containers):
+                    let transactions = self.getAllTransactions(from: containers)
+                    self.createTransactionSections(transactions: transactions)
+                case .failure(let error):
+                    print(error.localizedDescription)
+                }
+            }
+        }
+    }
+    
+    func getTransactions() {
+        getTransactionsContainerInteractor.execute { result in
+            switch result {
+            case .success(let containers):
+                let transactions = self.getAllTransactions(from: containers)
+                self.createTransactionSections(transactions: transactions)
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+        }
+    }
+
+    func createTransactionSections(transactions: [Transaction]) {
+        transactionListSection.removeAll()
+        transactionListSection = []
+        for date in self.getDatesInteractor.getDates(from: transactions) {
+            let filtered = transactions.filter {
+                Calendar.current.isDate($0.date, equalTo: date, toGranularity: .day) /*$0.date == date*/ }
             transactionListSection.append(TransactionListSection(date: format(date: date), transactions: filtered))
         }
     }
     
-    func getTransactions(from container: TransactionContainer?) {
-        testData.removeAll()
-        transactionListSection.removeAll()
-        if container != nil {
-            self.testData = container!.transactions!
-        } else {
-            self.testData = GetTransactionsInteractor().getTransactions(from: TestData().testData)
-        }
-        self.createTransactionSections()
-    }
-    
-    private func getUniqueDates() -> [Date] {
-        var uniques: [Date] = []
-        for transaction in testData {
-            if !uniques.contains(transaction.date) {
-                uniques.append(transaction.date)
+    private func getAllTransactions(from containers: [TransactionsContainer]) -> [Transaction] {
+        var allTransactions: [Transaction] = []
+        for container in containers {
+            if let transactions = container.transactions {
+                allTransactions.append(contentsOf: transactions)
             }
         }
-        return uniques
+        return allTransactions
     }
     
     private func format(date currentDate: Date) -> String {
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "dd MMMM"
+        dateFormatter.dateFormat = "dd MMMM YYYY"
         return dateFormatter.string(from: currentDate)
     }
-    
+
 }
 
 struct TransactionListSection: Identifiable {

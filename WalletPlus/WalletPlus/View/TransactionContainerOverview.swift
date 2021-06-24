@@ -9,13 +9,13 @@ import SwiftUI
 
 struct TransactionContainerOverview: View {
     
-    var container: TransactionContainer
+    var container: TransactionsContainer
     
     @ObservedObject var viewModel: TransactionContainerViewModel
     
-    init(container: TransactionContainer) {
+    init(container: TransactionsContainer) {
         self.container = container
-        self.viewModel = TransactionContainerViewModel(transactionContainer: self.container)
+        self.viewModel = TransactionContainerViewModel(selectedTransactionContainer: self.container)
     }
     
     var body: some View {
@@ -54,6 +54,6 @@ struct TransactionContainerOverview: View {
 
 struct TransactionContainerOverview_Previews: PreviewProvider {
     static var previews: some View {
-        TransactionContainerOverview(container: Wallet(name: "Hello"))
+        TransactionContainerOverview(container: TransactionsContainer(id: "123", transactions: [], name: "Hello"))
     }
 }
