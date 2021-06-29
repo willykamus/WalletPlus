@@ -12,13 +12,22 @@ class TransactionsViewModel: ObservableObject {
     
     var selectedContainer: TransactionsContainer?
     var getDatesInteractor: GetDates = GetDatesInteractor()
-    var getTransactionsContainerInteractor = GetTransactionsContainerInteractorImpl(dataSource: TransactionsContainerRemoteDataSourceImpl())
+    var getTransactionsContainerInteractor = GetTransactionsContainerInteractorImpl()
+    var getTransactionsFromContainerInteractor: GetTransactionsFromContainerInteractor = GetTransactionsFromContainerInteractorImpl()
+    var getTransactionsInteractor: GetTransactionsInteractor = GetTransactionsInteractorImpl()
 
     @Published var transactionListSection: [TransactionListSection] = []
     
     func initialize() {
         if selectedContainer != nil {
-            self.createTransactionSections(transactions: selectedContainer!.transactions!)
+            getTransactionsFromContainerInteractor.execute(for: selectedContainer!) { result in
+                switch result {
+                case .success(let transactions):
+                    self.createTransactionSections(transactions: transactions)
+                case .failure(let error):
+                    return
+                }
+            }
         } else {
             getTransactionsContainerInteractor.execute { result in
                 switch result {

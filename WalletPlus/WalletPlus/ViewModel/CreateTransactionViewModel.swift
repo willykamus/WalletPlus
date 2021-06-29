@@ -15,7 +15,7 @@ class CreateTransactionViewModel: ObservableObject, CreateTransactionViewModelLi
 
     @Published var transactionSaved: Bool = false
     
-    var transactionInteractor: AddTransactionInteractor = AddTransactionInteractorImpl(dataSource: AddTransactionRemoteDataSoutceImpl())
+    var transactionInteractor: AddTransactionInteractor = AddTransactionInteractorImpl(dataSource: TransactionRemoteDataSourceImpl())
     
     func save(containerID: String, containerTitle: String, category: String, amount: String, date: Date) {
         let transaction: Transaction = Transaction(id: UUID.init().uuidString, amount: Double(amount) ?? 0.0, category: category, date: date, containerTitle: containerTitle)

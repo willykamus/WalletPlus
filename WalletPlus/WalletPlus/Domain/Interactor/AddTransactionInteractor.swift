@@ -13,9 +13,9 @@ protocol AddTransactionInteractor {
 
 class AddTransactionInteractorImpl: AddTransactionInteractor {
     
-    var dataSource: TransactionRemoteDataSoutce
+    var dataSource: TransactionRemoteDataSource
     
-    init(dataSource: TransactionRemoteDataSoutce) {
+    init(dataSource: TransactionRemoteDataSource) {
         self.dataSource = dataSource
     }
     

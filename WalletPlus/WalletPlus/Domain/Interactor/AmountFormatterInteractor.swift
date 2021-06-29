@@ -18,10 +18,6 @@ class AmountFormatterInteractorImpl: AmountFormatterInteractor {
     }
     
     private func amountFormatter(value: Double) -> String {
-//        var amount: Double = value
-//        if amount < 0 {
-//            amount = amount * -1
-//        }
         let formatter = NumberFormatter()
         let number = NSNumber(value: value)
         formatter.minimumFractionDigits = 2
