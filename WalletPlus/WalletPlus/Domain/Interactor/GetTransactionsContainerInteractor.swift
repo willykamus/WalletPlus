@@ -13,15 +13,10 @@ protocol GetTransactionsContainerInteractor {
 
 class GetTransactionsContainerInteractorImpl: GetTransactionsContainerInteractor {
 
-    let dataSource: TransactionsContainerRemoteDataSource
-    let dispatchGroup = DispatchGroup()
-    
-    init(dataSource: TransactionsContainerRemoteDataSource) {
-        self.dataSource = dataSource
-    }
-    
+    let repository: TransactionsContainerRepository = TransactionsContainerRepositoryImpl()
+
     func execute(completed: @escaping (Result<[TransactionsContainer], Error>) -> Void) {
-        dataSource.getContainers { result in
+        repository.initialize { result in
             completed(result)
         }
     }

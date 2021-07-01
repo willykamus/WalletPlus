@@ -12,7 +12,7 @@ class ContainersListViewModel: ObservableObject {
     @Published var containers: [TransactionsContainer] = []
     @Published var total: String = ""
     
-    var getTransactionsContainerInteractor: GetTransactionsContainerInteractor = GetTransactionsContainerInteractorImpl(dataSource: TransactionsContainerRemoteDataSourceImpl())
+    var getTransactionsContainerInteractor: GetTransactionsContainerInteractor = GetTransactionsContainerInteractorImpl()
     var amountFormatterInteractor: AmountFormatterInteractor = AmountFormatterInteractorImpl()
     
     init() {

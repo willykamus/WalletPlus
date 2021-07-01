@@ -10,12 +10,18 @@ import Firebase
 import FirebaseFirestore
 import FirebaseFirestoreSwift
 
-protocol TransactionRemoteDataSoutce {
+protocol TransactionRemoteDataSource {
     func add(transaction: TransactionRemoteEntity, to containerID: String, completed: @escaping (Bool) -> Void)
     func getTransactions(container: TransactionsContainer, completed: @escaping (Result<[Transaction], Error>) -> Void)
+    func getAllTransactions(completed: @escaping (Result<[Transaction], Error>) -> Void)
 }
 
-class AddTransactionRemoteDataSoutceImpl: TransactionRemoteDataSoutce {
+class TransactionRemoteDataSourceImpl: TransactionRemoteDataSource {
+    
+    func getAllTransactions(completed: @escaping (Result<[Transaction], Error>) -> Void) {
+        
+    }
+    
     
     let dataBase = Firestore.firestore()
     
@@ -29,7 +35,7 @@ class AddTransactionRemoteDataSoutceImpl: TransactionRemoteDataSoutce {
     }
     
     func getTransactions(container: TransactionsContainer, completed: @escaping (Result<[Transaction], Error>) -> Void) {
-        dataBase.collection(container.id).document().collection("transactions").getDocuments { querySnapshot, error in
+        dataBase.collection("transactionContainers").document(container.id).collection("transactions").getDocuments { querySnapshot, error in
             if let error = error {
                 completed(.failure(error))
             }
