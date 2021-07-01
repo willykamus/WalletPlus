@@ -40,20 +40,8 @@ class TransactionsViewModel: ObservableObject {
             }
         }
     }
-    
-    func getTransactions() {
-        getTransactionsContainerInteractor.execute { result in
-            switch result {
-            case .success(let containers):
-                let transactions = self.getAllTransactions(from: containers)
-                self.createTransactionSections(transactions: transactions)
-            case .failure(let error):
-                print(error.localizedDescription)
-            }
-        }
-    }
 
-    func createTransactionSections(transactions: [Transaction]) {
+    private func createTransactionSections(transactions: [Transaction]) {
         transactionListSection.removeAll()
         transactionListSection = []
         for date in self.getDatesInteractor.getDates(from: transactions) {

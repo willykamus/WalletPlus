@@ -13,9 +13,15 @@ import FirebaseFirestoreSwift
 protocol TransactionRemoteDataSource {
     func add(transaction: TransactionRemoteEntity, to containerID: String, completed: @escaping (Bool) -> Void)
     func getTransactions(container: TransactionsContainer, completed: @escaping (Result<[Transaction], Error>) -> Void)
+    func getAllTransactions(completed: @escaping (Result<[Transaction], Error>) -> Void)
 }
 
 class TransactionRemoteDataSourceImpl: TransactionRemoteDataSource {
+    
+    func getAllTransactions(completed: @escaping (Result<[Transaction], Error>) -> Void) {
+        
+    }
+    
     
     let dataBase = Firestore.firestore()
     

@@ -69,7 +69,7 @@ struct TransactionsListView: View {
                 self.viewModel.initialize()
             })
             .sheet(isPresented: self.$createTransaction, onDismiss: {
-                viewModel.getTransactions()
+                viewModel.initialize()
             }, content: {
                 NavigationView {
                     CreateTransactionView(createTransactionOpened: self.$createTransaction, currentContainer: self.container)
