@@ -15,6 +15,7 @@ class TransactionsViewModel: ObservableObject {
     var getTransactionsContainerInteractor = GetTransactionsContainerInteractorImpl()
     var getTransactionsFromContainerInteractor: GetTransactionsFromContainerInteractor = GetTransactionsFromContainerInteractorImpl()
     var getTransactionsInteractor: GetTransactionsInteractor = GetTransactionsInteractorImpl()
+    var getAllTransactionsInteractor: GetAllTransactionsInteractor = GetAllTransactionsInteractorImpl()
 
     @Published var transactionListSection: [TransactionListSection] = []
     
@@ -29,10 +30,9 @@ class TransactionsViewModel: ObservableObject {
                 }
             }
         } else {
-            getTransactionsContainerInteractor.execute { result in
+            getAllTransactionsInteractor.execute { result in
                 switch result {
-                case .success(let containers):
-                    let transactions = self.getAllTransactions(from: containers)
+                case .success(let transactions):
                     self.createTransactionSections(transactions: transactions)
                 case .failure(let error):
                     print(error.localizedDescription)
@@ -49,16 +49,6 @@ class TransactionsViewModel: ObservableObject {
                 Calendar.current.isDate($0.date, equalTo: date, toGranularity: .day) /*$0.date == date*/ }
             transactionListSection.append(TransactionListSection(date: format(date: date), transactions: filtered))
         }
-    }
-    
-    private func getAllTransactions(from containers: [TransactionsContainer]) -> [Transaction] {
-        var allTransactions: [Transaction] = []
-        for container in containers {
-            if let transactions = container.transactions {
-                allTransactions.append(contentsOf: transactions)
-            }
-        }
-        return allTransactions
     }
     
     private func format(date currentDate: Date) -> String {

@@ -17,13 +17,36 @@ protocol TransactionRemoteDataSource {
 }
 
 class TransactionRemoteDataSourceImpl: TransactionRemoteDataSource {
+
+    let dataBase = Firestore.firestore()
+    private let remoteTransactionsContainer: TransactionsContainerRemoteDataSource = TransactionsContainerRemoteDataSourceImpl()
     
     func getAllTransactions(completed: @escaping (Result<[Transaction], Error>) -> Void) {
-        
+        let dispatchGroup = DispatchGroup()
+        remoteTransactionsContainer.getContainers { result in
+            switch result {
+            case .success(let containers):
+                var allTransactions: [Transaction] = []
+                for container in containers {
+                    dispatchGroup.enter()
+                    self.getTransactions(container: container) { result in
+                        switch result {
+                        case .success(let transactions):
+                            allTransactions.append(contentsOf: transactions)
+                        case .failure(let error):
+                            completed(.failure(error))
+                        }
+                        dispatchGroup.leave()
+                    }
+                }
+                dispatchGroup.notify(queue: .main) {
+                    completed(.success(allTransactions))
+                }
+            case .failure(let error):
+                completed(.failure(error))
+            }
+        }
     }
-    
-    
-    let dataBase = Firestore.firestore()
     
     func add(transaction: TransactionRemoteEntity, to containerID: String, completed: @escaping (Bool) -> Void) {
         do {
