@@ -30,16 +30,13 @@ struct TransactionsListView: View {
     
     var body: some View {
             ZStack {
-                List {
-                    ForEach(viewModel.transactionListSection) { section in
-                        Section(header: TransactionSectionView(text: section.date)) {
-                            ForEach(section.transactions, id: \.id) { transaction in
-                                TransactionRow(transaction: transaction)
-                            }
+                ScrollView(.vertical, showsIndicators: false, content: {
+                    VStack(spacing: 20) {
+                        ForEach(viewModel.transactionListSection) { section in
+                            TransactionsSection(content: section).padding(.horizontal, 16)
                         }
-                    }
-                }
-                .listStyle(InsetGroupedListStyle())
+                    }.padding(.vertical, 16)
+                })
                 .navigationBarTitle(Text("Transactions"))
                 .toolbar(content: {
                         ToolbarItem(placement: .navigationBarTrailing) {
@@ -63,6 +60,8 @@ struct TransactionsListView: View {
                 }
             }
             .onAppear(perform: {
+                UITableView.appearance().backgroundColor = UIColor.clear
+                UITableView.appearance().separatorStyle = .none
                 if container != nil {
                     self.viewModel.selectedContainer = container!
                 }
