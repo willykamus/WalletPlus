@@ -55,6 +55,7 @@
 		11BE022D268BD50A004EFED9 /* TransactionsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11BE022C268BD50A004EFED9 /* TransactionsRepository.swift */; };
 		11BE022F268BD672004EFED9 /* GetTransactionsFromContainerInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11BE022E268BD672004EFED9 /* GetTransactionsFromContainerInteractor.swift */; };
 		11BE0231268E6861004EFED9 /* GetAllTransactionsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11BE0230268E6860004EFED9 /* GetAllTransactionsInteractor.swift */; };
+		11BE0233268F6967004EFED9 /* TransactionsSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11BE0232268F6967004EFED9 /* TransactionsSection.swift */; };
 		11BF7EF02641605F00C6D01E /* TransactionsListTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11BF7EEF2641605F00C6D01E /* TransactionsListTab.swift */; };
 		11E59A7F266E6364008452EF /* GetTransactionsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11E59A7E266E6364008452EF /* GetTransactionsInteractor.swift */; };
 		11E59A81266E6EC5008452EF /* GetTransactionsCategoriesInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11E59A80266E6EC5008452EF /* GetTransactionsCategoriesInteractor.swift */; };
@@ -138,6 +139,7 @@
 		11BE022C268BD50A004EFED9 /* TransactionsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsRepository.swift; sourceTree = "<group>"; };
 		11BE022E268BD672004EFED9 /* GetTransactionsFromContainerInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetTransactionsFromContainerInteractor.swift; sourceTree = "<group>"; };
 		11BE0230268E6860004EFED9 /* GetAllTransactionsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetAllTransactionsInteractor.swift; sourceTree = "<group>"; };
+		11BE0232268F6967004EFED9 /* TransactionsSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsSection.swift; sourceTree = "<group>"; };
 		11BF7EEF2641605F00C6D01E /* TransactionsListTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsListTab.swift; sourceTree = "<group>"; };
 		11E59A7E266E6364008452EF /* GetTransactionsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetTransactionsInteractor.swift; sourceTree = "<group>"; };
 		11E59A80266E6EC5008452EF /* GetTransactionsCategoriesInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetTransactionsCategoriesInteractor.swift; sourceTree = "<group>"; };
@@ -212,6 +214,7 @@
 				116914AB264C8F0D00C01B69 /* BottomSheet.swift */,
 				1162FD1D2665277100B21EBC /* WalletRowView.swift */,
 				1162FD1F26652F1100B21EBC /* ContainersListView.swift */,
+				11BE0232268F6967004EFED9 /* TransactionsSection.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -658,6 +661,7 @@
 				11BE022F268BD672004EFED9 /* GetTransactionsFromContainerInteractor.swift in Sources */,
 				115C500626361A7B0008D217 /* Group.swift in Sources */,
 				1145639C26378D170068C58F /* ContainerList.swift in Sources */,
+				11BE0233268F6967004EFED9 /* TransactionsSection.swift in Sources */,
 				11346A0226850BA000335CD3 /* TransactionsContainerRepository.swift in Sources */,
 				115C4FF42634DF330008D217 /* CategoryRow.swift in Sources */,
 				115C50012634E6600008D217 /* DisplayableCategory.swift in Sources */,
