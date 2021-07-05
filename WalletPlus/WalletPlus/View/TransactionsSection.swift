@@ -22,7 +22,7 @@ struct TransactionsSection: View {
             .padding(.horizontal,16)
             .background(Color.white)
             .cornerRadius(12)
-            .shadow(color: /*@START_MENU_TOKEN@*/.black/*@END_MENU_TOKEN@*/.opacity(0.2), radius: 5, x: 0, y: 0)
+            .shadow(color: /*@START_MENU_TOKEN@*/.black/*@END_MENU_TOKEN@*/.opacity(0.1), radius: 4, x: 0, y: 0)
         }
         
         
