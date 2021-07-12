@@ -20,29 +20,37 @@ struct CreateTransactionView: View {
     
     var body: some View {
         NavigationView {
-            List {
-                TextField("Amount", text: $amount)
-                Picker(selection: $selectedContainer, label: Text("Wallet")) {
-                    ForEach(viewModel.transactionsContainer, id: \.self) { container in
-                        Text(container.name).tag(container.name)
+                Form {
+                    Section(header: Text("Transaction Amount")) {
+                        TextField("Amount", text: $amount)
+                    }
+                    
+                    Section(header: Text("Transaction Note")) {
+                        TextField("Note", text: $description)
+                    }
+                    
+                    Picker(selection: $selectedContainer, label: Text("Wallet")) {
+                        ForEach(viewModel.transactionsContainer, id: \.self) { container in
+                            Text(container.name).tag(container.name)
+                        }
+                    }
+                    Picker(selection: $selectedCategory, label: Text("Category")) {
+                        ForEach(viewModel.categories, id: \.self) { category in
+                            if category == viewModel.categories.last {
+                                Text(category.name).tag(category.name)
+                                    .navigationBarItems(trailing: Button(action: {}, label: {
+                                        Text("Button")
+                                    }))
+                            } else {
+                                Text(category.name).tag(category.name)
+                            }
+                            
+                        }
                     }
                 }
-                Picker(selection: $selectedCategory, label: Text("Category")) {
-                    ForEach(viewModel.categories, id: \.self) { category in
-                        Text(category.name).tag(category.name)
-                    }
-                }
-
-                
+//                .listStyle(GroupedListStyle())
+                .navigationTitle("Create Transaction")
             }
-            .padding(0)
-            .listStyle(GroupedListStyle())
-            .navigationTitle("Create Transaction")
-            
-            Button(action: {}, label: {
-                Text("Button")
-            })
-        }
     }
     
 //    var body: some View {

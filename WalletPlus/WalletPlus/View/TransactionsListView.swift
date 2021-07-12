@@ -60,8 +60,6 @@ struct TransactionsListView: View {
                 }
             }
             .onAppear(perform: {
-                UITableView.appearance().backgroundColor = UIColor.clear
-                UITableView.appearance().separatorStyle = .none
                 if container != nil {
                     self.viewModel.selectedContainer = container!
                 }

@@ -44,7 +44,6 @@
 		116913352649FDD900C01B69 /* CreateTransaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116913342649FDD900C01B69 /* CreateTransaction.swift */; };
 		11691337264A005B00C01B69 /* FloatingButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11691336264A005B00C01B69 /* FloatingButton.swift */; };
 		116914AA264BF7ED00C01B69 /* CreateTransactionVIew.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116914A9264BF7ED00C01B69 /* CreateTransactionVIew.swift */; };
-		116914AC264C8F0D00C01B69 /* BottomSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116914AB264C8F0D00C01B69 /* BottomSheet.swift */; };
 		117BC642266FFFD400F8F036 /* TransactionRemoteDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 117BC641266FFFD400F8F036 /* TransactionRemoteDataSource.swift */; };
 		117BFAB126656F86009D4318 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 117BFAB026656F86009D4318 /* GoogleService-Info.plist */; };
 		117BFAB426658EAC009D4318 /* TransactionsContainerRemoteDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 117BFAB326658EAC009D4318 /* TransactionsContainerRemoteDataSource.swift */; };
@@ -133,7 +132,6 @@
 		116913342649FDD900C01B69 /* CreateTransaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateTransaction.swift; sourceTree = "<group>"; };
 		11691336264A005B00C01B69 /* FloatingButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatingButton.swift; sourceTree = "<group>"; };
 		116914A9264BF7ED00C01B69 /* CreateTransactionVIew.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateTransactionVIew.swift; sourceTree = "<group>"; };
-		116914AB264C8F0D00C01B69 /* BottomSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheet.swift; sourceTree = "<group>"; };
 		117BC641266FFFD400F8F036 /* TransactionRemoteDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionRemoteDataSource.swift; sourceTree = "<group>"; };
 		117BFAB026656F86009D4318 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		117BFAB326658EAC009D4318 /* TransactionsContainerRemoteDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsContainerRemoteDataSource.swift; sourceTree = "<group>"; };
@@ -221,7 +219,6 @@
 				11BF7EEF2641605F00C6D01E /* TransactionsListTab.swift */,
 				11691336264A005B00C01B69 /* FloatingButton.swift */,
 				116914A9264BF7ED00C01B69 /* CreateTransactionVIew.swift */,
-				116914AB264C8F0D00C01B69 /* BottomSheet.swift */,
 				1162FD1D2665277100B21EBC /* WalletRowView.swift */,
 				1162FD1F26652F1100B21EBC /* ContainersListView.swift */,
 				11BE0232268F6967004EFED9 /* TransactionsSection.swift */,
@@ -706,7 +703,6 @@
 				11104CA7262F9BD800F94902 /* TransactionContainerViewModel.swift in Sources */,
 				1162FD1E2665277100B21EBC /* WalletRowView.swift in Sources */,
 				11BE024A26951CF4004EFED9 /* CategoryRemoteEntityMapper.swift in Sources */,
-				116914AC264C8F0D00C01B69 /* BottomSheet.swift in Sources */,
 				11BE023D26951398004EFED9 /* Category.swift in Sources */,
 				114BD9D82667C08200C4F9F6 /* TransactionsContainerRemoteEntity.swift in Sources */,
 				11104A66262E5FB600F94902 /* TransactionRow.swift in Sources */,
