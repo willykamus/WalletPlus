@@ -11,36 +11,65 @@ struct CreateTransactionView: View {
     
     @Binding var createTransactionOpened: Bool
     @State var currentContainer: TransactionsContainer?
+    @State var selectedContainer: String = ""
+    @State var selectedCategory: String = ""
     @State var amount: String = ""
     @State var description: String = ""
     @State var presentContainers: Bool = false
     @ObservedObject var viewModel = CreateTransactionViewModel()
     
     var body: some View {
-        ZStack(alignment: Alignment(horizontal: .center, vertical: .center)) {
-            VStack {
-                NavigationLink(
-                    destination: ContainersListView(container: self.$currentContainer, containersPresented: $presentContainers),
-                    isActive: $presentContainers,
-                    label: {
-                        HStack {
-                            Text("Wallet").foregroundColor(.black)
-                            Spacer()
-                            Text(currentContainer?.name ?? "")
-                        }
-                    })
-                TextField("Description", text: self.$description).textFieldStyle(RoundedBorderTextFieldStyle())
-                TextField("Amount", text: self.$amount).textFieldStyle(RoundedBorderTextFieldStyle())
-                Button(action: {
-                    viewModel.save(containerID: currentContainer!.id, containerTitle: currentContainer!.name, category: description, amount: amount, date: Date())
-                    createTransactionOpened.toggle()
-                }, label: {
-                    Text("Save")
-                })
+        NavigationView {
+            List {
+                TextField("Amount", text: $amount)
+                Picker(selection: $selectedContainer, label: Text("Wallet")) {
+                    ForEach(viewModel.transactionsContainer, id: \.self) { container in
+                        Text(container.name).tag(container.name)
+                    }
+                }
+                Picker(selection: $selectedCategory, label: Text("Category")) {
+                    ForEach(viewModel.categories, id: \.self) { category in
+                        Text(category.name).tag(category.name)
+                    }
+                }
+
+                
             }
-            .padding()
+            .padding(0)
+            .listStyle(GroupedListStyle())
+            .navigationTitle("Create Transaction")
+            
+            Button(action: {}, label: {
+                Text("Button")
+            })
         }
     }
+    
+//    var body: some View {
+//        ZStack(alignment: Alignment(horizontal: .center, vertical: .center)) {
+//            VStack {
+//                NavigationLink(
+//                    destination: ContainersListView(container: self.$currentContainer, containersPresented: $presentContainers),
+//                    isActive: $presentContainers,
+//                    label: {
+//                        HStack {
+//                            Text("Wallet").foregroundColor(.black)
+//                            Spacer()
+//                            Text(currentContainer?.name ?? "")
+//                        }
+//                    })
+//                TextField("Description", text: self.$description).textFieldStyle(RoundedBorderTextFieldStyle())
+//                TextField("Amount", text: self.$amount).textFieldStyle(RoundedBorderTextFieldStyle())
+//                Button(action: {
+//                    viewModel.save(containerID: currentContainer!.id, containerTitle: currentContainer!.name, category: description, amount: amount, date: Date())
+//                    createTransactionOpened.toggle()
+//                }, label: {
+//                    Text("Save")
+//                })
+//            }
+//            .padding()
+//        }
+//    }
 }
 
 struct CreateTransactionVIew_Previews: PreviewProvider {

@@ -18,12 +18,12 @@ class TransactionTest: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
     
-    func testCreateTransaction() {
-        let value: Double = 100.0
-        let category: String = "Cash"
-        let income: IncomeTransaction = IncomeTransaction(containerTitle: "Wallet", date: Date(), remoteId: "1", amount: value, category: category)
-        XCTAssertEqual(income.amount, value)
-        XCTAssertEqual(income.category, category)
-    }
+//    func testCreateTransaction() {
+//        let value: Double = 100.0
+//        let category: String = "Cash"
+//        let income: IncomeTransaction = IncomeTransaction(containerTitle: "Wallet", date: Date(), remoteId: "1", amount: value, category: category)
+//        XCTAssertEqual(income.amount, value)
+//        XCTAssertEqual(income.category, category)
+//    }
 
 }
