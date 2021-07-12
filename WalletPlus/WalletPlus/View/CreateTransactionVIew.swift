@@ -29,26 +29,16 @@ struct CreateTransactionView: View {
                         TextField("Note", text: $description)
                     }
                     
-                    Picker(selection: $selectedContainer, label: Text("Wallet")) {
-                        ForEach(viewModel.transactionsContainer, id: \.self) { container in
-                            Text(container.name).tag(container.name)
-                        }
-                    }
-                    Picker(selection: $selectedCategory, label: Text("Category")) {
-                        ForEach(viewModel.categories, id: \.self) { category in
-                            if category == viewModel.categories.last {
-                                Text(category.name).tag(category.name)
-                                    .navigationBarItems(trailing: Button(action: {}, label: {
-                                        Text("Button")
-                                    }))
-                            } else {
-                                Text(category.name).tag(category.name)
+                    NavigationLink(
+                        destination: Text("Destination"),
+                        label: {
+                            HStack {
+                                Text("Navigate")
+                                Spacer()
+                                Text("Navigate")
                             }
-                            
-                        }
-                    }
+                        })
                 }
-//                .listStyle(GroupedListStyle())
                 .navigationTitle("Create Transaction")
             }
     }
