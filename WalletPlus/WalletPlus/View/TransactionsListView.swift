@@ -60,8 +60,6 @@ struct TransactionsListView: View {
                 }
             }
             .onAppear(perform: {
-                UITableView.appearance().backgroundColor = UIColor.clear
-                UITableView.appearance().separatorStyle = .none
                 if container != nil {
                     self.viewModel.selectedContainer = container!
                 }
@@ -70,9 +68,7 @@ struct TransactionsListView: View {
             .sheet(isPresented: self.$createTransaction, onDismiss: {
                 viewModel.initialize()
             }, content: {
-                NavigationView {
-                    CreateTransactionView(createTransactionOpened: self.$createTransaction, currentContainer: self.container)
-                }
+                CreateTransactionView(createTransactionOpened: self.$createTransaction, currentContainer: self.container)
             })
         }
 

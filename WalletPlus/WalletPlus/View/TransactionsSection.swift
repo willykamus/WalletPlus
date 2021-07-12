@@ -24,10 +24,6 @@ struct TransactionsSection: View {
             .cornerRadius(12)
             .shadow(color: /*@START_MENU_TOKEN@*/.black/*@END_MENU_TOKEN@*/.opacity(0.1), radius: 4, x: 0, y: 0)
         }
-        
-        
-
-        
     }
 }
 
