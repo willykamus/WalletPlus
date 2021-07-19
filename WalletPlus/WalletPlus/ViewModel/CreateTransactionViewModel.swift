@@ -8,7 +8,7 @@
 import Foundation
 
 protocol CreateTransactionViewModelListener {
-    func save(containerID: String, containerTitle: String, category: String, amount: String, date: Date)
+    func save(container: TransactionsContainer, category: Category, amount: String, date: Date)
 }
 
 class CreateTransactionViewModel: ObservableObject, CreateTransactionViewModelListener {
@@ -17,9 +17,10 @@ class CreateTransactionViewModel: ObservableObject, CreateTransactionViewModelLi
     @Published var categories: [Category] = []
     @Published var transactionsContainer: [TransactionsContainer] = []
     
-    var transactionInteractor: AddTransactionInteractor = AddTransactionInteractorImpl(dataSource: TransactionRemoteDataSourceImpl())
+    var saveTransactionInteractor: AddTransactionInteractor = AddTransactionInteractorImpl(dataSource: TransactionRemoteDataSourceImpl())
     var getCategoriesInteractor: GetCategoriesInteractor = GetCategoriesInteractorImpl()
     var getTransactionsContainerInteractor: GetTransactionsContainerInteractor = GetTransactionsContainerInteractorImpl()
+
     
     init() {
         getTransactionsContainerInteractor.execute { result in
@@ -40,14 +41,10 @@ class CreateTransactionViewModel: ObservableObject, CreateTransactionViewModelLi
         }
     }
     
-    func save(containerID: String, containerTitle: String, category: String, amount: String, date: Date) {
-        let transaction: Transaction = Transaction(id: UUID.init().uuidString, amount: Double(amount) ?? 0.0, category: category, date: date, containerTitle: containerTitle)
-        transactionInteractor.execute(transaction: transaction, containerID: containerID) { result in
+    func save(container: TransactionsContainer, category: Category, amount: String, date: Date) {
+        let transaction: Transaction = Transaction(id: UUID.init().uuidString, amount: Double(amount) ?? 0.0, category: category.name, date: date, containerTitle: container.name)
+        saveTransactionInteractor.execute(transaction: transaction, containerID: container.id) { result in
             self.transactionSaved = result
         }
     }
-    
-    
-    
-    
 }
