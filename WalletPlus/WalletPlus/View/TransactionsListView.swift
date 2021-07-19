@@ -68,7 +68,7 @@ struct TransactionsListView: View {
             .sheet(isPresented: self.$createTransaction, onDismiss: {
                 viewModel.initialize()
             }, content: {
-                CreateTransactionView(createTransactionOpened: self.$createTransaction, currentContainer: self.container)
+                CreateTransactionView(createTransactionOpened: self.$createTransaction, selectedContainer: self.container)
             })
         }
 

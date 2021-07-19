@@ -7,11 +7,11 @@
 
 import Foundation
 
-protocol AddTransactionInteractor {
+protocol SaveTransactionInteractor {
     func execute(transaction: Transaction, containerID: String, completion: @escaping (Bool) -> Void)
 }
 
-class AddTransactionInteractorImpl: AddTransactionInteractor {
+class SaveTransactionInteractorImpl: SaveTransactionInteractor {
     
     var dataSource: TransactionRemoteDataSource
     
