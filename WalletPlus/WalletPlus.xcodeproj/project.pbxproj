@@ -48,13 +48,13 @@
 		116912ED264947FF00C01B69 /* GetDatesFromTransactionsTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116912EC264947FF00C01B69 /* GetDatesFromTransactionsTest.swift */; };
 		116913352649FDD900C01B69 /* CreateTransaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116913342649FDD900C01B69 /* CreateTransaction.swift */; };
 		11691337264A005B00C01B69 /* FloatingButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11691336264A005B00C01B69 /* FloatingButton.swift */; };
-		116914AA264BF7ED00C01B69 /* CreateTransactionVIew.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116914A9264BF7ED00C01B69 /* CreateTransactionVIew.swift */; };
+		116914AA264BF7ED00C01B69 /* CreateTransactionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116914A9264BF7ED00C01B69 /* CreateTransactionView.swift */; };
 		117BC642266FFFD400F8F036 /* TransactionRemoteDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 117BC641266FFFD400F8F036 /* TransactionRemoteDataSource.swift */; };
 		117BFAB126656F86009D4318 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 117BFAB026656F86009D4318 /* GoogleService-Info.plist */; };
 		117BFAB426658EAC009D4318 /* TransactionsContainerRemoteDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 117BFAB326658EAC009D4318 /* TransactionsContainerRemoteDataSource.swift */; };
 		1188CFFE263A1B6300FD489C /* AmountFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1188CFFD263A1B6300FD489C /* AmountFormatter.swift */; };
 		11B9C48B2671808D00949132 /* CreateTransactionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B9C48A2671808D00949132 /* CreateTransactionViewModel.swift */; };
-		11B9C48D267180BC00949132 /* AddTransactionInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B9C48C267180BC00949132 /* AddTransactionInteractor.swift */; };
+		11B9C48D267180BC00949132 /* SaveTransactionInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B9C48C267180BC00949132 /* SaveTransactionInteractor.swift */; };
 		11BE022D268BD50A004EFED9 /* TransactionsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11BE022C268BD50A004EFED9 /* TransactionsRepository.swift */; };
 		11BE022F268BD672004EFED9 /* GetTransactionsFromContainerInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11BE022E268BD672004EFED9 /* GetTransactionsFromContainerInteractor.swift */; };
 		11BE0231268E6861004EFED9 /* GetAllTransactionsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11BE0230268E6860004EFED9 /* GetAllTransactionsInteractor.swift */; };
@@ -141,13 +141,13 @@
 		116912EC264947FF00C01B69 /* GetDatesFromTransactionsTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetDatesFromTransactionsTest.swift; sourceTree = "<group>"; };
 		116913342649FDD900C01B69 /* CreateTransaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateTransaction.swift; sourceTree = "<group>"; };
 		11691336264A005B00C01B69 /* FloatingButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatingButton.swift; sourceTree = "<group>"; };
-		116914A9264BF7ED00C01B69 /* CreateTransactionVIew.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateTransactionVIew.swift; sourceTree = "<group>"; };
+		116914A9264BF7ED00C01B69 /* CreateTransactionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateTransactionView.swift; sourceTree = "<group>"; };
 		117BC641266FFFD400F8F036 /* TransactionRemoteDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionRemoteDataSource.swift; sourceTree = "<group>"; };
 		117BFAB026656F86009D4318 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		117BFAB326658EAC009D4318 /* TransactionsContainerRemoteDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsContainerRemoteDataSource.swift; sourceTree = "<group>"; };
 		1188CFFD263A1B6300FD489C /* AmountFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AmountFormatter.swift; sourceTree = "<group>"; };
 		11B9C48A2671808D00949132 /* CreateTransactionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateTransactionViewModel.swift; sourceTree = "<group>"; };
-		11B9C48C267180BC00949132 /* AddTransactionInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTransactionInteractor.swift; sourceTree = "<group>"; };
+		11B9C48C267180BC00949132 /* SaveTransactionInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveTransactionInteractor.swift; sourceTree = "<group>"; };
 		11BE022C268BD50A004EFED9 /* TransactionsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsRepository.swift; sourceTree = "<group>"; };
 		11BE022E268BD672004EFED9 /* GetTransactionsFromContainerInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetTransactionsFromContainerInteractor.swift; sourceTree = "<group>"; };
 		11BE0230268E6860004EFED9 /* GetAllTransactionsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetAllTransactionsInteractor.swift; sourceTree = "<group>"; };
@@ -228,7 +228,7 @@
 				1145639B26378D170068C58F /* ContainerList.swift */,
 				11BF7EEF2641605F00C6D01E /* TransactionsListTab.swift */,
 				11691336264A005B00C01B69 /* FloatingButton.swift */,
-				116914A9264BF7ED00C01B69 /* CreateTransactionVIew.swift */,
+				116914A9264BF7ED00C01B69 /* CreateTransactionView.swift */,
 				1162FD1D2665277100B21EBC /* WalletRowView.swift */,
 				1162FD1F26652F1100B21EBC /* ContainersListView.swift */,
 				11BE0232268F6967004EFED9 /* TransactionsSection.swift */,
@@ -381,7 +381,7 @@
 				11E59A82266E8698008452EF /* GetIncomeTransactionsFromContainerInteractor.swift */,
 				11E59A84266E8876008452EF /* GetExpenseTransactionsFromContainerInteractor.swift */,
 				11E59A86266E9BD2008452EF /* AmountFormatterInteractor.swift */,
-				11B9C48C267180BC00949132 /* AddTransactionInteractor.swift */,
+				11B9C48C267180BC00949132 /* SaveTransactionInteractor.swift */,
 				11BE022E268BD672004EFED9 /* GetTransactionsFromContainerInteractor.swift */,
 				11BE0230268E6860004EFED9 /* GetAllTransactionsInteractor.swift */,
 				11BE024F2695217C004EFED9 /* GetCategoriesInteractor.swift */,
@@ -706,12 +706,12 @@
 				115C4FF42634DF330008D217 /* CategoryRow.swift in Sources */,
 				115C50012634E6600008D217 /* DisplayableCategory.swift in Sources */,
 				11470005269CF37200C9CE74 /* CategoriesListViewModel.swift in Sources */,
-				11B9C48D267180BC00949132 /* AddTransactionInteractor.swift in Sources */,
+				11B9C48D267180BC00949132 /* SaveTransactionInteractor.swift in Sources */,
 				1136D550262E4A6900CDB4E7 /* ContentView.swift in Sources */,
 				116913352649FDD900C01B69 /* CreateTransaction.swift in Sources */,
 				11BE022D268BD50A004EFED9 /* TransactionsRepository.swift in Sources */,
 				117BC642266FFFD400F8F036 /* TransactionRemoteDataSource.swift in Sources */,
-				116914AA264BF7ED00C01B69 /* CreateTransactionVIew.swift in Sources */,
+				116914AA264BF7ED00C01B69 /* CreateTransactionView.swift in Sources */,
 				11BF7EF02641605F00C6D01E /* TransactionsListTab.swift in Sources */,
 				1136D54E262E4A6900CDB4E7 /* WalletPlusApp.swift in Sources */,
 				11E59A83266E8698008452EF /* GetIncomeTransactionsFromContainerInteractor.swift in Sources */,

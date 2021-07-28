@@ -16,8 +16,9 @@ class CreateTransactionViewModel: ObservableObject, CreateTransactionViewModelLi
     @Published var transactionSaved: Bool = false
     @Published var categories: [Category] = []
     @Published var transactionsContainer: [TransactionsContainer] = []
+    @Published var allInputsValidated: Bool = false
     
-    var saveTransactionInteractor: AddTransactionInteractor = AddTransactionInteractorImpl(dataSource: TransactionRemoteDataSourceImpl())
+    var saveTransactionInteractor: SaveTransactionInteractor = SaveTransactionInteractorImpl(dataSource: TransactionRemoteDataSourceImpl())
     var getCategoriesInteractor: GetCategoriesInteractor = GetCategoriesInteractorImpl()
     var getTransactionsContainerInteractor: GetTransactionsContainerInteractor = GetTransactionsContainerInteractorImpl()
 
@@ -38,6 +39,14 @@ class CreateTransactionViewModel: ObservableObject, CreateTransactionViewModelLi
             case .failure(let error):
                 print(error.localizedDescription)
             }
+        }
+    }
+    
+    func validateInputData(container: TransactionsContainer?, category: Category?, amount: String?) {
+        if container != nil && category != nil && !(amount?.isEmpty ?? true) {
+            self.allInputsValidated = true
+        } else {
+            self.allInputsValidated = false
         }
     }
     

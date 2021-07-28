@@ -10,7 +10,6 @@ import SwiftUI
 struct CreateTransactionView: View {
     
     @Binding var createTransactionOpened: Bool
-    @State var currentContainer: TransactionsContainer?
     @State var selectedContainer: TransactionsContainer?
     @State var selectedCategory: Category?
     @State var amount: String = ""
@@ -23,7 +22,9 @@ struct CreateTransactionView: View {
         NavigationView {
                 Form {
                     Section(header: Text("Transaction Amount")) {
-                        TextField("Amount", text: $amount)
+                        TextField("Amount", text: $amount).onChange(of: self.amount, perform: { value in
+                            self.viewModel.validateInputData(container: self.selectedContainer, category: self.selectedCategory, amount: value)
+                        })
                     }
                     
                     Section(header: Text("Wallet")) {
@@ -34,11 +35,7 @@ struct CreateTransactionView: View {
                                 HStack {
                                     Text("Wallet")
                                     Spacer()
-                                    if currentContainer != nil {
-                                        Text(self.currentContainer?.name ?? "").foregroundColor(.gray)
-                                    } else {
-                                        Text(self.selectedContainer?.name ?? "").foregroundColor(.gray)
-                                    }
+                                    Text(self.selectedContainer?.name ?? "").foregroundColor(.gray)
                                 }
                             })
                     }
@@ -62,13 +59,17 @@ struct CreateTransactionView: View {
                     }
                     
                     Button(action: {
-                        print("Hello world")
+                        self.viewModel.save(container: self.selectedContainer!, category: self.selectedCategory!, amount: self.amount, date: Date())
                     }, label: {
                         Text("Save")
                     })
+                    .onAppear(perform: {
+                        self.viewModel.validateInputData(container: self.selectedContainer, category: self.selectedCategory, amount: self.amount)
+                    })
+                    .disabled(self.viewModel.allInputsValidated == false)
                 }
                 .navigationTitle("Create Transaction")
-            }
+        }
     }
 }
 
