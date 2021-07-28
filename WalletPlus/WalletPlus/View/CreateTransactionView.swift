@@ -29,9 +29,7 @@ struct CreateTransactionView: View {
                     
                     Section(header: Text("Wallet")) {
                         NavigationLink(
-                            destination: AvailableContainersListView(selectedContainer: self.$selectedContainer, containerListPresented: self.$containersPresented).onChange(of: self.selectedCategory, perform: { value in
-                                self.viewModel.validateInputData(container: self.selectedContainer, category: self.selectedCategory, amount: self.amount)
-                            }),
+                            destination: AvailableContainersListView(selectedContainer: self.$selectedContainer, containerListPresented: self.$containersPresented),
                             isActive: self.$containersPresented,
                             label: {
                                 HStack {
@@ -44,9 +42,7 @@ struct CreateTransactionView: View {
                     
                     Section(header: Text("Category")) {
                         NavigationLink(
-                            destination: CategoriesListView(selectedCategory: self.$selectedCategory, categoriesPresented: self.$categoriesPresented).navigationBarTitleDisplayMode(.inline).onChange(of: self.selectedCategory, perform: { value in
-                                self.viewModel.validateInputData(container: self.selectedContainer, category: self.selectedCategory, amount: self.amount)
-                            }),
+                            destination: CategoriesListView(selectedCategory: self.$selectedCategory, categoriesPresented: self.$categoriesPresented).navigationBarTitleDisplayMode(.inline),
                             isActive: self.$categoriesPresented,
                             label: {
                                 HStack {
@@ -66,10 +62,14 @@ struct CreateTransactionView: View {
                         self.viewModel.save(container: self.selectedContainer!, category: self.selectedCategory!, amount: self.amount, date: Date())
                     }, label: {
                         Text("Save")
-                    }).disabled(self.viewModel.allInputsValidated == false)
+                    })
+                    .onAppear(perform: {
+                        self.viewModel.validateInputData(container: self.selectedContainer, category: self.selectedCategory, amount: self.amount)
+                    })
+                    .disabled(self.viewModel.allInputsValidated == false)
                 }
                 .navigationTitle("Create Transaction")
-            }
+        }
     }
 }
 
