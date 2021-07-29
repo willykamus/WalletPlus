@@ -16,6 +16,7 @@ struct CreateTransactionView: View {
     @State var description: String = ""
     @State var containersPresented: Bool = false
     @State var categoriesPresented: Bool = false
+    @State var selectedDate: Date = Date()
     @ObservedObject var viewModel = CreateTransactionViewModel()
     
     var body: some View {
@@ -25,6 +26,11 @@ struct CreateTransactionView: View {
                         TextField("Amount", text: $amount).onChange(of: self.amount, perform: { value in
                             self.viewModel.validateInputData(container: self.selectedContainer, category: self.selectedCategory, amount: value)
                         })
+                    }
+                    
+                    Section(header: Text("Date")) {
+                        DatePicker("Date", selection: self.$selectedDate, displayedComponents: .date)
+                            .datePickerStyle(DefaultDatePickerStyle())
                     }
                     
                     Section(header: Text("Wallet")) {
@@ -59,7 +65,7 @@ struct CreateTransactionView: View {
                     }
                     
                     Button(action: {
-                        self.viewModel.save(container: self.selectedContainer!, category: self.selectedCategory!, amount: self.amount, date: Date())
+                        self.viewModel.save(container: self.selectedContainer!, category: self.selectedCategory!, amount: self.amount, date: self.selectedDate)
                     }, label: {
                         Text("Save")
                     })
@@ -75,6 +81,6 @@ struct CreateTransactionView: View {
 
 struct CreateTransactionVIew_Previews: PreviewProvider {
     static var previews: some View {
-        CreateTransactionView(createTransactionOpened: .constant(true))
+        CreateTransactionView(createTransactionOpened: .constant(true), selectedContainer: nil)
     }
 }
