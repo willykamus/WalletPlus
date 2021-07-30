@@ -8,7 +8,7 @@
 import Foundation
 
 protocol CreateTransactionViewModelListener {
-    func save(container: TransactionsContainer, category: Category, amount: String, date: Date)
+    func save(container: TransactionsContainer, category: Category, amount: String, date: Date, completed: @escaping (Bool) -> Void)
 }
 
 class CreateTransactionViewModel: ObservableObject, CreateTransactionViewModelListener {
@@ -50,10 +50,10 @@ class CreateTransactionViewModel: ObservableObject, CreateTransactionViewModelLi
         }
     }
     
-    func save(container: TransactionsContainer, category: Category, amount: String, date: Date) {
+    func save(container: TransactionsContainer, category: Category, amount: String, date: Date, completed: @escaping (Bool) -> Void) {
         let transaction: Transaction = Transaction(id: UUID.init().uuidString, amount: Double(amount) ?? 0.0, category: category.name, date: date, containerTitle: container.name)
         saveTransactionInteractor.execute(transaction: transaction, containerID: container.id) { result in
-            self.transactionSaved = result
+            completed(result)
         }
     }
 }

@@ -65,7 +65,9 @@ struct CreateTransactionView: View {
                     }
                     
                     Button(action: {
-                        self.viewModel.save(container: self.selectedContainer!, category: self.selectedCategory!, amount: self.amount, date: self.selectedDate)
+                        self.viewModel.save(container: self.selectedContainer!, category: self.selectedCategory!, amount: self.amount, date: self.selectedDate, completed: { result in
+                            self.createTransactionOpened = !result
+                        })
                     }, label: {
                         Text("Save")
                     })
