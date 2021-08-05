@@ -11,11 +11,13 @@ struct FloatingButton: View {
 
     var body: some View {
         VStack {
-            Text("+ Create")
-                .foregroundColor(Color.white)
-                .padding(.horizontal,12)
-                .padding(.vertical, 6)
+            Label(
+                title: { Text("Create") },
+                icon: { Image(systemName: "plus.circle") })
         }
+        .foregroundColor(Color.white)
+        .padding(.horizontal,12)
+        .padding(.vertical, 6)
         .background(Color.blue)
         .cornerRadius(12)
         .shadow(color: .black.opacity(0.3), radius: 2, x: 2, y: 2)

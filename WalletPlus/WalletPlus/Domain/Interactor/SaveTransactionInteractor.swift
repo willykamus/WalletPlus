@@ -8,7 +8,7 @@
 import Foundation
 
 protocol SaveTransactionInteractor {
-    func execute(transaction: Transaction, containerID: String, completion: @escaping (Bool) -> Void)
+    func execute(transaction: Transaction, in container: TransactionsContainer, completion: @escaping (Bool) -> Void)
 }
 
 class SaveTransactionInteractorImpl: SaveTransactionInteractor {
@@ -19,11 +19,11 @@ class SaveTransactionInteractorImpl: SaveTransactionInteractor {
         self.dataSource = dataSource
     }
     
-    func execute(transaction: Transaction, containerID: String, completion: @escaping (Bool) -> Void) {
+    func execute(transaction: Transaction, in container: TransactionsContainer, completion: @escaping (Bool) -> Void) {
         
         let entity = TransactionRemoteEntityMapper().toRemoteEntity(transaction: transaction)
         
-        dataSource.add(transaction: entity, to: containerID) { result in
+        dataSource.add(transaction: entity, to: container) { result in
             completion(result)
         }
     }

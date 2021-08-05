@@ -14,6 +14,6 @@ protocol CreateTransaction {
 class CreateContainerInteractor: CreateTransaction {
     func createTransaction(amount: Double, category: String, date: Date?, container: TransactionsContainer) -> Transaction {
         let date: Date = date ?? Date()
-        return Transaction(id: UUID().uuidString, amount: amount, category: "", date: date, containerTitle: container.name)
+        return Transaction(id: UUID().uuidString, amount: amount, category: "", date: date, containerId: container.id)
     }
 }
