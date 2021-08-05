@@ -29,6 +29,6 @@ struct TransactionsSection: View {
 
 struct TransactionsSection_Previews: PreviewProvider {
     static var previews: some View {
-        TransactionsSection(content: TransactionListSection(date: "10-10-2000", transactions: [Transaction(id: "1", amount: 100.0, category: "None", date: Date(), containerTitle: "Cash"), Transaction(id: "1", amount: 100.0, category: "None", date: Date(), containerTitle: "Cash")])).previewLayout(.sizeThatFits)
+        TransactionsSection(content: TransactionListSection(date: "10-10-2000", transactions: [Transaction(id: "1", amount: 100.0, category: "None", date: Date(), containerId: "123"), Transaction(id: "1", amount: 100.0, category: "None", date: Date(), containerId: "123")])).previewLayout(.sizeThatFits)
     }
 }

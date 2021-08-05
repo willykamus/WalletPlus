@@ -16,6 +16,7 @@ class TransactionsViewModel: ObservableObject {
     var getTransactionsFromContainerInteractor: GetTransactionsFromContainerInteractor = GetTransactionsFromContainerInteractorImpl()
     var getTransactionsInteractor: GetTransactionsInteractor = GetTransactionsInteractorImpl()
     var getAllTransactionsInteractor: GetAllTransactionsInteractor = GetAllTransactionsInteractorImpl()
+    var deleteTransactionInteractor: DeleteTransactionInteractor = DeleteTransactionInteractorImpl()
 
     @Published var transactionListSection: [TransactionListSection] = []
     
@@ -38,6 +39,36 @@ class TransactionsViewModel: ObservableObject {
                     print(error.localizedDescription)
                 }
             }
+        }
+    }
+    
+    func delete(transaction: Transaction, completed: @escaping (Result<Bool, Error>) -> Void) {
+        deleteTransactionInteractor.execute(transaction: transaction) { result in
+            switch result {
+            case .success(_):
+                if self.selectedContainer != nil {
+                    self.getTransactionsFromContainerInteractor.execute(for: self.selectedContainer!) { result in
+                        switch result {
+                        case .success(let transactions):
+                            self.createTransactionSections(transactions: transactions)
+                        case .failure(_):
+                            return
+                        }
+                    }
+                } else {
+                    self.getAllTransactionsInteractor.execute { result in
+                        switch result {
+                        case .success(let transactions):
+                            self.createTransactionSections(transactions: transactions)
+                        case .failure(let error):
+                            print(error.localizedDescription)
+                        }
+                    }
+                }
+            case .failure(_):
+                break
+            }
+            completed(result)
         }
     }
 

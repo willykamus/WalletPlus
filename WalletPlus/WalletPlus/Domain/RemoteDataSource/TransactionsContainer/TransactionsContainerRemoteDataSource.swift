@@ -19,14 +19,14 @@ class TransactionsContainerRemoteDataSourceImpl: TransactionsContainerRemoteData
     let dataBase = Firestore.firestore()
     let dispatchGroup = DispatchGroup()
     
-    private func getTransactions(from container: DocumentSnapshot, containerTitle: String, completed: @escaping (Result<[Transaction], Error>) -> Void) {
-        container.reference.collection("transactions").getDocuments { querySnapshot, error in
+    private func getTransactions(from document: DocumentSnapshot, container: TransactionsContainer, completed: @escaping (Result<[Transaction], Error>) -> Void) {
+        document.reference.collection("transactions").getDocuments { querySnapshot, error in
             if let query = querySnapshot {
                 var transactions: [Transaction] = []
                 do {
                     for transaction in query.documents {
                         let entity = try transaction.data(as: TransactionRemoteEntity.self)
-                        transactions.append(TransactionRemoteEntityMapper().toTransaction(remoteEntity: entity!, transactionContainer: containerTitle))
+                        transactions.append(TransactionRemoteEntityMapper().toTransaction(remoteEntity: entity!))
                     }
                     completed(.success(transactions))
                 } catch {
@@ -45,7 +45,7 @@ class TransactionsContainerRemoteDataSourceImpl: TransactionsContainerRemoteData
                         self.dispatchGroup.enter()
                         let remoteEntity = try document.data(as: TransactionsContainerRemoteEntity.self)
                         var container = TransactionsContainerRemoteEntityMapper().toTransactionContainer(remoteEntity: remoteEntity!)
-                        self.getTransactions(from: document, containerTitle: remoteEntity!.name) { result in
+                        self.getTransactions(from: document, container: container) { result in
                             switch result {
                             case .success(let transactions):
                                 container.transactions = transactions

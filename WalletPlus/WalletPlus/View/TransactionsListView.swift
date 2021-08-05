@@ -30,13 +30,27 @@ struct TransactionsListView: View {
     
     var body: some View {
             ZStack {
-                ScrollView(.vertical, showsIndicators: false, content: {
-                    VStack(spacing: 20) {
-                        ForEach(viewModel.transactionListSection) { section in
-                            TransactionsSection(content: section).padding(.horizontal, 16)
+                List {
+                    ForEach(viewModel.transactionListSection) { section in
+                        Section(header: Text(section.date)) {
+                            ForEach(section.transactions) { transaction in
+                                TransactionRow(transaction: transaction).contextMenu(menuItems: {
+                                    Button(action: {
+                                        self.viewModel.delete(transaction: transaction) { result in
+                                            print("Deleted")
+                                        }
+                                    }, label: {
+                                        Label(
+                                            title: { Text("Delete") },
+                                            icon: { Image(systemName: "trash") }
+)
+                                    })
+                                })
+                            }
                         }
-                    }.padding(.vertical, 16)
-                })
+                    }
+                }
+                .listStyle(PlainListStyle())
                 .navigationBarTitle(Text("Transactions"))
                 .toolbar(content: {
                         ToolbarItem(placement: .navigationBarTrailing) {

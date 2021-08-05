@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		11019E6126B84CE3007AAD1B /* DeleteTransactionInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11019E6026B84CE3007AAD1B /* DeleteTransactionInteractor.swift */; };
 		11104A58262E4F1400F94902 /* TransactionsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11104A57262E4F1400F94902 /* TransactionsListView.swift */; };
 		11104A61262E5F5000F94902 /* TransactionsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11104A60262E5F5000F94902 /* TransactionsViewModel.swift */; };
 		11104A66262E5FB600F94902 /* TransactionRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11104A65262E5FB600F94902 /* TransactionRow.swift */; };
@@ -94,6 +95,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		11019E6026B84CE3007AAD1B /* DeleteTransactionInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteTransactionInteractor.swift; sourceTree = "<group>"; };
 		11104A57262E4F1400F94902 /* TransactionsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsListView.swift; sourceTree = "<group>"; };
 		11104A60262E5F5000F94902 /* TransactionsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsViewModel.swift; sourceTree = "<group>"; };
 		11104A65262E5FB600F94902 /* TransactionRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionRow.swift; sourceTree = "<group>"; };
@@ -387,6 +389,7 @@
 				11BE024F2695217C004EFED9 /* GetCategoriesInteractor.swift */,
 				1147FFFE269CF20F00C9CE74 /* GetIncomeCategories.swift */,
 				11470000269CF26B00C9CE74 /* GetExpenseCategories.swift */,
+				11019E6026B84CE3007AAD1B /* DeleteTransactionInteractor.swift */,
 			);
 			path = Interactor;
 			sourceTree = "<group>";
@@ -710,6 +713,7 @@
 				1136D550262E4A6900CDB4E7 /* ContentView.swift in Sources */,
 				116913352649FDD900C01B69 /* CreateTransaction.swift in Sources */,
 				11BE022D268BD50A004EFED9 /* TransactionsRepository.swift in Sources */,
+				11019E6126B84CE3007AAD1B /* DeleteTransactionInteractor.swift in Sources */,
 				117BC642266FFFD400F8F036 /* TransactionRemoteDataSource.swift in Sources */,
 				116914AA264BF7ED00C01B69 /* CreateTransactionView.swift in Sources */,
 				11BF7EF02641605F00C6D01E /* TransactionsListTab.swift in Sources */,

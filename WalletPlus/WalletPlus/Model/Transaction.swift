@@ -12,5 +12,5 @@ struct Transaction: Identifiable, Hashable {
     var amount: Double
     var category: String
     var date: Date
-    var containerTitle: String
+    var containerId: String
 }

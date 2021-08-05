@@ -13,11 +13,13 @@ struct TransactionRemoteEntity: Codable {
     var amount: Double
     var category: String
     var date: Date
+    var containerId: String?
     
     enum CodingKeys: String, CodingKey {
         case id
         case category
         case amount
         case date
+        case containerId
     }
 }
