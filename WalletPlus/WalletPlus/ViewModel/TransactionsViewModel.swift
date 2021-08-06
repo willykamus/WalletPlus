@@ -19,13 +19,17 @@ class TransactionsViewModel: ObservableObject {
     var deleteTransactionInteractor: DeleteTransactionInteractor = DeleteTransactionInteractorImpl()
 
     @Published var transactionListSection: [TransactionListSection] = []
+    @Published var displayNoTransactionMessage: Bool = false
     
     func initialize() {
         if selectedContainer != nil {
             getTransactionsFromContainerInteractor.execute(for: selectedContainer!) { result in
                 switch result {
                 case .success(let transactions):
-                    self.createTransactionSections(transactions: transactions)
+                    if self.isTransactionsAvailable(transactions) {
+                        self.displayNoTransactionMessage = false
+                        self.createTransactionSections(transactions: transactions)
+                    }
                 case .failure(let error):
                     return
                 }
@@ -34,7 +38,10 @@ class TransactionsViewModel: ObservableObject {
             getAllTransactionsInteractor.execute { result in
                 switch result {
                 case .success(let transactions):
-                    self.createTransactionSections(transactions: transactions)
+                    if self.isTransactionsAvailable(transactions) {
+                        self.displayNoTransactionMessage = false
+                        self.createTransactionSections(transactions: transactions)
+                    }
                 case .failure(let error):
                     print(error.localizedDescription)
                 }
@@ -50,7 +57,10 @@ class TransactionsViewModel: ObservableObject {
                     self.getTransactionsFromContainerInteractor.execute(for: self.selectedContainer!) { result in
                         switch result {
                         case .success(let transactions):
-                            self.createTransactionSections(transactions: transactions)
+                            if self.isTransactionsAvailable(transactions) {
+                                self.displayNoTransactionMessage = false
+                                self.createTransactionSections(transactions: transactions)
+                            }
                         case .failure(_):
                             return
                         }
@@ -59,7 +69,10 @@ class TransactionsViewModel: ObservableObject {
                     self.getAllTransactionsInteractor.execute { result in
                         switch result {
                         case .success(let transactions):
-                            self.createTransactionSections(transactions: transactions)
+                            if self.isTransactionsAvailable(transactions) {
+                                self.displayNoTransactionMessage = false
+                                self.createTransactionSections(transactions: transactions)
+                            }
                         case .failure(let error):
                             print(error.localizedDescription)
                         }
@@ -70,6 +83,14 @@ class TransactionsViewModel: ObservableObject {
             }
             completed(result)
         }
+    }
+    
+    private func isTransactionsAvailable(_ transactions: [Transaction]) -> Bool {
+        if transactions.count > 0 {
+            return true
+        }
+        self.displayNoTransactionMessage = true
+        return false
     }
 
     private func createTransactionSections(transactions: [Transaction]) {

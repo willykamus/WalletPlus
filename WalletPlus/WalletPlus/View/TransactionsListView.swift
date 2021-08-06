@@ -30,33 +30,36 @@ struct TransactionsListView: View {
     
     var body: some View {
             ZStack {
-                List {
-                    ForEach(viewModel.transactionListSection) { section in
-                        Section(header: Text(section.date)) {
-                            ForEach(section.transactions) { transaction in
-                                TransactionRow(transaction: transaction).contextMenu(menuItems: {
-                                    Button(action: {
-                                        self.viewModel.delete(transaction: transaction) { result in
-                                            print("Deleted")
-                                        }
-                                    }, label: {
-                                        Label(
-                                            title: { Text("Delete") },
-                                            icon: { Image(systemName: "trash") }
-)
+                if viewModel.displayNoTransactionMessage {
+                    Text("No transactions")
+                } else {
+                    List {
+                        ForEach(viewModel.transactionListSection) { section in
+                            Section(header: Text(section.date)) {
+                                ForEach(section.transactions) { transaction in
+                                    TransactionRow(transaction: transaction).contextMenu(menuItems: {
+                                        Button(action: {
+                                            self.viewModel.delete(transaction: transaction) { result in
+                                                print("Deleted")
+                                            }
+                                        }, label: {
+                                            Label(
+                                                title: { Text("Delete") },
+                                                icon: { Image(systemName: "trash") })
+                                        })
                                     })
-                                })
+                                }
                             }
                         }
                     }
+                    .listStyle(PlainListStyle())
+                    .navigationBarTitle(Text("Transactions"))
+                    .toolbar(content: {
+                            ToolbarItem(placement: .navigationBarTrailing) {
+                                self.trailingButton
+                            }
+                    })
                 }
-                .listStyle(PlainListStyle())
-                .navigationBarTitle(Text("Transactions"))
-                .toolbar(content: {
-                        ToolbarItem(placement: .navigationBarTrailing) {
-                            self.trailingButton
-                        }
-                })
                 
                 VStack {
                     Spacer()
