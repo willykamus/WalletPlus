@@ -24,6 +24,9 @@ struct ContainerList: View {
                         })
                 
             }
+            .onAppear(perform: {
+                viewModel.getTransactionsContainer()
+            })
             .navigationBarTitle(viewModel.total)
             .navigationBarTitleDisplayMode(.inline)
         }
