@@ -24,6 +24,7 @@ struct ContainerList: View {
                         })
                 
             }
+            .listRowInsets(EdgeInsets())
             .onAppear(perform: {
                 viewModel.getTransactionsContainer()
             })

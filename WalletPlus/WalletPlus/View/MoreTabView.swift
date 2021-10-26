@@ -8,8 +8,24 @@
 import SwiftUI
 
 struct MoreTabView: View {
+    
+    @State var displayCategories: Bool = false
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        NavigationView {
+            NavigationLink(
+                destination: CategoriesListView(selectedCategory: Binding.constant(nil), categoriesPresented: self.$displayCategories)
+                    .toolbar(content: {
+                        ToolbarItem(placement: .navigationBarTrailing) {
+                            Image(systemName: "plus")
+                        }
+                    }),
+                isActive: self.$displayCategories,
+                label: {
+                    Text("Categories")
+                })
+                .navigationBarTitle(Text("More"), displayMode: .inline)
+        }
     }
 }
 

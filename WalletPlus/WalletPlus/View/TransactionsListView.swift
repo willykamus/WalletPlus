@@ -52,7 +52,7 @@ struct TransactionsListView: View {
                             }
                         }
                     }
-                    .listStyle(PlainListStyle())
+                    .listRowInsets(EdgeInsets())
                     .navigationBarTitle(Text("Transactions"))
                     .toolbar(content: {
                             ToolbarItem(placement: .navigationBarTrailing) {

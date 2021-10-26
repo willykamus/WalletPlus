@@ -34,7 +34,7 @@ struct CategoriesListView: View {
                     }, label: {
                         Text(category.name)
                     })
-                }
+                }.listStyle(PlainListStyle())
             } else {
                 List(viewModel.expenseCategories, id: \.id) { category in
                     Button(action: {
@@ -43,7 +43,7 @@ struct CategoriesListView: View {
                     }, label: {
                         Text(category.name)
                     })
-                }
+                }.listStyle(PlainListStyle())
             }
         }.padding(.top, 16)
     }
