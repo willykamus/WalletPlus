@@ -40,6 +40,7 @@
 		114BD9DA2667C0AE00C4F9F6 /* TransactionRemoteEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 114BD9D92667C0AE00C4F9F6 /* TransactionRemoteEntity.swift */; };
 		114BD9DC2667C0C200C4F9F6 /* TransactionRemoteEntityMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 114BD9DB2667C0C200C4F9F6 /* TransactionRemoteEntityMapper.swift */; };
 		114BD9EF2669647300C4F9F6 /* GetTransactionsContainerInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 114BD9EE2669647300C4F9F6 /* GetTransactionsContainerInteractor.swift */; };
+		1155EE6F26E29B2F00A72AC3 /* MoreTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1155EE6E26E29B2F00A72AC3 /* MoreTabView.swift */; };
 		115C4FF42634DF330008D217 /* CategoryRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 115C4FF32634DF330008D217 /* CategoryRow.swift */; };
 		115C50012634E6600008D217 /* DisplayableCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 115C50002634E6600008D217 /* DisplayableCategory.swift */; };
 		115C500C26361AB30008D217 /* GroupTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 115C500B26361AB30008D217 /* GroupTest.swift */; };
@@ -134,6 +135,7 @@
 		114BD9D92667C0AE00C4F9F6 /* TransactionRemoteEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionRemoteEntity.swift; sourceTree = "<group>"; };
 		114BD9DB2667C0C200C4F9F6 /* TransactionRemoteEntityMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionRemoteEntityMapper.swift; sourceTree = "<group>"; };
 		114BD9EE2669647300C4F9F6 /* GetTransactionsContainerInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetTransactionsContainerInteractor.swift; sourceTree = "<group>"; };
+		1155EE6E26E29B2F00A72AC3 /* MoreTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreTabView.swift; sourceTree = "<group>"; };
 		115C4FF32634DF330008D217 /* CategoryRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryRow.swift; sourceTree = "<group>"; };
 		115C50002634E6600008D217 /* DisplayableCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayableCategory.swift; sourceTree = "<group>"; };
 		115C500B26361AB30008D217 /* GroupTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupTest.swift; sourceTree = "<group>"; };
@@ -236,6 +238,7 @@
 				11BE0232268F6967004EFED9 /* TransactionsSection.swift */,
 				11470002269CF35B00C9CE74 /* CategoriesListView.swift */,
 				11470006269D132E00C9CE74 /* AvailableContainersListView.swift */,
+				1155EE6E26E29B2F00A72AC3 /* MoreTabView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -722,6 +725,7 @@
 				11B9C48B2671808D00949132 /* CreateTransactionViewModel.swift in Sources */,
 				117BFAB426658EAC009D4318 /* TransactionsContainerRemoteDataSource.swift in Sources */,
 				1136D585262E4AE900CDB4E7 /* Transaction.swift in Sources */,
+				1155EE6F26E29B2F00A72AC3 /* MoreTabView.swift in Sources */,
 				11691337264A005B00C01B69 /* FloatingButton.swift in Sources */,
 				11104CA7262F9BD800F94902 /* TransactionContainerViewModel.swift in Sources */,
 				1162FD1E2665277100B21EBC /* WalletRowView.swift in Sources */,

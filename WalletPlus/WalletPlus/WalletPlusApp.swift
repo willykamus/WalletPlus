@@ -26,6 +26,11 @@ struct WalletPlusApp: App {
                         Text("Transactions")
                         Image(systemName: "list.bullet.rectangle")
                     }
+                MoreTabView()
+                    .tabItem {
+                        Text("More")
+                        Image(uiImage: UIImage(systemName: "ellipsis")!.imageWithoutBaseline())
+                    }
             }
         }
     }
