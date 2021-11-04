@@ -15,20 +15,13 @@ class ContainersListViewModel: ObservableObject {
     var getTransactionsContainerInteractor: GetTransactionsContainerInteractor = GetTransactionsContainerInteractorImpl()
     var amountFormatterInteractor: AmountFormatterInteractor = AmountFormatterInteractorImpl()
     
-    init() {
-        self.getTransactionsContainer()
+    func initialize() async {
+        await self.getTransactionsContainer()
     }
     
-    func getTransactionsContainer() {
-        getTransactionsContainerInteractor.execute { result in
-            switch result {
-            case .success(let containers):
-                self.containers = containers
-                self.getTotalFromContainers()
-            case .failure(let error):
-                print(error.localizedDescription)
-            }
-        }
+    func getTransactionsContainer() async {
+        self.containers = await self.getTransactionsContainerInteractor.execute()
+        self.getTotalFromContainers()
     }
     
     func getTotalFromContainers() {

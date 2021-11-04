@@ -8,31 +8,31 @@
 import Foundation
 
 protocol TransactionsRepository {
-    func getTransactions(from container: TransactionsContainer, completed: @escaping (Result<[Transaction], Error>) -> Void)
-    func getAllTransactions(completed: @escaping (Result<[Transaction], Error>) -> Void)
-    func delete(transaction: Transaction, completed: @escaping (Result<Bool,Error>) -> Void)
+    func getTransactions(from container: TransactionsContainer) async -> [Transaction]
+    func getAllTransactions() async -> [Transaction]
+    func delete(transaction: Transaction)
+    func add(transaction: Transaction, to container: TransactionsContainer) async -> Bool
 }
 
 class TransactionsRepositoryImpl: TransactionsRepository {
 
     var remoteDataSource: TransactionRemoteDataSource = TransactionRemoteDataSourceImpl()
     
-    func getAllTransactions(completed: @escaping (Result<[Transaction], Error>) -> Void) {
-        self.remoteDataSource.getAllTransactions { result in
-            completed(result)
-        }
+    func getAllTransactions() async -> [Transaction] {
+        return await remoteDataSource.getAllTransactions()
     }
     
-    func getTransactions(from container: TransactionsContainer, completed: @escaping (Result<[Transaction], Error>) -> Void) {
-        self.remoteDataSource.getTransactions(container: container) { result in
-            completed(result)
-        }
+    func getTransactions(from container: TransactionsContainer) async -> [Transaction] {
+        return await self.remoteDataSource.getTransactions(container: container)
     }
     
-    func delete(transaction: Transaction, completed: @escaping (Result<Bool, Error>) -> Void) {
+    func delete(transaction: Transaction) {
         let remoteEntity: TransactionRemoteEntity = TransactionRemoteEntityMapper().toRemoteEntity(transaction: transaction)
-        self.remoteDataSource.delete(transaction: remoteEntity) { result in
-            completed(result)
-        }
+        self.remoteDataSource.delete(transaction: remoteEntity)
+    }
+    
+    func add(transaction: Transaction, to container: TransactionsContainer) async -> Bool {
+        let entity = TransactionRemoteEntityMapper().toRemoteEntity(transaction: transaction)
+        return await self.remoteDataSource.add(transaction: entity, to: container)
     }
 }

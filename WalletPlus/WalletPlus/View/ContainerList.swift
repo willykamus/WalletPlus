@@ -26,10 +26,13 @@ struct ContainerList: View {
             }
             .listRowInsets(EdgeInsets())
             .onAppear(perform: {
-                viewModel.getTransactionsContainer()
+                Task.init {
+                    await viewModel.initialize()
+                }
             })
             .navigationBarTitle(viewModel.total)
             .navigationBarTitleDisplayMode(.inline)
+            .navigationViewStyle(StackNavigationViewStyle())
         }
     }
 

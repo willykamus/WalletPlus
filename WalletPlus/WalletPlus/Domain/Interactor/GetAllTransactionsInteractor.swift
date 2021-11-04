@@ -8,16 +8,14 @@
 import Foundation
 
 protocol GetAllTransactionsInteractor {
-    func execute(completed: @escaping (Result<[Transaction], Error>) -> Void)
+    func execute() async -> [Transaction]
 }
 
 class GetAllTransactionsInteractorImpl: GetAllTransactionsInteractor {
     
     var repository: TransactionsRepository = TransactionsRepositoryImpl()
     
-    func execute(completed: @escaping (Result<[Transaction], Error>) -> Void) {
-        repository.getAllTransactions { result in
-            completed(result)
-        }
+    func execute() async -> [Transaction] {
+        return await repository.getAllTransactions()
     }
 }

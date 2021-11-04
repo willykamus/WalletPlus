@@ -8,7 +8,7 @@
 import Foundation
 
 protocol CreateTransactionViewModelListener {
-    func save(container: TransactionsContainer, category: Category, amount: String, date: Date, completed: @escaping (Bool) -> Void)
+    func save(container: TransactionsContainer, category: Category, amount: String, date: Date) async -> Bool
 }
 
 class CreateTransactionViewModel: ObservableObject, CreateTransactionViewModelListener {
@@ -18,28 +18,13 @@ class CreateTransactionViewModel: ObservableObject, CreateTransactionViewModelLi
     @Published var transactionsContainer: [TransactionsContainer] = []
     @Published var allInputsValidated: Bool = false
     
-    var saveTransactionInteractor: SaveTransactionInteractor = SaveTransactionInteractorImpl(dataSource: TransactionRemoteDataSourceImpl())
+    var saveTransactionInteractor: SaveTransactionInteractor = SaveTransactionInteractorImpl(repository: TransactionsRepositoryImpl())
     var getCategoriesInteractor: GetCategoriesInteractor = GetCategoriesInteractorImpl()
     var getTransactionsContainerInteractor: GetTransactionsContainerInteractor = GetTransactionsContainerInteractorImpl()
-
     
-    init() {
-        getTransactionsContainerInteractor.execute { result in
-            switch result {
-            case .success(let containers):
-                self.transactionsContainer = containers
-            case .failure(let error):
-                print(error.localizedDescription)
-            }
-        }
-        getCategoriesInteractor.execute { result in
-            switch result {
-            case .success(let categories):
-                self.categories = categories
-            case .failure(let error):
-                print(error.localizedDescription)
-            }
-        }
+    func initialize() async {
+        self.transactionsContainer = await self.getTransactionsContainerInteractor.execute()
+        self.categories = await self.getCategoriesInteractor.execute()
     }
     
     func validateInputData(container: TransactionsContainer?, category: Category?, amount: String?) {
@@ -50,10 +35,8 @@ class CreateTransactionViewModel: ObservableObject, CreateTransactionViewModelLi
         }
     }
     
-    func save(container: TransactionsContainer, category: Category, amount: String, date: Date, completed: @escaping (Bool) -> Void) {
+    func save(container: TransactionsContainer, category: Category, amount: String, date: Date) async -> Bool {
         let transaction: Transaction = Transaction(id: UUID.init().uuidString, amount: Double(amount) ?? 0.0, category: category.name, date: date, containerId: container.id)
-        saveTransactionInteractor.execute(transaction: transaction, in: container) { result in
-            completed(result)
-        }
+        return await self.saveTransactionInteractor.execute(transaction: transaction, in: container)
     }
 }

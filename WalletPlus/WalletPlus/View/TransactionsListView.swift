@@ -39,8 +39,8 @@ struct TransactionsListView: View {
                                 ForEach(section.transactions) { transaction in
                                     TransactionRow(transaction: transaction).contextMenu(menuItems: {
                                         Button(action: {
-                                            self.viewModel.delete(transaction: transaction) { result in
-                                                print("Deleted")
+                                            Task.init {
+                                                await self.viewModel.delete(transaction: transaction)
                                             }
                                         }, label: {
                                             Label(
@@ -80,10 +80,14 @@ struct TransactionsListView: View {
                 if container != nil {
                     self.viewModel.selectedContainer = container!
                 }
-                self.viewModel.initialize()
+                Task.init {
+                    await self.viewModel.initialize()
+                }
             })
             .sheet(isPresented: self.$createTransaction, onDismiss: {
-                viewModel.initialize()
+                Task.init {
+                    await self.viewModel.initialize()
+                }
             }, content: {
                 CreateTransactionView(createTransactionOpened: self.$createTransaction, selectedContainer: self.container)
             })

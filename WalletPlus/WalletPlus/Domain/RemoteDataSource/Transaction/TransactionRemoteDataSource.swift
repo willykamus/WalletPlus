@@ -11,83 +11,55 @@ import FirebaseFirestore
 import FirebaseFirestoreSwift
 
 protocol TransactionRemoteDataSource {
-    func add(transaction: TransactionRemoteEntity, to container: TransactionsContainer, completed: @escaping (Bool) -> Void)
-    func delete(transaction: TransactionRemoteEntity, completed: @escaping (Result<Bool,Error>) -> Void)
-    func getTransactions(container: TransactionsContainer, completed: @escaping (Result<[Transaction], Error>) -> Void)
-    func getAllTransactions(completed: @escaping (Result<[Transaction], Error>) -> Void)
+    func add(transaction: TransactionRemoteEntity, to container: TransactionsContainer) async -> Bool
+    func delete(transaction: TransactionRemoteEntity)
+    func getTransactions(container: TransactionsContainer) async -> [Transaction]
+    func getAllTransactions() async -> [Transaction]
 }
 
 class TransactionRemoteDataSourceImpl: TransactionRemoteDataSource {
-
     
-
     let dataBase = Firestore.firestore()
     private let remoteTransactionsContainer: TransactionsContainerRemoteDataSource = TransactionsContainerRemoteDataSourceImpl()
+    private let currentUserLocalDataSource: CurrentUserLocalDataSource = CurrentUserLocalDataSourceImpl()
     
-    func getAllTransactions(completed: @escaping (Result<[Transaction], Error>) -> Void) {
-        let dispatchGroup = DispatchGroup()
-        remoteTransactionsContainer.getContainers { result in
-            switch result {
-            case .success(let containers):
-                var allTransactions: [Transaction] = []
-                for container in containers {
-                    dispatchGroup.enter()
-                    self.getTransactions(container: container) { result in
-                        switch result {
-                        case .success(let transactions):
-                            allTransactions.append(contentsOf: transactions)
-                        case .failure(let error):
-                            completed(.failure(error))
-                        }
-                        dispatchGroup.leave()
-                    }
-                }
-                dispatchGroup.notify(queue: .main) {
-                    completed(.success(allTransactions))
-                }
-            case .failure(let error):
-                completed(.failure(error))
-            }
+    func getAllTransactions() async -> [Transaction] {
+        let containers = await remoteTransactionsContainer.getContainers()
+        var allTransactions: [Transaction] = []
+        for container in containers {
+            let transactions = await self.getTransactions(container: container)
+            allTransactions.append(contentsOf: transactions)
         }
+        return allTransactions
     }
     
-    func add(transaction: TransactionRemoteEntity, to container: TransactionsContainer, completed: @escaping (Bool) -> Void) {
+    func add(transaction: TransactionRemoteEntity, to container: TransactionsContainer) async ->  Bool {
+        let user = currentUserLocalDataSource.get()
         do {
-            _ = try dataBase.collection("transactionContainers").document(container.id).collection("transactions").addDocument(from: transaction)
-            completed(true)
+            _ = try dataBase.document(user.id).collection("transactionContainers").document(container.id).collection("transactions").addDocument(from: transaction)
+            return true
         } catch {
-            completed(false)
+            return false
         }
     }
     
-    func delete(transaction: TransactionRemoteEntity, completed: @escaping (Result<Bool,Error>) -> Void) {
-        dataBase.collection("transactionContainers").document(transaction.containerId!).collection("transactions").document(transaction.id!).delete(completion: { error in
-            if error == nil {
-                completed(.success(true))
-            } else {
-                completed(.failure(error!))
-            }
-        })
+    func delete(transaction: TransactionRemoteEntity) {
+        let user = currentUserLocalDataSource.get()
+        dataBase.document(user.id).collection("transactionContainers").document(transaction.containerId!).collection("transactions").document(transaction.id!).delete()
     }
     
-    func getTransactions(container: TransactionsContainer, completed: @escaping (Result<[Transaction], Error>) -> Void) {
-        dataBase.collection("transactionContainers").document(container.id).collection("transactions").getDocuments { querySnapshot, error in
-            if let error = error {
-                completed(.failure(error))
+    func getTransactions(container: TransactionsContainer) async -> [Transaction] {
+        let user = currentUserLocalDataSource.get()
+        do {
+            let query = try await dataBase.document(user.id).collection("transactionContainers").document(container.id).collection("transactions").getDocuments()
+            var transactions: [Transaction] = []
+            for transaction in query.documents {
+                let entity = try transaction.data(as: TransactionRemoteEntity.self)
+                transactions.append(TransactionRemoteEntityMapper().toTransaction(remoteEntity: entity!))
             }
-            
-            if let query = querySnapshot {
-                var transactions: [Transaction] = []
-                do {
-                    for transaction in query.documents {
-                        let entity = try transaction.data(as: TransactionRemoteEntity.self)
-                        transactions.append(TransactionRemoteEntityMapper().toTransaction(remoteEntity: entity!))
-                    }
-                    completed(.success(transactions))
-                } catch {
-                    completed(.failure(error))
-                }
-            }
+            return transactions
+        } catch {
+            return []
         }
     }
 }

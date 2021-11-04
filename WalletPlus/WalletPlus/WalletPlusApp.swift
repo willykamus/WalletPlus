@@ -15,23 +15,7 @@ struct WalletPlusApp: App {
 
     var body: some Scene {
         WindowGroup {
-            TabView {
-                ContainerList()
-                    .tabItem {
-                        Text("Wallets")
-                        Image(systemName: "wallet.pass")
-                    }
-                TransactionsListTab()
-                    .tabItem {
-                        Text("Transactions")
-                        Image(systemName: "list.bullet.rectangle")
-                    }
-                MoreTabView()
-                    .tabItem {
-                        Text("More")
-                        Image(uiImage: UIImage(systemName: "ellipsis")!.imageWithoutBaseline())
-                    }
-            }
+            LoginView()
         }
     }
 }

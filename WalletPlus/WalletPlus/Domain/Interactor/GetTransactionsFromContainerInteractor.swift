@@ -8,18 +8,14 @@
 import Foundation
 
 protocol GetTransactionsFromContainerInteractor {
-    func execute(for container: TransactionsContainer, completed: @escaping (Result<[Transaction], Error>) -> Void)
+    func execute(for container: TransactionsContainer) async -> [Transaction]
 }
 
 class GetTransactionsFromContainerInteractorImpl: GetTransactionsFromContainerInteractor {
     
     var repository: TransactionsRepository = TransactionsRepositoryImpl()
     
-    func execute(for container: TransactionsContainer, completed: @escaping (Result<[Transaction], Error>) -> Void) {
-        repository.getTransactions(from: container) { result in
-            completed(result)
-        }
+    func execute(for container: TransactionsContainer) async -> [Transaction] {
+        return await repository.getTransactions(from: container)
     }
-    
-    
 }

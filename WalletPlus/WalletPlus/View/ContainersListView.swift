@@ -22,7 +22,9 @@ struct ContainersListView: View {
                         self.containersPresented.toggle()
                     }
             }.onAppear(perform: {
-                viewModel.getTransactionsContainer()
+                Task.init {
+                    await self.viewModel.initialize()
+                }
             })
         }
     }

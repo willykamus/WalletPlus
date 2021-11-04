@@ -8,10 +8,10 @@
 import Foundation
 
 struct TransactionsContainer: Identifiable, Hashable {
+    
     static func == (lhs: TransactionsContainer, rhs: TransactionsContainer) -> Bool {
         return lhs.id == rhs.id
     }
-    
     
     var id: String
     var transactions: [Transaction]?

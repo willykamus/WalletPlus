@@ -65,14 +65,17 @@ struct CreateTransactionView: View {
                     }
                     
                     Button(action: {
-                        self.viewModel.save(container: self.selectedContainer!, category: self.selectedCategory!, amount: self.amount, date: self.selectedDate, completed: { result in
-                            self.createTransactionOpened = !result
-                        })
+                        Task.init {
+                            self.createTransactionOpened = await !self.viewModel.save(container: self.selectedContainer!, category: self.selectedCategory!, amount: self.amount, date: self.selectedDate)
+                        }
                     }, label: {
                         Text("Save")
                     })
                     .onAppear(perform: {
-                        self.viewModel.validateInputData(container: self.selectedContainer, category: self.selectedCategory, amount: self.amount)
+                        Task.init {
+                            await self.viewModel.initialize()
+                            self.viewModel.validateInputData(container: self.selectedContainer, category: self.selectedCategory, amount: self.amount)
+                        }
                     })
                     .disabled(self.viewModel.allInputsValidated == false)
                 }
