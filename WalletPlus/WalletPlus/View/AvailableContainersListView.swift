@@ -21,6 +21,10 @@ struct AvailableContainersListView: View {
             }, label: {
                 Text(container.name)
             })
+        }.onAppear {
+            Task.init {
+                await self.viewModel.initialize()
+            }
         }
     }
 }

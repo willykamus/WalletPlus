@@ -9,6 +9,6 @@ import Foundation
 import FirebaseFirestoreSwift
 
 struct TransactionsContainerRemoteEntity: Codable {
-    @DocumentID public var id: String?
+    var id: String?
     var name: String
 }

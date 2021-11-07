@@ -8,16 +8,14 @@
 import Foundation
 
 protocol GetCategoriesInteractor {
-    func execute(completed: @escaping (Result<[Category], Error>) -> Void)
+    func execute() async -> [Category]
 }
 
 class GetCategoriesInteractorImpl: GetCategoriesInteractor {
     
     var repository: CategoryRepository = CategoryRepositoryImpl()
     
-    func execute(completed: @escaping (Result<[Category], Error>) -> Void) {
-        repository.getCategories { result in
-            completed(result)
-        }
+    func execute() async -> [Category] {
+        return await repository.getCategories()
     }
 }

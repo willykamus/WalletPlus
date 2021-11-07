@@ -7,15 +7,20 @@
 
 import Foundation
 
-struct TransactionsContainer: Identifiable, Hashable {
+struct TransactionsContainer: Identifiable, Hashable, Codable {
+    
     static func == (lhs: TransactionsContainer, rhs: TransactionsContainer) -> Bool {
         return lhs.id == rhs.id
     }
     
-    
     var id: String
     var transactions: [Transaction]?
     var name: String
+    
+    enum CodingKeys: String, CodingKey {
+        case id
+        case name
+    }
     
     func currentAmount() -> Double {
         var amount: Double = 0

@@ -21,67 +21,40 @@ class TransactionsViewModel: ObservableObject {
     @Published var transactionListSection: [TransactionListSection] = []
     @Published var displayNoTransactionMessage: Bool = false
     
-    func initialize() {
+    func initialize() async {
         if selectedContainer != nil {
-            getTransactionsFromContainerInteractor.execute(for: selectedContainer!) { result in
-                switch result {
-                case .success(let transactions):
-                    if self.isTransactionsAvailable(transactions) {
-                        self.displayNoTransactionMessage = false
-                        self.createTransactionSections(transactions: transactions)
-                    }
-                case .failure(let error):
-                    return
+            let transactions = await getTransactionsFromContainerInteractor.execute(for: selectedContainer!)
+            DispatchQueue.main.async {
+                if self.isTransactionsAvailable(transactions) {
+                    self.displayNoTransactionMessage = false
+                    self.createTransactionSections(transactions: transactions)
                 }
             }
         } else {
-            getAllTransactionsInteractor.execute { result in
-                switch result {
-                case .success(let transactions):
-                    if self.isTransactionsAvailable(transactions) {
-                        self.displayNoTransactionMessage = false
-                        self.createTransactionSections(transactions: transactions)
-                    }
-                case .failure(let error):
-                    print(error.localizedDescription)
+            let transactions = await getAllTransactionsInteractor.execute()
+            DispatchQueue.main.async {
+                if self.isTransactionsAvailable(transactions) {
+                    self.displayNoTransactionMessage = false
+                    self.createTransactionSections(transactions: transactions)
                 }
             }
         }
     }
     
-    func delete(transaction: Transaction, completed: @escaping (Result<Bool, Error>) -> Void) {
-        deleteTransactionInteractor.execute(transaction: transaction) { result in
-            switch result {
-            case .success(_):
-                if self.selectedContainer != nil {
-                    self.getTransactionsFromContainerInteractor.execute(for: self.selectedContainer!) { result in
-                        switch result {
-                        case .success(let transactions):
-                            if self.isTransactionsAvailable(transactions) {
-                                self.displayNoTransactionMessage = false
-                                self.createTransactionSections(transactions: transactions)
-                            }
-                        case .failure(_):
-                            return
-                        }
-                    }
-                } else {
-                    self.getAllTransactionsInteractor.execute { result in
-                        switch result {
-                        case .success(let transactions):
-                            if self.isTransactionsAvailable(transactions) {
-                                self.displayNoTransactionMessage = false
-                                self.createTransactionSections(transactions: transactions)
-                            }
-                        case .failure(let error):
-                            print(error.localizedDescription)
-                        }
-                    }
-                }
-            case .failure(_):
-                break
+    func delete(transaction: Transaction) async {
+        self.deleteTransactionInteractor.execute(transaction: transaction)
+        if selectedContainer != nil {
+            let transactions =  await self.getTransactionsFromContainerInteractor.execute(for: selectedContainer!)
+            if self.isTransactionsAvailable(transactions) {
+                self.displayNoTransactionMessage = false
+                self.createTransactionSections(transactions: transactions)
             }
-            completed(result)
+        } else {
+            let transactions = await self.getAllTransactionsInteractor.execute()
+            if self.isTransactionsAvailable(transactions) {
+                self.displayNoTransactionMessage = false
+                self.createTransactionSections(transactions: transactions)
+            }
         }
     }
     

@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -40,10 +40,14 @@
 		114BD9DA2667C0AE00C4F9F6 /* TransactionRemoteEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 114BD9D92667C0AE00C4F9F6 /* TransactionRemoteEntity.swift */; };
 		114BD9DC2667C0C200C4F9F6 /* TransactionRemoteEntityMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 114BD9DB2667C0C200C4F9F6 /* TransactionRemoteEntityMapper.swift */; };
 		114BD9EF2669647300C4F9F6 /* GetTransactionsContainerInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 114BD9EE2669647300C4F9F6 /* GetTransactionsContainerInteractor.swift */; };
+		1152A6472735FB6E00358782 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 1152A6462735FB6E00358782 /* FirebaseAuth */; };
+		1152A6492735FB6E00358782 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 1152A6482735FB6E00358782 /* FirebaseFirestore */; };
+		1152A64B2735FB6E00358782 /* FirebaseFirestoreSwift-Beta in Frameworks */ = {isa = PBXBuildFile; productRef = 1152A64A2735FB6E00358782 /* FirebaseFirestoreSwift-Beta */; };
 		1155EE6F26E29B2F00A72AC3 /* MoreTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1155EE6E26E29B2F00A72AC3 /* MoreTabView.swift */; };
 		115C4FF42634DF330008D217 /* CategoryRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 115C4FF32634DF330008D217 /* CategoryRow.swift */; };
 		115C50012634E6600008D217 /* DisplayableCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 115C50002634E6600008D217 /* DisplayableCategory.swift */; };
 		115C500C26361AB30008D217 /* GroupTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 115C500B26361AB30008D217 /* GroupTest.swift */; };
+		115FDA232731F8DD004E2C35 /* CurrentUserLocalDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 115FDA222731F8DC004E2C35 /* CurrentUserLocalDataSource.swift */; };
 		1162FD1E2665277100B21EBC /* WalletRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1162FD1D2665277100B21EBC /* WalletRowView.swift */; };
 		1162FD2026652F1100B21EBC /* ContainersListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1162FD1F26652F1100B21EBC /* ContainersListView.swift */; };
 		116912EB2649476E00C01B69 /* GetDates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116912EA2649476E00C01B69 /* GetDates.swift */; };
@@ -54,9 +58,18 @@
 		117BC642266FFFD400F8F036 /* TransactionRemoteDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 117BC641266FFFD400F8F036 /* TransactionRemoteDataSource.swift */; };
 		117BFAB126656F86009D4318 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 117BFAB026656F86009D4318 /* GoogleService-Info.plist */; };
 		117BFAB426658EAC009D4318 /* TransactionsContainerRemoteDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 117BFAB326658EAC009D4318 /* TransactionsContainerRemoteDataSource.swift */; };
+		1187121E272C9D8D0081F25D /* CreateAccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1187121D272C9D8D0081F25D /* CreateAccountView.swift */; };
+		11871220272E33FE0081F25D /* CreateUserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1187121F272E33FE0081F25D /* CreateUserViewModel.swift */; };
+		11871222272E36A30081F25D /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11871221272E36A30081F25D /* LoginView.swift */; };
+		11871224272E36DA0081F25D /* LogInViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11871223272E36DA0081F25D /* LogInViewModel.swift */; };
+		11871227272F60F60081F25D /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11871226272F60F60081F25D /* HomeView.swift */; };
+		1187122E272F70390081F25D /* AuthenticateUserInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1187122D272F70390081F25D /* AuthenticateUserInteractor.swift */; };
 		1188CFFE263A1B6300FD489C /* AmountFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1188CFFD263A1B6300FD489C /* AmountFormatter.swift */; };
 		11B9C48B2671808D00949132 /* CreateTransactionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B9C48A2671808D00949132 /* CreateTransactionViewModel.swift */; };
 		11B9C48D267180BC00949132 /* SaveTransactionInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B9C48C267180BC00949132 /* SaveTransactionInteractor.swift */; };
+		11BBC31E2728D8F50079974C /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11BBC31D2728D8F50079974C /* User.swift */; };
+		11BBC3202728D9520079974C /* CreateUserInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11BBC31F2728D9520079974C /* CreateUserInteractor.swift */; };
+		11BBC3222728D9970079974C /* UserRemoteDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11BBC3212728D9970079974C /* UserRemoteDataSource.swift */; };
 		11BE022D268BD50A004EFED9 /* TransactionsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11BE022C268BD50A004EFED9 /* TransactionsRepository.swift */; };
 		11BE022F268BD672004EFED9 /* GetTransactionsFromContainerInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11BE022E268BD672004EFED9 /* GetTransactionsFromContainerInteractor.swift */; };
 		11BE0231268E6861004EFED9 /* GetAllTransactionsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11BE0230268E6860004EFED9 /* GetAllTransactionsInteractor.swift */; };
@@ -69,13 +82,16 @@
 		11BE024E269520BA004EFED9 /* CategoryRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11BE024D269520BA004EFED9 /* CategoryRepository.swift */; };
 		11BE02502695217C004EFED9 /* GetCategoriesInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11BE024F2695217C004EFED9 /* GetCategoriesInteractor.swift */; };
 		11BF7EF02641605F00C6D01E /* TransactionsListTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11BF7EEF2641605F00C6D01E /* TransactionsListTab.swift */; };
+		11CBB42527335D7A00D934D4 /* UserValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11CBB42427335D7A00D934D4 /* UserValidator.swift */; };
+		11CBB4272733781200D934D4 /* CreateUserRemoteDataBaseInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11CBB4262733781200D934D4 /* CreateUserRemoteDataBaseInteractor.swift */; };
+		11CBB42A27342C9500D934D4 /* CreateTransactionsContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11CBB42927342C9500D934D4 /* CreateTransactionsContainerView.swift */; };
+		11CBB42C273437D600D934D4 /* CreateTransactionsContainerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11CBB42B273437D600D934D4 /* CreateTransactionsContainerViewModel.swift */; };
+		11CBB42E27343AE900D934D4 /* CreateTransactionsContainerInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11CBB42D27343AE900D934D4 /* CreateTransactionsContainerInteractor.swift */; };
+		11CBB430273463FF00D934D4 /* Firebase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11CBB42F273463FF00D934D4 /* Firebase.swift */; };
 		11E59A7F266E6364008452EF /* GetTransactionsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11E59A7E266E6364008452EF /* GetTransactionsInteractor.swift */; };
 		11E59A83266E8698008452EF /* GetIncomeTransactionsFromContainerInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11E59A82266E8698008452EF /* GetIncomeTransactionsFromContainerInteractor.swift */; };
 		11E59A85266E8876008452EF /* GetExpenseTransactionsFromContainerInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11E59A84266E8876008452EF /* GetExpenseTransactionsFromContainerInteractor.swift */; };
 		11E59A87266E9BD2008452EF /* AmountFormatterInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11E59A86266E9BD2008452EF /* AmountFormatterInteractor.swift */; };
-		5EE066FA673BD9088F5569A0 /* Pods_WalletPlus_WalletPlusUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73934E786EBF92730325604D /* Pods_WalletPlus_WalletPlusUITests.framework */; };
-		A9458BADE25DFC6E62EC554C /* Pods_WalletPlus.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 240E1B78601BAB85764F7C4D /* Pods_WalletPlus.framework */; };
-		FF987B9EAEE2F3F0CD21196C /* Pods_WalletPlusTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4618C195D485268A25AFAFC3 /* Pods_WalletPlusTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -139,6 +155,7 @@
 		115C4FF32634DF330008D217 /* CategoryRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryRow.swift; sourceTree = "<group>"; };
 		115C50002634E6600008D217 /* DisplayableCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayableCategory.swift; sourceTree = "<group>"; };
 		115C500B26361AB30008D217 /* GroupTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupTest.swift; sourceTree = "<group>"; };
+		115FDA222731F8DC004E2C35 /* CurrentUserLocalDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentUserLocalDataSource.swift; sourceTree = "<group>"; };
 		1162FD1D2665277100B21EBC /* WalletRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletRowView.swift; sourceTree = "<group>"; };
 		1162FD1F26652F1100B21EBC /* ContainersListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainersListView.swift; sourceTree = "<group>"; };
 		116912EA2649476E00C01B69 /* GetDates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetDates.swift; sourceTree = "<group>"; };
@@ -149,9 +166,18 @@
 		117BC641266FFFD400F8F036 /* TransactionRemoteDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionRemoteDataSource.swift; sourceTree = "<group>"; };
 		117BFAB026656F86009D4318 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		117BFAB326658EAC009D4318 /* TransactionsContainerRemoteDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsContainerRemoteDataSource.swift; sourceTree = "<group>"; };
+		1187121D272C9D8D0081F25D /* CreateAccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountView.swift; sourceTree = "<group>"; };
+		1187121F272E33FE0081F25D /* CreateUserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateUserViewModel.swift; sourceTree = "<group>"; };
+		11871221272E36A30081F25D /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		11871223272E36DA0081F25D /* LogInViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewModel.swift; sourceTree = "<group>"; };
+		11871226272F60F60081F25D /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		1187122D272F70390081F25D /* AuthenticateUserInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticateUserInteractor.swift; sourceTree = "<group>"; };
 		1188CFFD263A1B6300FD489C /* AmountFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AmountFormatter.swift; sourceTree = "<group>"; };
 		11B9C48A2671808D00949132 /* CreateTransactionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateTransactionViewModel.swift; sourceTree = "<group>"; };
 		11B9C48C267180BC00949132 /* SaveTransactionInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveTransactionInteractor.swift; sourceTree = "<group>"; };
+		11BBC31D2728D8F50079974C /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		11BBC31F2728D9520079974C /* CreateUserInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateUserInteractor.swift; sourceTree = "<group>"; };
+		11BBC3212728D9970079974C /* UserRemoteDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRemoteDataSource.swift; sourceTree = "<group>"; };
 		11BE022C268BD50A004EFED9 /* TransactionsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsRepository.swift; sourceTree = "<group>"; };
 		11BE022E268BD672004EFED9 /* GetTransactionsFromContainerInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetTransactionsFromContainerInteractor.swift; sourceTree = "<group>"; };
 		11BE0230268E6860004EFED9 /* GetAllTransactionsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetAllTransactionsInteractor.swift; sourceTree = "<group>"; };
@@ -164,19 +190,16 @@
 		11BE024D269520BA004EFED9 /* CategoryRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryRepository.swift; sourceTree = "<group>"; };
 		11BE024F2695217C004EFED9 /* GetCategoriesInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetCategoriesInteractor.swift; sourceTree = "<group>"; };
 		11BF7EEF2641605F00C6D01E /* TransactionsListTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsListTab.swift; sourceTree = "<group>"; };
+		11CBB42427335D7A00D934D4 /* UserValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserValidator.swift; sourceTree = "<group>"; };
+		11CBB4262733781200D934D4 /* CreateUserRemoteDataBaseInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateUserRemoteDataBaseInteractor.swift; sourceTree = "<group>"; };
+		11CBB42927342C9500D934D4 /* CreateTransactionsContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateTransactionsContainerView.swift; sourceTree = "<group>"; };
+		11CBB42B273437D600D934D4 /* CreateTransactionsContainerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateTransactionsContainerViewModel.swift; sourceTree = "<group>"; };
+		11CBB42D27343AE900D934D4 /* CreateTransactionsContainerInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateTransactionsContainerInteractor.swift; sourceTree = "<group>"; };
+		11CBB42F273463FF00D934D4 /* Firebase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Firebase.swift; sourceTree = "<group>"; };
 		11E59A7E266E6364008452EF /* GetTransactionsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetTransactionsInteractor.swift; sourceTree = "<group>"; };
 		11E59A82266E8698008452EF /* GetIncomeTransactionsFromContainerInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetIncomeTransactionsFromContainerInteractor.swift; sourceTree = "<group>"; };
 		11E59A84266E8876008452EF /* GetExpenseTransactionsFromContainerInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetExpenseTransactionsFromContainerInteractor.swift; sourceTree = "<group>"; };
 		11E59A86266E9BD2008452EF /* AmountFormatterInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AmountFormatterInteractor.swift; sourceTree = "<group>"; };
-		240E1B78601BAB85764F7C4D /* Pods_WalletPlus.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WalletPlus.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		3694C332BC4267329F36575C /* Pods-WalletPlus-WalletPlusUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WalletPlus-WalletPlusUITests.debug.xcconfig"; path = "Target Support Files/Pods-WalletPlus-WalletPlusUITests/Pods-WalletPlus-WalletPlusUITests.debug.xcconfig"; sourceTree = "<group>"; };
-		3B38E253EE3C157D95A618BD /* Pods-WalletPlusTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WalletPlusTests.debug.xcconfig"; path = "Target Support Files/Pods-WalletPlusTests/Pods-WalletPlusTests.debug.xcconfig"; sourceTree = "<group>"; };
-		4178E362268B0128CA648C75 /* Pods-WalletPlusTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WalletPlusTests.release.xcconfig"; path = "Target Support Files/Pods-WalletPlusTests/Pods-WalletPlusTests.release.xcconfig"; sourceTree = "<group>"; };
-		4618C195D485268A25AFAFC3 /* Pods_WalletPlusTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WalletPlusTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		5E95CF6CE6A42B1EC2D7EEBA /* Pods-WalletPlus-WalletPlusUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WalletPlus-WalletPlusUITests.release.xcconfig"; path = "Target Support Files/Pods-WalletPlus-WalletPlusUITests/Pods-WalletPlus-WalletPlusUITests.release.xcconfig"; sourceTree = "<group>"; };
-		60256D91211C3A06FE103DDB /* Pods-WalletPlus.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WalletPlus.release.xcconfig"; path = "Target Support Files/Pods-WalletPlus/Pods-WalletPlus.release.xcconfig"; sourceTree = "<group>"; };
-		73934E786EBF92730325604D /* Pods_WalletPlus_WalletPlusUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WalletPlus_WalletPlusUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		ED709F7C427049923593D3A2 /* Pods-WalletPlus.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WalletPlus.debug.xcconfig"; path = "Target Support Files/Pods-WalletPlus/Pods-WalletPlus.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -184,7 +207,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A9458BADE25DFC6E62EC554C /* Pods_WalletPlus.framework in Frameworks */,
+				1152A64B2735FB6E00358782 /* FirebaseFirestoreSwift-Beta in Frameworks */,
+				1152A6472735FB6E00358782 /* FirebaseAuth in Frameworks */,
+				1152A6492735FB6E00358782 /* FirebaseFirestore in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -192,7 +217,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FF987B9EAEE2F3F0CD21196C /* Pods_WalletPlusTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -200,29 +224,18 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5EE066FA673BD9088F5569A0 /* Pods_WalletPlus_WalletPlusUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		0CAC0D866FF2DF94FC9B34B6 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				ED709F7C427049923593D3A2 /* Pods-WalletPlus.debug.xcconfig */,
-				60256D91211C3A06FE103DDB /* Pods-WalletPlus.release.xcconfig */,
-				3694C332BC4267329F36575C /* Pods-WalletPlus-WalletPlusUITests.debug.xcconfig */,
-				5E95CF6CE6A42B1EC2D7EEBA /* Pods-WalletPlus-WalletPlusUITests.release.xcconfig */,
-				3B38E253EE3C157D95A618BD /* Pods-WalletPlusTests.debug.xcconfig */,
-				4178E362268B0128CA648C75 /* Pods-WalletPlusTests.release.xcconfig */,
-			);
-			path = Pods;
-			sourceTree = "<group>";
-		};
 		11104A4B262E4EF200F94902 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				11CBB42827342C4800D934D4 /* Containers */,
+				11871225272F60E70081F25D /* Home */,
+				11BBC3232728E0A00079974C /* Login */,
 				11104A57262E4F1400F94902 /* TransactionsListView.swift */,
 				11104A65262E5FB600F94902 /* TransactionRow.swift */,
 				11104AE5262F45FB00F94902 /* TransactionSectionView.swift */,
@@ -234,7 +247,6 @@
 				11691336264A005B00C01B69 /* FloatingButton.swift */,
 				116914A9264BF7ED00C01B69 /* CreateTransactionView.swift */,
 				1162FD1D2665277100B21EBC /* WalletRowView.swift */,
-				1162FD1F26652F1100B21EBC /* ContainersListView.swift */,
 				11BE0232268F6967004EFED9 /* TransactionsSection.swift */,
 				11470002269CF35B00C9CE74 /* CategoriesListView.swift */,
 				11470006269D132E00C9CE74 /* AvailableContainersListView.swift */,
@@ -252,6 +264,9 @@
 				1145639626378B0F0068C58F /* ContainersListViewModel.swift */,
 				11B9C48A2671808D00949132 /* CreateTransactionViewModel.swift */,
 				11470004269CF37200C9CE74 /* CategoriesListViewModel.swift */,
+				1187121F272E33FE0081F25D /* CreateUserViewModel.swift */,
+				11871223272E36DA0081F25D /* LogInViewModel.swift */,
+				11CBB42B273437D600D934D4 /* CreateTransactionsContainerViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -260,6 +275,7 @@
 			isa = PBXGroup;
 			children = (
 				113469FE268506EC00335CD3 /* TransactionContainerLocalDataSource.swift */,
+				115FDA222731F8DC004E2C35 /* CurrentUserLocalDataSource.swift */,
 			);
 			path = LocalDataSource;
 			sourceTree = "<group>";
@@ -281,8 +297,6 @@
 				1136D55E262E4A6900CDB4E7 /* WalletPlusTests */,
 				1136D569262E4A6900CDB4E7 /* WalletPlusUITests */,
 				1136D54B262E4A6800CDB4E7 /* Products */,
-				0CAC0D866FF2DF94FC9B34B6 /* Pods */,
-				F5677A63D388F94B27033A76 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -352,6 +366,7 @@
 				114563A026378EFF0068C58F /* GetContainerTotal.swift */,
 				11BE023C26951398004EFED9 /* Category.swift */,
 				11BE023E269515C4004EFED9 /* TransactionType.swift */,
+				11BBC31D2728D8F50079974C /* User.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -371,9 +386,11 @@
 		114BD9EC2669604400C4F9F6 /* RemoteDataSource */ = {
 			isa = PBXGroup;
 			children = (
+				11BBC31C2728D8C60079974C /* User */,
 				11BE023B26951386004EFED9 /* Category */,
 				117BC640266FFFA400F8F036 /* Transaction */,
 				114BD9D42667C01300C4F9F6 /* TransactionsContainer */,
+				11CBB42F273463FF00D934D4 /* Firebase.swift */,
 			);
 			path = RemoteDataSource;
 			sourceTree = "<group>";
@@ -393,6 +410,10 @@
 				1147FFFE269CF20F00C9CE74 /* GetIncomeCategories.swift */,
 				11470000269CF26B00C9CE74 /* GetExpenseCategories.swift */,
 				11019E6026B84CE3007AAD1B /* DeleteTransactionInteractor.swift */,
+				11BBC31F2728D9520079974C /* CreateUserInteractor.swift */,
+				1187122D272F70390081F25D /* AuthenticateUserInteractor.swift */,
+				11CBB4262733781200D934D4 /* CreateUserRemoteDataBaseInteractor.swift */,
+				11CBB42D27343AE900D934D4 /* CreateTransactionsContainerInteractor.swift */,
 			);
 			path = Interactor;
 			sourceTree = "<group>";
@@ -406,6 +427,7 @@
 				114BD9EC2669604400C4F9F6 /* RemoteDataSource */,
 				116912EA2649476E00C01B69 /* GetDates.swift */,
 				116913342649FDD900C01B69 /* CreateTransaction.swift */,
+				11CBB42427335D7A00D934D4 /* UserValidator.swift */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
@@ -418,12 +440,37 @@
 			path = Transaction;
 			sourceTree = "<group>";
 		};
+		11871225272F60E70081F25D /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				11871226272F60F60081F25D /* HomeView.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
 		1188CFFC263A1B5000FD489C /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
 				1188CFFD263A1B6300FD489C /* AmountFormatter.swift */,
 			);
 			path = Presentation;
+			sourceTree = "<group>";
+		};
+		11BBC31C2728D8C60079974C /* User */ = {
+			isa = PBXGroup;
+			children = (
+				11BBC3212728D9970079974C /* UserRemoteDataSource.swift */,
+			);
+			path = User;
+			sourceTree = "<group>";
+		};
+		11BBC3232728E0A00079974C /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				1187121D272C9D8D0081F25D /* CreateAccountView.swift */,
+				11871221272E36A30081F25D /* LoginView.swift */,
+			);
+			path = Login;
 			sourceTree = "<group>";
 		};
 		11BE023B26951386004EFED9 /* Category */ = {
@@ -436,14 +483,13 @@
 			path = Category;
 			sourceTree = "<group>";
 		};
-		F5677A63D388F94B27033A76 /* Frameworks */ = {
+		11CBB42827342C4800D934D4 /* Containers */ = {
 			isa = PBXGroup;
 			children = (
-				240E1B78601BAB85764F7C4D /* Pods_WalletPlus.framework */,
-				73934E786EBF92730325604D /* Pods_WalletPlus_WalletPlusUITests.framework */,
-				4618C195D485268A25AFAFC3 /* Pods_WalletPlusTests.framework */,
+				1162FD1F26652F1100B21EBC /* ContainersListView.swift */,
+				11CBB42927342C9500D934D4 /* CreateTransactionsContainerView.swift */,
 			);
-			name = Frameworks;
+			path = Containers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -453,17 +499,20 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1136D56F262E4A6900CDB4E7 /* Build configuration list for PBXNativeTarget "WalletPlus" */;
 			buildPhases = (
-				A3259C1170756C1C2AC22AE1 /* [CP] Check Pods Manifest.lock */,
 				1136D546262E4A6800CDB4E7 /* Sources */,
 				1136D547262E4A6800CDB4E7 /* Frameworks */,
 				1136D548262E4A6800CDB4E7 /* Resources */,
-				3A74CCF1E3B351908D0C7B83 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = WalletPlus;
+			packageProductDependencies = (
+				1152A6462735FB6E00358782 /* FirebaseAuth */,
+				1152A6482735FB6E00358782 /* FirebaseFirestore */,
+				1152A64A2735FB6E00358782 /* FirebaseFirestoreSwift-Beta */,
+			);
 			productName = WalletPlus;
 			productReference = 1136D54A262E4A6800CDB4E7 /* WalletPlus.app */;
 			productType = "com.apple.product-type.application";
@@ -472,7 +521,6 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1136D572262E4A6900CDB4E7 /* Build configuration list for PBXNativeTarget "WalletPlusTests" */;
 			buildPhases = (
-				645B360305C0FAC893F0BE72 /* [CP] Check Pods Manifest.lock */,
 				1136D557262E4A6900CDB4E7 /* Sources */,
 				1136D558262E4A6900CDB4E7 /* Frameworks */,
 				1136D559262E4A6900CDB4E7 /* Resources */,
@@ -491,11 +539,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1136D575262E4A6900CDB4E7 /* Build configuration list for PBXNativeTarget "WalletPlusUITests" */;
 			buildPhases = (
-				2CD476B16F2AB5128FA471B4 /* [CP] Check Pods Manifest.lock */,
 				1136D562262E4A6900CDB4E7 /* Sources */,
 				1136D563262E4A6900CDB4E7 /* Frameworks */,
 				1136D564262E4A6900CDB4E7 /* Resources */,
-				64F2B36A4E35789C2831538C /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -538,6 +584,9 @@
 				Base,
 			);
 			mainGroup = 1136D541262E4A6800CDB4E7;
+			packageReferences = (
+				1152A6452735FB6E00358782 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
 			productRefGroup = 1136D54B262E4A6800CDB4E7 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -576,109 +625,6 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
-/* Begin PBXShellScriptBuildPhase section */
-		2CD476B16F2AB5128FA471B4 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-WalletPlus-WalletPlusUITests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		3A74CCF1E3B351908D0C7B83 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-WalletPlus/Pods-WalletPlus-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-WalletPlus/Pods-WalletPlus-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-WalletPlus/Pods-WalletPlus-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		645B360305C0FAC893F0BE72 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-WalletPlusTests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		64F2B36A4E35789C2831538C /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-WalletPlus-WalletPlusUITests/Pods-WalletPlus-WalletPlusUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-WalletPlus-WalletPlusUITests/Pods-WalletPlus-WalletPlusUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-WalletPlus-WalletPlusUITests/Pods-WalletPlus-WalletPlusUITests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		A3259C1170756C1C2AC22AE1 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-WalletPlus-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
-
 /* Begin PBXSourcesBuildPhase section */
 		1136D546262E4A6800CDB4E7 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -687,22 +633,28 @@
 				1188CFFE263A1B6300FD489C /* AmountFormatter.swift in Sources */,
 				11E59A87266E9BD2008452EF /* AmountFormatterInteractor.swift in Sources */,
 				114BD9DA2667C0AE00C4F9F6 /* TransactionRemoteEntity.swift in Sources */,
+				11CBB42527335D7A00D934D4 /* UserValidator.swift in Sources */,
 				11470001269CF26B00C9CE74 /* GetExpenseCategories.swift in Sources */,
 				11104C92262F904F00F94902 /* Wallet.swift in Sources */,
 				114563A126378EFF0068C58F /* GetContainerTotal.swift in Sources */,
+				1187122E272F70390081F25D /* AuthenticateUserInteractor.swift in Sources */,
 				11BE0231268E6861004EFED9 /* GetAllTransactionsInteractor.swift in Sources */,
 				1162FD2026652F1100B21EBC /* ContainersListView.swift in Sources */,
+				11BBC31E2728D8F50079974C /* User.swift in Sources */,
 				1147FFFF269CF20F00C9CE74 /* GetIncomeCategories.swift in Sources */,
 				11BE024826951AC9004EFED9 /* CategoryRemoteEntity.swift in Sources */,
 				11BE024C26951EE9004EFED9 /* CategoryRemoteDataSource.swift in Sources */,
+				11CBB42C273437D600D934D4 /* CreateTransactionsContainerViewModel.swift in Sources */,
 				116912EB2649476E00C01B69 /* GetDates.swift in Sources */,
 				11470007269D132E00C9CE74 /* AvailableContainersListView.swift in Sources */,
 				11BE02502695217C004EFED9 /* GetCategoriesInteractor.swift in Sources */,
 				114BD9DC2667C0C200C4F9F6 /* TransactionRemoteEntityMapper.swift in Sources */,
+				115FDA232731F8DD004E2C35 /* CurrentUserLocalDataSource.swift in Sources */,
 				114BD9D62667C03C00C4F9F6 /* TransactionsContainerRemoteEntityMapper.swift in Sources */,
 				11104E622630DAB000F94902 /* SegmentedControlView.swift in Sources */,
 				11BE024E269520BA004EFED9 /* CategoryRepository.swift in Sources */,
 				1145639726378B0F0068C58F /* ContainersListViewModel.swift in Sources */,
+				11871224272E36DA0081F25D /* LogInViewModel.swift in Sources */,
 				11104CA2262F9B5B00F94902 /* TransactionContainerOverview.swift in Sources */,
 				114BD9EF2669647300C4F9F6 /* GetTransactionsContainerInteractor.swift in Sources */,
 				11BE022F268BD672004EFED9 /* GetTransactionsFromContainerInteractor.swift in Sources */,
@@ -710,9 +662,11 @@
 				11BE0233268F6967004EFED9 /* TransactionsSection.swift in Sources */,
 				11346A0226850BA000335CD3 /* TransactionsContainerRepository.swift in Sources */,
 				115C4FF42634DF330008D217 /* CategoryRow.swift in Sources */,
+				11871227272F60F60081F25D /* HomeView.swift in Sources */,
 				115C50012634E6600008D217 /* DisplayableCategory.swift in Sources */,
 				11470005269CF37200C9CE74 /* CategoriesListViewModel.swift in Sources */,
 				11B9C48D267180BC00949132 /* SaveTransactionInteractor.swift in Sources */,
+				11BBC3202728D9520079974C /* CreateUserInteractor.swift in Sources */,
 				1136D550262E4A6900CDB4E7 /* ContentView.swift in Sources */,
 				116913352649FDD900C01B69 /* CreateTransaction.swift in Sources */,
 				11BE022D268BD50A004EFED9 /* TransactionsRepository.swift in Sources */,
@@ -721,9 +675,13 @@
 				116914AA264BF7ED00C01B69 /* CreateTransactionView.swift in Sources */,
 				11BF7EF02641605F00C6D01E /* TransactionsListTab.swift in Sources */,
 				1136D54E262E4A6900CDB4E7 /* WalletPlusApp.swift in Sources */,
+				11BBC3222728D9970079974C /* UserRemoteDataSource.swift in Sources */,
+				11CBB430273463FF00D934D4 /* Firebase.swift in Sources */,
 				11E59A83266E8698008452EF /* GetIncomeTransactionsFromContainerInteractor.swift in Sources */,
 				11B9C48B2671808D00949132 /* CreateTransactionViewModel.swift in Sources */,
+				1187121E272C9D8D0081F25D /* CreateAccountView.swift in Sources */,
 				117BFAB426658EAC009D4318 /* TransactionsContainerRemoteDataSource.swift in Sources */,
+				11871220272E33FE0081F25D /* CreateUserViewModel.swift in Sources */,
 				1136D585262E4AE900CDB4E7 /* Transaction.swift in Sources */,
 				1155EE6F26E29B2F00A72AC3 /* MoreTabView.swift in Sources */,
 				11691337264A005B00C01B69 /* FloatingButton.swift in Sources */,
@@ -731,11 +689,15 @@
 				1162FD1E2665277100B21EBC /* WalletRowView.swift in Sources */,
 				11BE024A26951CF4004EFED9 /* CategoryRemoteEntityMapper.swift in Sources */,
 				11470003269CF35B00C9CE74 /* CategoriesListView.swift in Sources */,
+				11CBB42A27342C9500D934D4 /* CreateTransactionsContainerView.swift in Sources */,
+				11CBB4272733781200D934D4 /* CreateUserRemoteDataBaseInteractor.swift in Sources */,
 				11BE023D26951398004EFED9 /* Category.swift in Sources */,
 				114BD9D82667C08200C4F9F6 /* TransactionsContainerRemoteEntity.swift in Sources */,
 				11104A66262E5FB600F94902 /* TransactionRow.swift in Sources */,
 				11104A61262E5F5000F94902 /* TransactionsViewModel.swift in Sources */,
 				113469FF268506EC00335CD3 /* TransactionContainerLocalDataSource.swift in Sources */,
+				11CBB42E27343AE900D934D4 /* CreateTransactionsContainerInteractor.swift in Sources */,
+				11871222272E36A30081F25D /* LoginView.swift in Sources */,
 				11104A58262E4F1400F94902 /* TransactionsListView.swift in Sources */,
 				11BE023F269515C4004EFED9 /* TransactionType.swift in Sources */,
 				11E59A7F266E6364008452EF /* GetTransactionsInteractor.swift in Sources */,
@@ -831,7 +793,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -886,7 +848,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -898,7 +860,6 @@
 		};
 		1136D570262E4A6900CDB4E7 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = ED709F7C427049923593D3A2 /* Pods-WalletPlus.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -907,7 +868,7 @@
 				DEVELOPMENT_TEAM = 3JF6M2L57N;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = WalletPlus/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -921,7 +882,6 @@
 		};
 		1136D571262E4A6900CDB4E7 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 60256D91211C3A06FE103DDB /* Pods-WalletPlus.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -930,7 +890,7 @@
 				DEVELOPMENT_TEAM = 3JF6M2L57N;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = WalletPlus/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -944,14 +904,13 @@
 		};
 		1136D573262E4A6900CDB4E7 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3B38E253EE3C157D95A618BD /* Pods-WalletPlusTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3JF6M2L57N;
 				INFOPLIST_FILE = WalletPlusTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -967,14 +926,13 @@
 		};
 		1136D574262E4A6900CDB4E7 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4178E362268B0128CA648C75 /* Pods-WalletPlusTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3JF6M2L57N;
 				INFOPLIST_FILE = WalletPlusTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -990,7 +948,6 @@
 		};
 		1136D576262E4A6900CDB4E7 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3694C332BC4267329F36575C /* Pods-WalletPlus-WalletPlusUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -1011,7 +968,6 @@
 		};
 		1136D577262E4A6900CDB4E7 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5E95CF6CE6A42B1EC2D7EEBA /* Pods-WalletPlus-WalletPlusUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -1070,6 +1026,35 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		1152A6452735FB6E00358782 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 8.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		1152A6462735FB6E00358782 /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1152A6452735FB6E00358782 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		1152A6482735FB6E00358782 /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1152A6452735FB6E00358782 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
+		1152A64A2735FB6E00358782 /* FirebaseFirestoreSwift-Beta */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1152A6452735FB6E00358782 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = "FirebaseFirestoreSwift-Beta";
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 1136D542262E4A6800CDB4E7 /* Project object */;
 }

@@ -8,25 +8,18 @@
 import Foundation
 
 protocol SaveTransactionInteractor {
-    func execute(transaction: Transaction, in container: TransactionsContainer, completion: @escaping (Bool) -> Void)
+    func execute(transaction: Transaction, in container: TransactionsContainer) async -> Bool
 }
 
 class SaveTransactionInteractorImpl: SaveTransactionInteractor {
     
-    var dataSource: TransactionRemoteDataSource
+    var repository: TransactionsRepository
     
-    init(dataSource: TransactionRemoteDataSource) {
-        self.dataSource = dataSource
+    init(repository: TransactionsRepository) {
+        self.repository = repository
     }
     
-    func execute(transaction: Transaction, in container: TransactionsContainer, completion: @escaping (Bool) -> Void) {
-        
-        let entity = TransactionRemoteEntityMapper().toRemoteEntity(transaction: transaction)
-        
-        dataSource.add(transaction: entity, to: container) { result in
-            completion(result)
-        }
+    func execute(transaction: Transaction, in container: TransactionsContainer) async -> Bool {
+        return await self.repository.add(transaction: transaction, to: container)
     }
-    
-    
 }

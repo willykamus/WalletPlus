@@ -8,7 +8,7 @@
 import Foundation
 
 protocol CategoryRepository {
-    func getCategories(completed: @escaping (Result<[Category], Error>) -> Void)
+    func getCategories() async -> [Category]
     func getIncomeCategories(completed: @escaping (Result<[Category], Error>) -> Void)
     func getExpenseCategories(completed: @escaping (Result<[Category], Error>) -> Void)
 }
@@ -17,10 +17,8 @@ class CategoryRepositoryImpl: CategoryRepository {
 
     var remoteDataSource: CategoryRemoteDataSource = CategoryRemoteDataSourceImpl()
     
-    func getCategories(completed: @escaping (Result<[Category], Error>) -> Void) {
-        remoteDataSource.getCategories { result in
-            completed(result)
-        }
+    func getCategories() async -> [Category] {
+        return await remoteDataSource.getCategories()
     }
     
     func getIncomeCategories(completed: @escaping (Result<[Category], Error>) -> Void) {

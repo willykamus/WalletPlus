@@ -11,35 +11,27 @@ import FirebaseFirestore
 import FirebaseFirestoreSwift
 
 protocol CategoryRemoteDataSource {
-    func getCategories(completed: @escaping (Result<[Category], Error>) -> Void)
+    func getCategories() async -> [Category]
     func getIncomeCategories(completed: @escaping (Result<[Category], Error>) -> Void)
     func getExpenseCategories(completed: @escaping (Result<[Category], Error>) -> Void)
 }
 
 class CategoryRemoteDataSourceImpl: CategoryRemoteDataSource {
 
-    
-
     let dataBase = Firestore.firestore()
     
-    func getCategories(completed: @escaping (Result<[Category], Error>) -> Void) {
-        dataBase.collection("categories").getDocuments { querySnapshot, error in
-            if let query = querySnapshot {
-                var categories: [Category] = []
-                for document in query.documents {
-                    do {
-                        let entity = try document.data(as: CategoryRemoteEntity.self)
-                        let model = CategoryRemoteEntityMapper().toCategory(entity!)
-                        categories.append(model)
-                    } catch {
-                        completed(.failure(error))
-                        return
-                    }
-                }
-                completed(.success(categories))
-                return
+    func getCategories() async -> [Category] {
+        do {
+            let query = try await dataBase.collection("categories").getDocuments()
+            var categories: [Category] = []
+            for document in query.documents {
+                let entity = try document.data(as: CategoryRemoteEntity.self)
+                let model = CategoryRemoteEntityMapper().toCategory(entity!)
+                categories.append(model)
             }
-            completed(.failure(error!))
+            return categories
+        } catch {
+            return []
         }
     }
     

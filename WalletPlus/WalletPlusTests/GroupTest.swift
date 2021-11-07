@@ -18,18 +18,18 @@ class GroupTest: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
     
-    func testGetGroupsFromTransactions() {
-        // Given
-        let testData = TestData()
-        let categoryInteractor: GetCategory = CategoryInteractor()
-        
-        // When
-        let groups = categoryInteractor.getCategory(from: testData.testData[0].transactions)
-        
-        // Then
-        XCTAssertNotNil(groups)
-        XCTAssert(groups.count == 3)
-    }
+//    func testGetGroupsFromTransactions() {
+//        // Given
+//        let testData = TestData()
+//        let categoryInteractor: GetCategory = CategoryInteractor()
+//        
+//        // When
+//        let groups = categoryInteractor.getCategory(from: testData.testData[0].transactions)
+//        
+//        // Then
+//        XCTAssertNotNil(groups)
+//        XCTAssert(groups.count == 3)
+//    }
 
 
 }

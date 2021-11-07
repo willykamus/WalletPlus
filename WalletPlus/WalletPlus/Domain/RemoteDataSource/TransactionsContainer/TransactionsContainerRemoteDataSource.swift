@@ -6,64 +6,70 @@
 //
 
 import Foundation
-import Firebase
 import FirebaseFirestore
 import FirebaseFirestoreSwift
 
 protocol TransactionsContainerRemoteDataSource {
-    func getContainers(completed: @escaping (Result<[TransactionsContainer], Error>) -> Void)
+    func getContainers() async -> [TransactionsContainer]
+    func createDataBase(for user: User)
+    func createContainer(container: TransactionsContainer) -> Bool
 }
 
 class TransactionsContainerRemoteDataSourceImpl: TransactionsContainerRemoteDataSource {
 
-    let dataBase = Firestore.firestore()
+    let dataBase = Firebase.database
     let dispatchGroup = DispatchGroup()
+    private let currentUserLocalDataSource: CurrentUserLocalDataSource = CurrentUserLocalDataSourceImpl()
     
-    private func getTransactions(from document: DocumentSnapshot, container: TransactionsContainer, completed: @escaping (Result<[Transaction], Error>) -> Void) {
-        document.reference.collection("transactions").getDocuments { querySnapshot, error in
-            if let query = querySnapshot {
-                var transactions: [Transaction] = []
-                do {
-                    for transaction in query.documents {
-                        let entity = try transaction.data(as: TransactionRemoteEntity.self)
-                        transactions.append(TransactionRemoteEntityMapper().toTransaction(remoteEntity: entity!))
-                    }
-                    completed(.success(transactions))
-                } catch {
-                    completed(.failure(error))
-                }
+    private func getTransactions(from document: DocumentSnapshot, container: TransactionsContainer) async -> [Transaction] {
+        do {
+            var transactions: [Transaction] = []
+            let query = try await document.reference.collection("transactions").getDocuments()
+            for transaction in query.documents {
+                let entity = try transaction.data(as: TransactionRemoteEntity.self)
+                transactions.append(TransactionRemoteEntityMapper().toTransaction(remoteEntity: entity!))
             }
+            return transactions
+        } catch {
+            return []
         }
     }
     
-    func getContainers(completed: @escaping (Result<[TransactionsContainer], Error>) -> Void) {
+    func getContainers() async -> [TransactionsContainer] {
         var containers: [TransactionsContainer] = []
-        dataBase.collection("transactionContainers").getDocuments { querySnapshot, error in
-            if let query = querySnapshot {
-                do {
-                    for document in query.documents {
-                        self.dispatchGroup.enter()
-                        let remoteEntity = try document.data(as: TransactionsContainerRemoteEntity.self)
-                        var container = TransactionsContainerRemoteEntityMapper().toTransactionContainer(remoteEntity: remoteEntity!)
-                        self.getTransactions(from: document, container: container) { result in
-                            switch result {
-                            case .success(let transactions):
-                                container.transactions = transactions
-                                containers.append(container)
-                            case .failure(let error):
-                                self.dispatchGroup.leave()
-                                completed(.failure(error))
-                            }
-                            self.dispatchGroup.leave()
-                        }
-                    }
-                    self.dispatchGroup.notify(queue: .main) {
-                        completed(.success(containers))
-                    }
-                } catch {
-                    completed(.failure(error))
-                }
+        let user  = currentUserLocalDataSource.get()
+        let id: String = user.id
+        let reference = Firebase.database.collection("users").document(id).collection("transactionsContainers")
+        do {
+            let query = try await reference.getDocuments()
+            for document in query.documents {
+                let remoteEntity = try document.data(as: TransactionsContainerRemoteEntity.self)
+                var container = TransactionsContainerRemoteEntityMapper().toTransactionContainer(remoteEntity: remoteEntity!)
+                let transactions = await self.getTransactions(from: document, container: container)
+                container.transactions = transactions
+                containers.append(container)
             }
+            return containers
+        } catch {
+            print(error.localizedDescription)
+            return []
         }
+    }
+    
+    func createDataBase(for user: User) {
+        dataBase.collection("users").document(user.id).setData(["id" : user.id])
+    }
+    
+    func createContainer(container: TransactionsContainer) -> Bool {
+        let user  = currentUserLocalDataSource.get()
+        let entity = TransactionsContainerRemoteEntityMapper().toRemoteEntity(object: container)
+        let entityId: String = entity.id!
+        do {
+            try Firebase.database.collection("users").document(user.id).collection("transactionsContainers").document(entityId).setData(from: container)
+            return true
+        } catch {
+            return false
+        }
+        
     }
 }

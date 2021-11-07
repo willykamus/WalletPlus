@@ -8,16 +8,14 @@
 import Foundation
 
 protocol DeleteTransactionInteractor {
-    func execute(transaction: Transaction, completed: @escaping (Result<Bool, Error>) -> Void)
+    func execute(transaction: Transaction)
 }
 
 class DeleteTransactionInteractorImpl: DeleteTransactionInteractor {
     
     var repository: TransactionsRepository = TransactionsRepositoryImpl()
     
-    func execute(transaction: Transaction, completed: @escaping (Result<Bool, Error>) -> Void) {
-        repository.delete(transaction: transaction) { result in
-            completed(result)
-        }
+    func execute(transaction: Transaction) {
+        repository.delete(transaction: transaction)
     }
 }
