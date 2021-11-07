@@ -24,15 +24,19 @@ class TransactionsViewModel: ObservableObject {
     func initialize() async {
         if selectedContainer != nil {
             let transactions = await getTransactionsFromContainerInteractor.execute(for: selectedContainer!)
-            if self.isTransactionsAvailable(transactions) {
-                self.displayNoTransactionMessage = false
-                self.createTransactionSections(transactions: transactions)
+            DispatchQueue.main.async {
+                if self.isTransactionsAvailable(transactions) {
+                    self.displayNoTransactionMessage = false
+                    self.createTransactionSections(transactions: transactions)
+                }
             }
         } else {
             let transactions = await getAllTransactionsInteractor.execute()
-            if self.isTransactionsAvailable(transactions) {
-                self.displayNoTransactionMessage = false
-                self.createTransactionSections(transactions: transactions)
+            DispatchQueue.main.async {
+                if self.isTransactionsAvailable(transactions) {
+                    self.displayNoTransactionMessage = false
+                    self.createTransactionSections(transactions: transactions)
+                }
             }
         }
     }

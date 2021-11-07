@@ -35,8 +35,9 @@ class TransactionRemoteDataSourceImpl: TransactionRemoteDataSource {
     
     func add(transaction: TransactionRemoteEntity, to container: TransactionsContainer) async ->  Bool {
         let user = currentUserLocalDataSource.get()
+        let reference = Firebase.database.collection("users").document(user.id).collection("transactionsContainers").document(container.id).collection("transactions")
         do {
-            _ = try dataBase.document(user.id).collection("transactionContainers").document(container.id).collection("transactions").addDocument(from: transaction)
+            _ = try reference.addDocument(from: transaction)
             return true
         } catch {
             return false
@@ -45,13 +46,15 @@ class TransactionRemoteDataSourceImpl: TransactionRemoteDataSource {
     
     func delete(transaction: TransactionRemoteEntity) {
         let user = currentUserLocalDataSource.get()
-        dataBase.document(user.id).collection("transactionContainers").document(transaction.containerId!).collection("transactions").document(transaction.id!).delete()
+        let reference = dataBase.document(user.id).collection("transactionsContainers").document(transaction.containerId!).collection("transactions").document(transaction.id!)
+        reference.delete()
     }
     
     func getTransactions(container: TransactionsContainer) async -> [Transaction] {
         let user = currentUserLocalDataSource.get()
+        let reference = Firebase.database.collection("users").document(user.id).collection("transactionsContainers").document(container.id).collection("transactions")
         do {
-            let query = try await dataBase.document(user.id).collection("transactionContainers").document(container.id).collection("transactions").getDocuments()
+            let query = try await reference.getDocuments()
             var transactions: [Transaction] = []
             for transaction in query.documents {
                 let entity = try transaction.data(as: TransactionRemoteEntity.self)

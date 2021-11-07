@@ -53,7 +53,7 @@ struct TransactionsListView: View {
                         }
                     }
                     .listRowInsets(EdgeInsets())
-                    .navigationBarTitle(Text("Transactions"))
+                    .listStyle(.plain)
                     .toolbar(content: {
                             ToolbarItem(placement: .navigationBarTrailing) {
                                 self.trailingButton
@@ -76,6 +76,7 @@ struct TransactionsListView: View {
                     
                 }
             }
+            .navigationBarTitle(Text("Transactions"))
             .onAppear(perform: {
                 if container != nil {
                     self.viewModel.selectedContainer = container!

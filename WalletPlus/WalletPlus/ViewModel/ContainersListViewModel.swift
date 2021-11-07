@@ -11,6 +11,7 @@ class ContainersListViewModel: ObservableObject {
     
     @Published var containers: [TransactionsContainer] = []
     @Published var total: String = ""
+    @Published var createTransaction: Bool = false
     
     var getTransactionsContainerInteractor: GetTransactionsContainerInteractor = GetTransactionsContainerInteractorImpl()
     var amountFormatterInteractor: AmountFormatterInteractor = AmountFormatterInteractorImpl()

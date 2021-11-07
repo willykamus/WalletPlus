@@ -13,6 +13,7 @@ protocol TransactionsContainerRepository {
     func getTransactionsContainer(with id: String) -> Result<TransactionsContainer, Error>
     func saveTransactionsContainer(_ containers: [TransactionsContainer])
     func createDataBase(for user: User)
+    func createContainer(containerName: TransactionsContainer) -> Bool
 }
 
 class TransactionsContainerRepositoryImpl: TransactionsContainerRepository {
@@ -41,6 +42,10 @@ class TransactionsContainerRepositoryImpl: TransactionsContainerRepository {
     
     func createDataBase(for user: User) {
         self.remoteDataSource.createDataBase(for: user)
+    }
+    
+    func createContainer(containerName: TransactionsContainer) -> Bool {
+        return self.remoteDataSource.createContainer(container: containerName)
     }
 
 }

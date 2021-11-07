@@ -40,6 +40,9 @@
 		114BD9DA2667C0AE00C4F9F6 /* TransactionRemoteEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 114BD9D92667C0AE00C4F9F6 /* TransactionRemoteEntity.swift */; };
 		114BD9DC2667C0C200C4F9F6 /* TransactionRemoteEntityMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 114BD9DB2667C0C200C4F9F6 /* TransactionRemoteEntityMapper.swift */; };
 		114BD9EF2669647300C4F9F6 /* GetTransactionsContainerInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 114BD9EE2669647300C4F9F6 /* GetTransactionsContainerInteractor.swift */; };
+		1152A6472735FB6E00358782 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 1152A6462735FB6E00358782 /* FirebaseAuth */; };
+		1152A6492735FB6E00358782 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 1152A6482735FB6E00358782 /* FirebaseFirestore */; };
+		1152A64B2735FB6E00358782 /* FirebaseFirestoreSwift-Beta in Frameworks */ = {isa = PBXBuildFile; productRef = 1152A64A2735FB6E00358782 /* FirebaseFirestoreSwift-Beta */; };
 		1155EE6F26E29B2F00A72AC3 /* MoreTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1155EE6E26E29B2F00A72AC3 /* MoreTabView.swift */; };
 		115C4FF42634DF330008D217 /* CategoryRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 115C4FF32634DF330008D217 /* CategoryRow.swift */; };
 		115C50012634E6600008D217 /* DisplayableCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 115C50002634E6600008D217 /* DisplayableCategory.swift */; };
@@ -64,9 +67,6 @@
 		1188CFFE263A1B6300FD489C /* AmountFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1188CFFD263A1B6300FD489C /* AmountFormatter.swift */; };
 		11B9C48B2671808D00949132 /* CreateTransactionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B9C48A2671808D00949132 /* CreateTransactionViewModel.swift */; };
 		11B9C48D267180BC00949132 /* SaveTransactionInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B9C48C267180BC00949132 /* SaveTransactionInteractor.swift */; };
-		11BBC3172728D49A0079974C /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 11BBC3162728D49A0079974C /* FirebaseAuth */; };
-		11BBC3192728D49A0079974C /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 11BBC3182728D49A0079974C /* FirebaseFirestore */; };
-		11BBC31B2728D49A0079974C /* FirebaseFirestoreSwift-Beta in Frameworks */ = {isa = PBXBuildFile; productRef = 11BBC31A2728D49A0079974C /* FirebaseFirestoreSwift-Beta */; };
 		11BBC31E2728D8F50079974C /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11BBC31D2728D8F50079974C /* User.swift */; };
 		11BBC3202728D9520079974C /* CreateUserInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11BBC31F2728D9520079974C /* CreateUserInteractor.swift */; };
 		11BBC3222728D9970079974C /* UserRemoteDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11BBC3212728D9970079974C /* UserRemoteDataSource.swift */; };
@@ -84,6 +84,10 @@
 		11BF7EF02641605F00C6D01E /* TransactionsListTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11BF7EEF2641605F00C6D01E /* TransactionsListTab.swift */; };
 		11CBB42527335D7A00D934D4 /* UserValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11CBB42427335D7A00D934D4 /* UserValidator.swift */; };
 		11CBB4272733781200D934D4 /* CreateUserRemoteDataBaseInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11CBB4262733781200D934D4 /* CreateUserRemoteDataBaseInteractor.swift */; };
+		11CBB42A27342C9500D934D4 /* CreateTransactionsContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11CBB42927342C9500D934D4 /* CreateTransactionsContainerView.swift */; };
+		11CBB42C273437D600D934D4 /* CreateTransactionsContainerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11CBB42B273437D600D934D4 /* CreateTransactionsContainerViewModel.swift */; };
+		11CBB42E27343AE900D934D4 /* CreateTransactionsContainerInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11CBB42D27343AE900D934D4 /* CreateTransactionsContainerInteractor.swift */; };
+		11CBB430273463FF00D934D4 /* Firebase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11CBB42F273463FF00D934D4 /* Firebase.swift */; };
 		11E59A7F266E6364008452EF /* GetTransactionsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11E59A7E266E6364008452EF /* GetTransactionsInteractor.swift */; };
 		11E59A83266E8698008452EF /* GetIncomeTransactionsFromContainerInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11E59A82266E8698008452EF /* GetIncomeTransactionsFromContainerInteractor.swift */; };
 		11E59A85266E8876008452EF /* GetExpenseTransactionsFromContainerInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11E59A84266E8876008452EF /* GetExpenseTransactionsFromContainerInteractor.swift */; };
@@ -188,6 +192,10 @@
 		11BF7EEF2641605F00C6D01E /* TransactionsListTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsListTab.swift; sourceTree = "<group>"; };
 		11CBB42427335D7A00D934D4 /* UserValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserValidator.swift; sourceTree = "<group>"; };
 		11CBB4262733781200D934D4 /* CreateUserRemoteDataBaseInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateUserRemoteDataBaseInteractor.swift; sourceTree = "<group>"; };
+		11CBB42927342C9500D934D4 /* CreateTransactionsContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateTransactionsContainerView.swift; sourceTree = "<group>"; };
+		11CBB42B273437D600D934D4 /* CreateTransactionsContainerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateTransactionsContainerViewModel.swift; sourceTree = "<group>"; };
+		11CBB42D27343AE900D934D4 /* CreateTransactionsContainerInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateTransactionsContainerInteractor.swift; sourceTree = "<group>"; };
+		11CBB42F273463FF00D934D4 /* Firebase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Firebase.swift; sourceTree = "<group>"; };
 		11E59A7E266E6364008452EF /* GetTransactionsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetTransactionsInteractor.swift; sourceTree = "<group>"; };
 		11E59A82266E8698008452EF /* GetIncomeTransactionsFromContainerInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetIncomeTransactionsFromContainerInteractor.swift; sourceTree = "<group>"; };
 		11E59A84266E8876008452EF /* GetExpenseTransactionsFromContainerInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetExpenseTransactionsFromContainerInteractor.swift; sourceTree = "<group>"; };
@@ -199,9 +207,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				11BBC31B2728D49A0079974C /* FirebaseFirestoreSwift-Beta in Frameworks */,
-				11BBC3172728D49A0079974C /* FirebaseAuth in Frameworks */,
-				11BBC3192728D49A0079974C /* FirebaseFirestore in Frameworks */,
+				1152A64B2735FB6E00358782 /* FirebaseFirestoreSwift-Beta in Frameworks */,
+				1152A6472735FB6E00358782 /* FirebaseAuth in Frameworks */,
+				1152A6492735FB6E00358782 /* FirebaseFirestore in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -225,6 +233,7 @@
 		11104A4B262E4EF200F94902 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				11CBB42827342C4800D934D4 /* Containers */,
 				11871225272F60E70081F25D /* Home */,
 				11BBC3232728E0A00079974C /* Login */,
 				11104A57262E4F1400F94902 /* TransactionsListView.swift */,
@@ -238,7 +247,6 @@
 				11691336264A005B00C01B69 /* FloatingButton.swift */,
 				116914A9264BF7ED00C01B69 /* CreateTransactionView.swift */,
 				1162FD1D2665277100B21EBC /* WalletRowView.swift */,
-				1162FD1F26652F1100B21EBC /* ContainersListView.swift */,
 				11BE0232268F6967004EFED9 /* TransactionsSection.swift */,
 				11470002269CF35B00C9CE74 /* CategoriesListView.swift */,
 				11470006269D132E00C9CE74 /* AvailableContainersListView.swift */,
@@ -258,6 +266,7 @@
 				11470004269CF37200C9CE74 /* CategoriesListViewModel.swift */,
 				1187121F272E33FE0081F25D /* CreateUserViewModel.swift */,
 				11871223272E36DA0081F25D /* LogInViewModel.swift */,
+				11CBB42B273437D600D934D4 /* CreateTransactionsContainerViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -381,6 +390,7 @@
 				11BE023B26951386004EFED9 /* Category */,
 				117BC640266FFFA400F8F036 /* Transaction */,
 				114BD9D42667C01300C4F9F6 /* TransactionsContainer */,
+				11CBB42F273463FF00D934D4 /* Firebase.swift */,
 			);
 			path = RemoteDataSource;
 			sourceTree = "<group>";
@@ -403,6 +413,7 @@
 				11BBC31F2728D9520079974C /* CreateUserInteractor.swift */,
 				1187122D272F70390081F25D /* AuthenticateUserInteractor.swift */,
 				11CBB4262733781200D934D4 /* CreateUserRemoteDataBaseInteractor.swift */,
+				11CBB42D27343AE900D934D4 /* CreateTransactionsContainerInteractor.swift */,
 			);
 			path = Interactor;
 			sourceTree = "<group>";
@@ -472,6 +483,15 @@
 			path = Category;
 			sourceTree = "<group>";
 		};
+		11CBB42827342C4800D934D4 /* Containers */ = {
+			isa = PBXGroup;
+			children = (
+				1162FD1F26652F1100B21EBC /* ContainersListView.swift */,
+				11CBB42927342C9500D934D4 /* CreateTransactionsContainerView.swift */,
+			);
+			path = Containers;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -489,9 +509,9 @@
 			);
 			name = WalletPlus;
 			packageProductDependencies = (
-				11BBC3162728D49A0079974C /* FirebaseAuth */,
-				11BBC3182728D49A0079974C /* FirebaseFirestore */,
-				11BBC31A2728D49A0079974C /* FirebaseFirestoreSwift-Beta */,
+				1152A6462735FB6E00358782 /* FirebaseAuth */,
+				1152A6482735FB6E00358782 /* FirebaseFirestore */,
+				1152A64A2735FB6E00358782 /* FirebaseFirestoreSwift-Beta */,
 			);
 			productName = WalletPlus;
 			productReference = 1136D54A262E4A6800CDB4E7 /* WalletPlus.app */;
@@ -565,7 +585,7 @@
 			);
 			mainGroup = 1136D541262E4A6800CDB4E7;
 			packageReferences = (
-				11BBC3152728D49A0079974C /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				1152A6452735FB6E00358782 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 			);
 			productRefGroup = 1136D54B262E4A6800CDB4E7 /* Products */;
 			projectDirPath = "";
@@ -624,6 +644,7 @@
 				1147FFFF269CF20F00C9CE74 /* GetIncomeCategories.swift in Sources */,
 				11BE024826951AC9004EFED9 /* CategoryRemoteEntity.swift in Sources */,
 				11BE024C26951EE9004EFED9 /* CategoryRemoteDataSource.swift in Sources */,
+				11CBB42C273437D600D934D4 /* CreateTransactionsContainerViewModel.swift in Sources */,
 				116912EB2649476E00C01B69 /* GetDates.swift in Sources */,
 				11470007269D132E00C9CE74 /* AvailableContainersListView.swift in Sources */,
 				11BE02502695217C004EFED9 /* GetCategoriesInteractor.swift in Sources */,
@@ -655,6 +676,7 @@
 				11BF7EF02641605F00C6D01E /* TransactionsListTab.swift in Sources */,
 				1136D54E262E4A6900CDB4E7 /* WalletPlusApp.swift in Sources */,
 				11BBC3222728D9970079974C /* UserRemoteDataSource.swift in Sources */,
+				11CBB430273463FF00D934D4 /* Firebase.swift in Sources */,
 				11E59A83266E8698008452EF /* GetIncomeTransactionsFromContainerInteractor.swift in Sources */,
 				11B9C48B2671808D00949132 /* CreateTransactionViewModel.swift in Sources */,
 				1187121E272C9D8D0081F25D /* CreateAccountView.swift in Sources */,
@@ -667,12 +689,14 @@
 				1162FD1E2665277100B21EBC /* WalletRowView.swift in Sources */,
 				11BE024A26951CF4004EFED9 /* CategoryRemoteEntityMapper.swift in Sources */,
 				11470003269CF35B00C9CE74 /* CategoriesListView.swift in Sources */,
+				11CBB42A27342C9500D934D4 /* CreateTransactionsContainerView.swift in Sources */,
 				11CBB4272733781200D934D4 /* CreateUserRemoteDataBaseInteractor.swift in Sources */,
 				11BE023D26951398004EFED9 /* Category.swift in Sources */,
 				114BD9D82667C08200C4F9F6 /* TransactionsContainerRemoteEntity.swift in Sources */,
 				11104A66262E5FB600F94902 /* TransactionRow.swift in Sources */,
 				11104A61262E5F5000F94902 /* TransactionsViewModel.swift in Sources */,
 				113469FF268506EC00335CD3 /* TransactionContainerLocalDataSource.swift in Sources */,
+				11CBB42E27343AE900D934D4 /* CreateTransactionsContainerInteractor.swift in Sources */,
 				11871222272E36A30081F25D /* LoginView.swift in Sources */,
 				11104A58262E4F1400F94902 /* TransactionsListView.swift in Sources */,
 				11BE023F269515C4004EFED9 /* TransactionType.swift in Sources */,
@@ -1004,7 +1028,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		11BBC3152728D49A0079974C /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+		1152A6452735FB6E00358782 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
 			requirement = {
@@ -1015,19 +1039,19 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		11BBC3162728D49A0079974C /* FirebaseAuth */ = {
+		1152A6462735FB6E00358782 /* FirebaseAuth */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 11BBC3152728D49A0079974C /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			package = 1152A6452735FB6E00358782 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseAuth;
 		};
-		11BBC3182728D49A0079974C /* FirebaseFirestore */ = {
+		1152A6482735FB6E00358782 /* FirebaseFirestore */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 11BBC3152728D49A0079974C /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			package = 1152A6452735FB6E00358782 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseFirestore;
 		};
-		11BBC31A2728D49A0079974C /* FirebaseFirestoreSwift-Beta */ = {
+		1152A64A2735FB6E00358782 /* FirebaseFirestoreSwift-Beta */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 11BBC3152728D49A0079974C /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			package = 1152A6452735FB6E00358782 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = "FirebaseFirestoreSwift-Beta";
 		};
 /* End XCSwiftPackageProductDependency section */

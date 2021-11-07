@@ -25,7 +25,8 @@ class CurrentUserLocalDataSourceImpl: CurrentUserLocalDataSource {
     
     func get() -> User {
         if let id: String = defaults.value(forKey: User.CodingKeys.id.rawValue) as? String, let password: String = defaults.value(forKey: User.CodingKeys.password.rawValue) as? String, let email: String = defaults.value(forKey: User.CodingKeys.email.rawValue) as? String {
-            return User(id: id, email: email, password: password)
+            let user = User(id: id, email: email, password: password)
+            return user
         }
         return User(id: "", email: "", password: "")
     }
